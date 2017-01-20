@@ -6,15 +6,15 @@ export const CTA = {
 
 export const LINKS = [
   {
-    url: 'http://sparkpost.com',
+    url: 'https://www.sparkpost.com/features',
     label: 'Features'
   },
   {
-    url: 'http://sparkpost.com',
+    url: 'https://www.sparkpost.com/pricing',
     label: 'Pricing'
   },
   {
-    url: 'http://sparkpost.com',
+    url: 'https://www.sparkpost.com/blog',
     label: 'Blog'
   }
 ];

@@ -12,7 +12,7 @@ const Footer = () => (
         <div className='col-xs-12 col-md-8'>
           <h1>{CTA.header}</h1>
           <p className='marginBottom--lg'>{CTA.text}</p>
-          <a href='http://app.sparkpost.com' title='SparkPost' className='button button--l button--blue'>{CTA.button}</a>
+          <a href='http://app.sparkpost.com/sign-up' title='SparkPost' className='button button--l button--blue'>{CTA.button}</a>
         </div>
       </div>
 
