@@ -1,16 +1,18 @@
 exports[`GenerateEmail component should render correctly with a generate function 1`] = `
-<div
-  className="panel panel--accent">
+<span>
   <div
-    className="panel__body paddingTop--xl paddingBottom--xl text--center">
-    <h4>
-      To get started, click on the button below to generate an email address.
-    </h4>
-    <button
-      className="button button--blue"
-      onClick={[Function]}>
-      Generate Email Address
-    </button>
+    className="panel panel--accent">
+    <div
+      className="panel__body paddingTop--xl paddingBottom--xl text--center">
+      <h4>
+        To get started, click on the button below to generate an email address.
+      </h4>
+      <button
+        className="button button--blue"
+        onClick={[Function]}>
+        Generate Email Address
+      </button>
+    </div>
   </div>
-</div>
+</span>
 `;
