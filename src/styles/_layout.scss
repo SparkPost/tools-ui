@@ -6,13 +6,17 @@ html {
 }
 
 $footer-height: 24rem; // Change this later
-$nav-height: rem(57);
+$nav-height: rem(60);
 
 .pageWrapper {
   position: relative;
   min-height: 100vh;
-  padding-bottom: $footer-height;
+  padding-bottom: 0;
   padding-top: $nav-height;
+
+  @media screen and (min-width: break(md)) {
+    padding-bottom: $footer-height;
+  }
 }
 
 .container {
