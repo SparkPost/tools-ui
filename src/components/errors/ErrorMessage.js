@@ -1,14 +1,11 @@
 import React from 'react';
 import Icon from 'components/Icon';
-import _ from 'lodash';
 
-export default ({ error = {}, message = false, icon = 'exclamation-circle' }) => {
-  const errorMessage = _.get(error, 'message', message);
-  if (!errorMessage) { return null; }
-  return (
-    <div className='error'>
+import './ErrorMessage.scss';
+
+export default ({ message = false, icon = 'exclamation-circle' }) => (
+    <div className='errorMessage'>
       {icon && <Icon name={icon} />}
-      {errorMessage}
+      {message || 'Something happened!'}
     </div>
   );
-};

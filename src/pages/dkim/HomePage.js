@@ -26,7 +26,7 @@ export default class HomePage extends Component {
   // redux
   generate() {
     this.setState({ loading: true, error: null });
-    axios.post(`${config.apiBase}/messaging-tools/validator-emails`)
+    axios.post(`${config.apiBase}/messaging-tools/validator-email`)
       .then(({ data }) => {
         const { email } = data.results;
         this.setDkimCookie(email);
@@ -35,7 +35,10 @@ export default class HomePage extends Component {
           loading: false
         });
       }, () => {
-        this.setState({ error: true });
+        this.setState({
+          error: true,
+          loading: false
+        });
       });
   }
 
@@ -64,8 +67,8 @@ export default class HomePage extends Component {
   }
 
   renderGenerateOrEmail() {
-    const { email } = this.state;
-    return email ? <ShowEmail email={email} /> : <GenerateEmail generate={() => this.generate()} />;
+    const { email, error } = this.state;
+    return email ? <ShowEmail email={email} /> : <GenerateEmail generate={() => this.generate()} error={error} />;
   }
 
   render() {
