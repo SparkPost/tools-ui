@@ -26,7 +26,7 @@ export default class HomePage extends Component {
   // redux
   generate() {
     this.setState({ loading: true, error: null });
-    axios.post(`${config.apiBase}/messaging-tools/validator-email`)
+    axios.post(`${config.apiBase}/messaging-tools/validator-emails`)
       .then(({ data }) => {
         const { email } = data.results;
         this.setDkimCookie(email);
