@@ -1,5 +1,8 @@
 html {
   background: grayscale(9);
+  @media screen and (min-width: break(xl)) {
+    font-size: 21px;
+  }
 }
 
 $footer-height: 24rem; // Change this later
