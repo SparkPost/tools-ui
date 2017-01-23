@@ -86,13 +86,6 @@ exports[`ResultDetailHeader component should render when not logged in 1`] = `
     className="panel__body">
     <div
       className="float--right">
-      <a
-        className="actionLink"
-        onClick={[Function]}
-        style={Object {}}
-        title="">
-        Save Results
-      </a>
       <span
         className="popover__group"
         onClick={[Function]}>
@@ -174,13 +167,6 @@ exports[`ResultDetailHeader component should render with rows 1`] = `
     className="panel__body">
     <div
       className="float--right">
-      <a
-        className="actionLink"
-        onClick={[Function]}
-        style={Object {}}
-        title="">
-        Save Results
-      </a>
       <span
         className="popover__group"
         onClick={[Function]}>

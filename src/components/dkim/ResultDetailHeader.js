@@ -26,13 +26,10 @@ class ResultDetailHeader extends Component {
   }
 
   render() {
-    const { loggedIn } = this.props;
-
     return (
       <div className='panel panel--accent'>
         <div className='panel__body'>
           <div className='float--right'>
-            {!loggedIn && <ActionLink to='/'>Save Results</ActionLink>}
             <CopyPopover>
               <ActionLink title='Share'>Share</ActionLink>
             </CopyPopover>

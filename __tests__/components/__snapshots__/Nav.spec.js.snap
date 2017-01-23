@@ -31,13 +31,6 @@ exports[`Nav component should render correctly by default 1`] = `
       title="DKIM Validator">
       DKIM Validator
     </a>
-    <a
-      className="nav__link false"
-      onClick={[Function]}
-      style={Object {}}
-      title="SPF Inspector">
-      SPF Inspector
-    </a>
     <div
       className="float--right">
       <a
@@ -87,13 +80,6 @@ exports[`Nav component should render correctly when logged in 1`] = `
       style={Object {}}
       title="DKIM Validator">
       DKIM Validator
-    </a>
-    <a
-      className="nav__link false"
-      onClick={[Function]}
-      style={Object {}}
-      title="SPF Inspector">
-      SPF Inspector
     </a>
     <div
       className="float--right">
@@ -145,13 +131,6 @@ exports[`Nav component should render correctly when not logged in 1`] = `
       title="DKIM Validator">
       DKIM Validator
     </a>
-    <a
-      className="nav__link false"
-      onClick={[Function]}
-      style={Object {}}
-      title="SPF Inspector">
-      SPF Inspector
-    </a>
     <div
       className="float--right">
       <a
@@ -202,13 +181,6 @@ exports[`Nav component should render correctly with a dkim path 1`] = `
       title="DKIM Validator">
       DKIM Validator
     </a>
-    <a
-      className="nav__link false"
-      onClick={[Function]}
-      style={Object {}}
-      title="SPF Inspector">
-      SPF Inspector
-    </a>
     <div
       className="float--right">
       <a
@@ -258,13 +230,6 @@ exports[`Nav component should render correctly with an spf path 1`] = `
       style={Object {}}
       title="DKIM Validator">
       DKIM Validator
-    </a>
-    <a
-      className="nav__link is-active"
-      onClick={[Function]}
-      style={Object {}}
-      title="SPF Inspector">
-      SPF Inspector
     </a>
     <div
       className="float--right">

@@ -56,6 +56,9 @@ class Nav extends Component {
       'nav--sticky': sticky
     });
 
+    const dkimLink = classNames('nav__link', { 'is-active': path.includes('/dkim')});
+    const spfLink = classNames('nav__link', { 'is-active': path.includes('/spf')});
+
     return (
       <nav className={navClasses}>
         <div className='container'>
@@ -66,15 +69,8 @@ class Nav extends Component {
           <Link
             to='/dkim'
             title='DKIM Validator'
-            className={`nav__link ${path.includes('/dkim') && 'is-active'}`}>
+            className={dkimLink}>
             DKIM Validator
-          </Link>
-
-          <Link
-            to='/'
-            title='SPF Inspector'
-            className={`nav__link ${path.includes('/spf') && 'is-active'}`}>
-            SPF Inspector
           </Link>
 
           {loggedIn ? this.renderLoggedInLinks() : this.renderLoggedOutLinks()}

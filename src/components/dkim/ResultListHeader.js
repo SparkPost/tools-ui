@@ -4,14 +4,13 @@ import { ActionLink } from 'components/button/Button';
 
 class ResultListHeader extends Component {
   render() {
-    const { email, getResults, loggedIn } = this.props;
+    const { email, getResults, error } = this.props;
 
     return (
       <div className='panel panel--accent'>
         <div className='panel__body'>
 
           <div className='float--right'>
-            {!loggedIn && <ActionLink to='/'>Save Results</ActionLink>}
             <CopyPopover>
               <ActionLink title='Share'>Share</ActionLink>
             </CopyPopover>

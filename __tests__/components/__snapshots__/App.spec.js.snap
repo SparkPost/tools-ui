@@ -22,7 +22,7 @@ exports[`test App renders correctly 1`] = `
           </p>
           <a
             className="button button--l button--blue"
-            href="http://app.sparkpost.com"
+            href="http://app.sparkpost.com/sign-up"
             title="SparkPost">
             Send 100k Emails/Month for Free
           </a>
@@ -55,19 +55,19 @@ exports[`test App renders correctly 1`] = `
           className="float--right">
           <a
             className="footer__link"
-            href="http://sparkpost.com"
+            href="https://www.sparkpost.com/features"
             title="Features">
             Features
           </a>
           <a
             className="footer__link"
-            href="http://sparkpost.com"
+            href="https://www.sparkpost.com/pricing"
             title="Pricing">
             Pricing
           </a>
           <a
             className="footer__link"
-            href="http://sparkpost.com"
+            href="https://www.sparkpost.com/blog"
             title="Blog">
             Blog
           </a>
@@ -106,13 +106,6 @@ exports[`test App renders correctly 1`] = `
         style={Object {}}
         title="DKIM Validator">
         DKIM Validator
-      </a>
-      <a
-        className="nav__link false"
-        onClick={[Function]}
-        style={Object {}}
-        title="SPF Inspector">
-        SPF Inspector
       </a>
       <div
         className="float--right">
