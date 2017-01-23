@@ -4,7 +4,7 @@ import { ActionLink } from 'components/button/Button';
 
 class ResultListHeader extends Component {
   render() {
-    const { email, getResults, error } = this.props;
+    const { email, getResults } = this.props;
 
     return (
       <div className='panel panel--accent'>

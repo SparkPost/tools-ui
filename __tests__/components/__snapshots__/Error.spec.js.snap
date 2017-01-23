@@ -1,14 +1,17 @@
-exports[`ErrorMessage component should render (null) with no props 1`] = `null`;
-
-exports[`ErrorMessage component should render correctly with a custom icon 1`] = `null`;
-
-exports[`ErrorMessage component should render correctly with an error message 1`] = `null`;
-
-exports[`ErrorMessage component should render correctly with an error object 1`] = `
+exports[`ErrorMessage component should render correctly with an error message 1`] = `
 <div
-  className="error">
+  className="errorMessage">
   <i
     className="fa fa-exclamation-circle" />
-  my message
+  some string message
+</div>
+`;
+
+exports[`ErrorMessage component should render the default message with no props 1`] = `
+<div
+  className="errorMessage">
+  <i
+    className="fa fa-exclamation-circle" />
+  Something happened!
 </div>
 `;

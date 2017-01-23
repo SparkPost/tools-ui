@@ -101,7 +101,7 @@ exports[`test App renders correctly 1`] = `
         </svg>
       </a>
       <a
-        className="nav__link false"
+        className="nav__link"
         onClick={[Function]}
         style={Object {}}
         title="DKIM Validator">

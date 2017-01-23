@@ -194,12 +194,6 @@ exports[`ResultListHeader component should render with an error present 1`] = `
     <h3>
       some@email.com
     </h3>
-    <div
-      className="error">
-      <i
-        className="fa fa-exclamation-circle" />
-      oops
-    </div>
   </div>
 </div>
 `;

@@ -25,7 +25,7 @@ exports[`Nav component should render correctly by default 1`] = `
       </svg>
     </a>
     <a
-      className="nav__link false"
+      className="nav__link"
       onClick={[Function]}
       style={Object {}}
       title="DKIM Validator">
@@ -75,7 +75,7 @@ exports[`Nav component should render correctly when logged in 1`] = `
       </svg>
     </a>
     <a
-      className="nav__link false"
+      className="nav__link"
       onClick={[Function]}
       style={Object {}}
       title="DKIM Validator">
@@ -125,7 +125,7 @@ exports[`Nav component should render correctly when not logged in 1`] = `
       </svg>
     </a>
     <a
-      className="nav__link false"
+      className="nav__link"
       onClick={[Function]}
       style={Object {}}
       title="DKIM Validator">
@@ -225,7 +225,7 @@ exports[`Nav component should render correctly with an spf path 1`] = `
       </svg>
     </a>
     <a
-      className="nav__link false"
+      className="nav__link"
       onClick={[Function]}
       style={Object {}}
       title="DKIM Validator">

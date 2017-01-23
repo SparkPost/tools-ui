@@ -57,7 +57,6 @@ class Nav extends Component {
     });
 
     const dkimLink = classNames('nav__link', { 'is-active': path.includes('/dkim')});
-    const spfLink = classNames('nav__link', { 'is-active': path.includes('/spf')});
 
     return (
       <nav className={navClasses}>
