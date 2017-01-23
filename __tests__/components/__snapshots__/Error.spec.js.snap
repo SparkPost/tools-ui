@@ -1,3 +1,15 @@
+exports[`ErrorMessage component should render correctly with a supplied icon 1`] = `
+<div
+  className="errorMessage">
+  <div
+    className="errorMessage__friendly">
+    <i
+      className="fa fa-fa-bolt" />
+    Something happened!
+  </div>
+</div>
+`;
+
 exports[`ErrorMessage component should render correctly with an error message 1`] = `
 <div
   className="errorMessage">
@@ -10,7 +22,7 @@ exports[`ErrorMessage component should render correctly with an error message 1`
 </div>
 `;
 
-exports[`ErrorMessage component should render correctly with an error message with details 1`] = `
+exports[`ErrorMessage component should render correctly with an error message and details 1`] = `
 <div
   className="errorMessage">
   <div
@@ -23,18 +35,6 @@ exports[`ErrorMessage component should render correctly with an error message wi
       onClick={[Function]}>
       View Details
     </a>
-  </div>
-</div>
-`;
-
-exports[`ErrorMessage component should render the a supplied icon 1`] = `
-<div
-  className="errorMessage">
-  <div
-    className="errorMessage__friendly">
-    <i
-      className="fa fa-fa-bolt" />
-    Something happened!
   </div>
 </div>
 `;

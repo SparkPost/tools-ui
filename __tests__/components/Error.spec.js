@@ -9,7 +9,7 @@ describe('ErrorMessage component', () => {
     expect(renderer.create(<ErrorMessage />)).toMatchSnapshot();
   });
 
-  test('should render the a supplied icon', () => {
+  test('should render correctly with a supplied icon', () => {
     expect(renderer.create(<ErrorMessage icon='fa-bolt' />)).toMatchSnapshot();
   });
 
@@ -17,7 +17,7 @@ describe('ErrorMessage component', () => {
     expect(renderer.create(<ErrorMessage friendly='some string message' />)).toMatchSnapshot();
   });
 
-  test('should render correctly with an error message with details', () => {
+  test('should render correctly with an error message and details', () => {
     expect(renderer.create(<ErrorMessage friendly='some string message' details='extra details' />)).toMatchSnapshot();
   });
 
