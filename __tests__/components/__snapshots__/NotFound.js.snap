@@ -1,14 +1,14 @@
-exports[`Error page should render 404 1`] = `
+exports[`NotFound should render 404 1`] = `
 <div
   className="flex center-xs">
   <div
-    className="col-xs-12 errorPage">
+    className="col-xs-12 notFound">
     <h5
-      className="errorPage__desc">
+      className="notFound__desc">
       The page you are looking for can\'t be found.
     </h5>
     <h1
-      className="errorPage__code">
+      className="notFound__code">
       404
     </h1>
   </div>
