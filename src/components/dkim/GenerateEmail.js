@@ -6,7 +6,7 @@ const errorText = 'Sorry, something happened and we couldn\'t generate an addres
 
 export default (props) => (
   <span>
-    {props.error && <ErrorMessage message={errorText} />}
+    {props.error && <ErrorMessage friendly={errorText} />}
     <div className='panel panel--accent'>
       <div className='panel__body paddingTop--xl paddingBottom--xl text--center'>
         <h4>To get started, click on the button below to generate an email address.</h4>

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import axios from 'axios';
 import config from 'config/index';
@@ -80,7 +79,7 @@ export default class ResultDetailPage extends Component {
       <div className='flex center-xs'>
         <div className='col-xs-12 col-md-10'>
           <div className='text--left'><BackLink to={back} title='DKIM Results' /></div>
-          {error && <ErrorMessage message={DETAIL_ERROR_MESSAGE} />}
+          {error && <ErrorMessage friendly={DETAIL_ERROR_MESSAGE} details={error.message} />}
           {loading ? this.renderLoading() : this.renderDetails()}
         </div>
       </div>
