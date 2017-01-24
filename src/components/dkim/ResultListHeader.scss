@@ -1,0 +1,28 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.dkimResultListHeader {
+  &__label {
+    color: grayscale(5);
+    font-size: rem(14);
+
+    @media screen and (min-width: break(md)) {
+      font-size: rem(15);
+    }
+  }
+
+  &__email {
+    font-size: rem(15);
+    line-height: rem(18);
+
+    @media screen and (min-width: break(sm)) {
+      font-size: rem(18);
+      line-height: rem(24);
+    }
+
+    @media screen and (min-width: break(md)) {
+      font-size: rem(21);
+      line-height: rem(30);
+    }
+  }
+}

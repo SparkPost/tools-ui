@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Table, { VerticalTable } from 'components/Table';
+import Table, { VerticalTable } from 'components/table/Table';
 
 const testHeaders = ['One', 'Second Column', 'Three'];
 const testRows = [

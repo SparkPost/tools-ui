@@ -3,7 +3,7 @@ import axios from 'axios';
 import config from 'config/index';
 import moment from 'moment';
 
-import Table from 'components/Table';
+import Table from 'components/table/Table';
 import ResultDetailHeader from 'components/dkim/ResultDetailHeader';
 import { BackLink } from 'components/button/Button';
 import ErrorMessage from 'components/errors/ErrorMessage';

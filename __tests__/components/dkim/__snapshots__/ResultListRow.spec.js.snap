@@ -31,9 +31,11 @@ exports[`ResultListRow component should render 1`] = `
           some@email.com
         </div>
         <div
-          className="dkimResultListRow__received">
-          Sun Jan 01 2017 00:00:00 GMT+0000 (UTC)
-           
+          className="dkimResultListRow__action">
+          <span
+            className="dkimResultListRow__received">
+            Sun Jan 01 2017 00:00:00 GMT+0000 (UTC)
+          </span>
           <i
             className="fa fa-chevron-right" />
         </div>

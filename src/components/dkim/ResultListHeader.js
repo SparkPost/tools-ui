@@ -3,6 +3,8 @@ import { CopyPopover } from 'components/popover/Popover';
 import { ActionLink } from 'components/button/Button';
 import ErrorMessage from 'components/errors/ErrorMessage';
 
+import './ResultListHeader.scss';
+
 class ResultListHeader extends Component {
   render() {
     const { email, getResults, error } = this.props;
@@ -18,8 +20,8 @@ class ResultListHeader extends Component {
             <ActionLink onClick={getResults} title='Refresh Messages'>Refresh</ActionLink>
           </div>
 
-          <p className='text--muted marginBottom--xs'>Generated Test Address</p>
-          <h3>{email}</h3>
+          <p className='dkimResultListHeader__label marginBottom--xs'>Generated Test Address</p>
+          <h3 className='dkimResultListHeader__email'>{email}</h3>
 
           <ErrorMessage error={error} />
         </div>

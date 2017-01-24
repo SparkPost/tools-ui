@@ -3,7 +3,6 @@
 
 .footer {
   position: static;
-
   background: grayscale(1);
 
   @media screen and (min-width: break(md)) {
@@ -51,10 +50,12 @@
   .button {
     display: block;
     text-align: center;
-    font-size: rem(12);
+    font-size: rem(11);
+    white-space: nowrap;
 
     @media screen and (min-width: break(md)) {
       display: inline-block;
+      font-size: rem(12);
       text-align: left;
     }
   }

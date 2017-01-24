@@ -25,6 +25,12 @@ $nav-height: rem(60);
   max-width: break(xl);
 
   &--tool {
-    min-height: 70vh;
+    padding: rem(30) 0;
+
+    min-height: 0;
+    @media screen and (min-width: break(md)) {
+      padding: rem(60) 0;
+      min-height: 70vh;
+    }
   }
 }

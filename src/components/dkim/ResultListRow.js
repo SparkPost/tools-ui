@@ -27,7 +27,10 @@ const ResultListRow = (props) => {
               <span className='dkimResultListRow__label'>from</span>
               {header_from}
             </div>
-            <div className='dkimResultListRow__received'>{received} <Icon name='chevron-right' /></div>
+            <div className='dkimResultListRow__action'>
+              <span className='dkimResultListRow__received'>{received}</span>
+              <Icon name='chevron-right' />
+            </div>
           </div>
         </div>
       </div>

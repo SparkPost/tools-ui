@@ -1,0 +1,13 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+// TODO remove when responsive box model helpers are in place in @sparkpost/styles
+.showEmail {
+  &__bump {
+    margin-top: rem(18);
+
+    @media screen and (min-width: break(md)) {
+      margin-top: 0;
+    }
+  }
+}

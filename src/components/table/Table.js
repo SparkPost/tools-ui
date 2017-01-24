@@ -1,4 +1,5 @@
 import React from 'react';
+import './Table.scss';
 
 const Cell = ({ value }) => <td className='table__cell'>{value}</td>;
 const HeaderCell = ({ value }) => <th className='table__heading'>{value}</th>;

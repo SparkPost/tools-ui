@@ -2,7 +2,7 @@ exports[`test App renders correctly 1`] = `
 <div
   className="pageWrapper">
   <div
-    className="container container--tool paddingTop--xl paddingBottom--xl">
+    className="container container--tool">
     This is my app
   </div>
   <div

@@ -1,0 +1,24 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.table {
+  &__head {
+    font-weight: 500;
+    font-size: rem(12);
+    color: grayscale(5);
+  }
+
+  &__row {
+    // TODO Create transparent table modifier in @sparkpost/styles
+    background: transparent !important;
+
+    // Hides the las TD on each row
+    // For dkim signatures table - need to namespace this if tables used elsewhere
+    & > *:last-child {
+      display: none;
+      @media screen and (min-width: break(sm)) {
+        display: table-cell;
+      }
+    }
+  }
+}

@@ -1,7 +1,6 @@
 @import "~@sparkpost/styles/src/assets/scss/shared/config";
 @import "~@sparkpost/styles/src/assets/scss/shared/functions";
 
-// TODO Make responsive
 .dkimResultListRow {
   position: relative;
 
@@ -17,7 +16,7 @@
       box-shadow: shadow(2), 0 0 36px rgba(#000, 0.05);
     }
 
-    .dkimResultListRow__received .fa {
+    .dkimResultListRow__action .fa {
       color: color(blue);
     }
   }
@@ -53,7 +52,7 @@
     color: grayscale(5);
   }
 
-  &__received {
+  &__action {
     position: absolute;
     top: 50%;
     right: rem(18);
@@ -65,8 +64,15 @@
 
     .fa {
       display: inline-block;
-      margin-left: rem(9);
+      margin-left: rem(12);
       font-size: rem(15);
+    }
+  }
+
+  &__received {
+    display: none;
+    @media screen and (min-width: break(md)) {
+      display: inline;
     }
   }
 }
