@@ -1,0 +1,16 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.notFound {
+  padding: rem(42) 0;
+
+  &__desc {
+    color: grayscale(4);
+    font-family: $gotham-regular;
+  }
+
+  &__code {
+    padding: rem(39) 0;
+    font-size: rem(90);
+  }
+}

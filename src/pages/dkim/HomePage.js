@@ -35,7 +35,10 @@ export default class HomePage extends Component {
           loading: false
         });
       }, () => {
-        this.setState({ error: true });
+        this.setState({
+          error: true,
+          loading: false
+        });
       });
   }
 
@@ -64,8 +67,8 @@ export default class HomePage extends Component {
   }
 
   renderGenerateOrEmail() {
-    const { email } = this.state;
-    return email ? <ShowEmail email={email} /> : <GenerateEmail generate={() => this.generate()} />;
+    const { email, error } = this.state;
+    return email ? <ShowEmail email={email} /> : <GenerateEmail generate={() => this.generate()} error={error} />;
   }
 
   render() {

@@ -7,6 +7,7 @@ import Table from 'components/table/Table';
 import ResultDetailHeader from 'components/dkim/ResultDetailHeader';
 import { BackLink } from 'components/button/Button';
 import ErrorMessage from 'components/errors/ErrorMessage';
+import { DETAIL_ERROR_MESSAGE } from './constants';
 
 export default class ResultDetailPage extends Component {
   constructor(props) {
@@ -57,11 +58,11 @@ export default class ResultDetailPage extends Component {
   }
 
   renderDetails() {
-    const { error, detailTableRows, sigTableHeaders, sigTableRows } = this.state;
+    const { detailTableRows, sigTableHeaders, sigTableRows, error } = this.state;
+    if (error) { return null; }
     return (
       <div>
-        <ErrorMessage error={error} />
-        <ResultDetailHeader rows={detailTableRows} error={error} />
+        <ResultDetailHeader rows={detailTableRows} />
         <div className='panel'>
           <div className='panel__body padding--none'>
             <Table headers={sigTableHeaders} rows={sigTableRows} />
@@ -72,12 +73,13 @@ export default class ResultDetailPage extends Component {
   }
 
   render() {
-    const { loading } = this.state;
+    const { error, loading } = this.state;
     const back = `/dkim/results/${this.props.params.email}`;
     return (
       <div className='flex center-xs'>
         <div className='col-xs-12 col-md-10'>
           <div className='text--left'><BackLink to={back} title='DKIM Results' /></div>
+          {error && <ErrorMessage friendly={DETAIL_ERROR_MESSAGE} details={error.message} />}
           {loading ? this.renderLoading() : this.renderDetails()}
         </div>
       </div>

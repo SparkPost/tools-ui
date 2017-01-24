@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { CopyPopover } from 'components/popover/Popover';
 import { ActionLink } from 'components/button/Button';
-import ErrorMessage from 'components/errors/ErrorMessage';
 
 import './ResultListHeader.scss';
 
 class ResultListHeader extends Component {
   render() {
-    const { email, getResults, error } = this.props;
+    const { email, getResults } = this.props;
 
     return (
       <div className='panel panel--accent'>
@@ -22,8 +21,6 @@ class ResultListHeader extends Component {
 
           <p className='dkimResultListHeader__label marginBottom--xs'>Generated Test Address</p>
           <h3 className='dkimResultListHeader__email'>{email}</h3>
-
-          <ErrorMessage error={error} />
         </div>
       </div>
     );

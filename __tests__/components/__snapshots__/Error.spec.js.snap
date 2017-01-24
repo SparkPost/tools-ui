@@ -1,14 +1,64 @@
-exports[`ErrorMessage component should render (null) with no props 1`] = `null`;
-
-exports[`ErrorMessage component should render correctly with a custom icon 1`] = `null`;
-
-exports[`ErrorMessage component should render correctly with an error message 1`] = `null`;
-
-exports[`ErrorMessage component should render correctly with an error object 1`] = `
+exports[`ErrorMessage component should render correctly with a supplied icon 1`] = `
 <div
-  className="error">
-  <i
-    className="fa fa-exclamation-circle" />
-  my message
+  className="errorMessage">
+  <div
+    className="errorMessage__text">
+    <i
+      className="fa fa-fa-bolt" />
+    <p
+      className="errorMessage__friendly">
+      Something happened!
+    </p>
+  </div>
+</div>
+`;
+
+exports[`ErrorMessage component should render correctly with an error message 1`] = `
+<div
+  className="errorMessage">
+  <div
+    className="errorMessage__text">
+    <i
+      className="fa fa-exclamation-circle" />
+    <p
+      className="errorMessage__friendly">
+      some string message
+    </p>
+  </div>
+</div>
+`;
+
+exports[`ErrorMessage component should render correctly with an error message and details 1`] = `
+<div
+  className="errorMessage">
+  <div
+    className="errorMessage__text">
+    <i
+      className="fa fa-exclamation-circle" />
+    <a
+      className="errorMessage__link"
+      onClick={[Function]}>
+      View Details
+    </a>
+    <p
+      className="errorMessage__friendly">
+      some string message
+    </p>
+  </div>
+</div>
+`;
+
+exports[`ErrorMessage component should render the default message with no props 1`] = `
+<div
+  className="errorMessage">
+  <div
+    className="errorMessage__text">
+    <i
+      className="fa fa-exclamation-circle" />
+    <p
+      className="errorMessage__friendly">
+      Something happened!
+    </p>
+  </div>
 </div>
 `;
