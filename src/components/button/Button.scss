@@ -1,6 +1,13 @@
 @import "~@sparkpost/styles/src/assets/scss/shared/config";
 @import "~@sparkpost/styles/src/assets/scss/shared/functions";
 
+@import "~@sparkpost/styles/src/assets/scss/components/button";
+
+.button {
+  padding: 0 rem(12);
+  white-space: nowrap;
+}
+
 .actionLink {
   display: inline-block;
   padding: 0 rem(6);
