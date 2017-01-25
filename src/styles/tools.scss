@@ -23,11 +23,10 @@ $fa-font-path: "~@sparkpost/styles/src/assets/fonts";
 
 /*
  *  Components
- *  These can be imported within react components
+ *  These can be imported within react components to ensure correct order
  */
 @import "~@sparkpost/styles/src/assets/scss/components/panel";
 @import "~@sparkpost/styles/src/assets/scss/components/button";
-@import "~@sparkpost/styles/src/assets/scss/components/table";
 @import "~@sparkpost/styles/src/assets/scss/components/formelements";
 @import "~@sparkpost/styles/src/assets/scss/components/popover";
 

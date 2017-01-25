@@ -2,12 +2,15 @@
 @import "~@sparkpost/styles/src/assets/scss/shared/functions";
 
 .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
+  position: static;
   background: grayscale(1);
+
+  @media screen and (min-width: break(md)) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
   h1, h2, h3, h4, h5, h6, p {
     color: grayscale(white);
@@ -26,16 +29,34 @@
 
   &__link {
     display: inline-block;
-    padding: 0 rem(21);
+    padding: rem(9) rem(12);
 
     font-family: $gotham-regular;
-    font-size: rem(12);
+    font-size: rem(10);
     color: grayscale(5);
     font-weight: 400;
 
     &:hover {
       color: grayscale(white);
       text-decoration: none;
+    }
+
+    @media screen and (min-width: break(md)) {
+      font-size: rem(12);
+      padding: 0 rem(21);
+    }
+  }
+
+  .button {
+    display: block;
+    text-align: center;
+    font-size: rem(11);
+    white-space: nowrap;
+
+    @media screen and (min-width: break(md)) {
+      display: inline-block;
+      font-size: rem(12);
+      text-align: left;
     }
   }
 }

@@ -1,6 +1,6 @@
 exports[`test Table component should render correctly 1`] = `
 <table
-  className="table">
+  className="table table--transparent">
   <thead
     className="table__head">
     <tr
@@ -72,7 +72,7 @@ exports[`test Table component should render correctly 1`] = `
 
 exports[`test Vertical table component should render correctly 1`] = `
 <table
-  className="table">
+  className="table table--transparent">
   <tbody
     className="table__body">
     <tr

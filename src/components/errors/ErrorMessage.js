@@ -33,10 +33,10 @@ class ErrorMessage extends Component {
 
     return (
       <div className='errorMessage'>
-        <div className='errorMessage__friendly'>
+        <div className='errorMessage__text'>
           {icon && <Icon name={icon} />}
-          {friendly}
           {details && this.renderToggleButton()}
+          <p className='errorMessage__friendly'>{friendly}</p>
         </div>
 
         {(details && open) &&

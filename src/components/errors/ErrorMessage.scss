@@ -14,29 +14,50 @@
   text-align: left;
 
   .fa {
-    display: inline-block;
-    margin-right: rem(15);
+    float: left;
+    line-height: rem(21);
     font-size: rem(15);
+
+    @media screen and (min-width: break(md)) {
+      line-height: rem(27);
+    }
   }
 
-  &__details, &__friendly {
+  &__details, &__text {
     padding: rem(9) rem(15);
+    line-height: rem(21);
+
+    @media screen and (min-width: break(md)) {
+      line-height: rem(27);
+    }
+  }
+
+  &__friendly {
+    margin: 0;
+    padding-left: rem(21);
   }
 
   &__link {
-    display: inline-block;
+    display: none;
     float: right;
 
     &:hover {
       cursor: pointer;
       text-decoration: none;
     }
+
+    @media screen and (min-width: break(md)) {
+      display: inline-block;;
+    }
   }
 
   &__details {
+    display: none;
     border-top: 1px solid grayscale(9);
-
     color: grayscale(5);
 
+    @media screen and (min-width: break(md)) {
+      display: block;
+    }
   }
 }

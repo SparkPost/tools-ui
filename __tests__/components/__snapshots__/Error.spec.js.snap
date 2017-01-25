@@ -2,10 +2,13 @@ exports[`ErrorMessage component should render correctly with a supplied icon 1`]
 <div
   className="errorMessage">
   <div
-    className="errorMessage__friendly">
+    className="errorMessage__text">
     <i
       className="fa fa-fa-bolt" />
-    Something happened!
+    <p
+      className="errorMessage__friendly">
+      Something happened!
+    </p>
   </div>
 </div>
 `;
@@ -14,10 +17,13 @@ exports[`ErrorMessage component should render correctly with an error message 1`
 <div
   className="errorMessage">
   <div
-    className="errorMessage__friendly">
+    className="errorMessage__text">
     <i
       className="fa fa-exclamation-circle" />
-    some string message
+    <p
+      className="errorMessage__friendly">
+      some string message
+    </p>
   </div>
 </div>
 `;
@@ -26,15 +32,18 @@ exports[`ErrorMessage component should render correctly with an error message an
 <div
   className="errorMessage">
   <div
-    className="errorMessage__friendly">
+    className="errorMessage__text">
     <i
       className="fa fa-exclamation-circle" />
-    some string message
     <a
       className="errorMessage__link"
       onClick={[Function]}>
       View Details
     </a>
+    <p
+      className="errorMessage__friendly">
+      some string message
+    </p>
   </div>
 </div>
 `;
@@ -43,10 +52,13 @@ exports[`ErrorMessage component should render the default message with no props 
 <div
   className="errorMessage">
   <div
-    className="errorMessage__friendly">
+    className="errorMessage__text">
     <i
       className="fa fa-exclamation-circle" />
-    Something happened!
+    <p
+      className="errorMessage__friendly">
+      Something happened!
+    </p>
   </div>
 </div>
 `;

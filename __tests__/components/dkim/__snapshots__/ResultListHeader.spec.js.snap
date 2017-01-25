@@ -38,10 +38,11 @@ exports[`ResultListHeader component should render 1`] = `
       </a>
     </div>
     <p
-      className="text--muted marginBottom--xs">
+      className="dkimResultListHeader__label marginBottom--xs">
       Generated Test Address
     </p>
-    <h3>
+    <h3
+      className="dkimResultListHeader__email">
       some@email.com
     </h3>
   </div>
@@ -88,10 +89,11 @@ exports[`ResultListHeader component should render when logged in 1`] = `
       </a>
     </div>
     <p
-      className="text--muted marginBottom--xs">
+      className="dkimResultListHeader__label marginBottom--xs">
       Generated Test Address
     </p>
-    <h3>
+    <h3
+      className="dkimResultListHeader__email">
       some@email.com
     </h3>
   </div>
@@ -138,10 +140,11 @@ exports[`ResultListHeader component should render when not logged in 1`] = `
       </a>
     </div>
     <p
-      className="text--muted marginBottom--xs">
+      className="dkimResultListHeader__label marginBottom--xs">
       Generated Test Address
     </p>
-    <h3>
+    <h3
+      className="dkimResultListHeader__email">
       some@email.com
     </h3>
   </div>
@@ -188,10 +191,11 @@ exports[`ResultListHeader component should render with an error present 1`] = `
       </a>
     </div>
     <p
-      className="text--muted marginBottom--xs">
+      className="dkimResultListHeader__label marginBottom--xs">
       Generated Test Address
     </p>
-    <h3>
+    <h3
+      className="dkimResultListHeader__email">
       some@email.com
     </h3>
   </div>

@@ -32,4 +32,11 @@
       border: none;
     }
   }
+
+  &.popover.popover--l {
+    width: 300px;
+    @media screen and (min-width: break(md)) {
+      width: 400px;
+    }
+  }
 }

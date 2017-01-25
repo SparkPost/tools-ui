@@ -13,7 +13,7 @@ exports[`ShowEmail component should render 1`] = `
     <div
       className="flex">
       <div
-        className="col-xs-8">
+        className="col-xs-12 col-md-8">
         <input
           className="input__text input--full"
           readOnly={true}
@@ -21,7 +21,7 @@ exports[`ShowEmail component should render 1`] = `
           value="some@email.com" />
       </div>
       <div
-        className="col-xs-4">
+        className="col-xs-12 col-md-4 showEmail__bump">
         <a
           className="button button--blue button--full"
           onClick={[Function]}

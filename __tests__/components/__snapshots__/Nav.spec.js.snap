@@ -3,6 +3,19 @@ exports[`Nav component should render correctly by default 1`] = `
   className="nav">
   <div
     className="container">
+    <div
+      className="nav__right">
+      <a
+        className="nav__link"
+        href="http://app.sparkpost.com/auth">
+        Login
+      </a>
+      <a
+        className="button button--blue nav__button"
+        href="http://app.sparkpost.com/sign-up">
+        Sign Up
+      </a>
+    </div>
     <a
       className="nav__logoLink"
       href="http://sparkpost.com"
@@ -25,23 +38,18 @@ exports[`Nav component should render correctly by default 1`] = `
       </svg>
     </a>
     <a
-      className="nav__link"
-      onClick={[Function]}
-      style={Object {}}
-      title="DKIM Validator">
-      DKIM Validator
+      className="nav__hamburger"
+      onClick={[Function]}>
+      <span />
     </a>
     <div
-      className="float--right">
+      className="nav__links">
       <a
         className="nav__link"
-        href="http://app.sparkpost.com/auth">
-        Login
-      </a>
-      <a
-        className="button button--blue nav__button"
-        href="http://app.sparkpost.com/sign-up">
-        Sign Up
+        onClick={[Function]}
+        style={Object {}}
+        title="DKIM Validator">
+        DKIM Validator
       </a>
     </div>
   </div>
@@ -53,36 +61,8 @@ exports[`Nav component should render correctly when logged in 1`] = `
   className="nav">
   <div
     className="container">
-    <a
-      className="nav__logoLink"
-      href="http://sparkpost.com"
-      title="SparkPost">
-      <svg
-        className="logo logo--default"
-        viewBox="0 0 398 104"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          className="fillOne"
-          d="M.5 92.5L6.7 85c4.3 3.6 8.8 5.8 14.3 5.8 4.3 0 6.9-1.7 6.9-4.5v-.1c0-2.7-1.6-4-9.7-6.1-9.5-2.5-15.8-5.2-15.8-14.7v-.1c0-8.7 7-14.5 16.8-14.5 7 0 12.9 2.2 17.8 6.1l-5.5 7.9c-4.2-2.9-8.4-4.7-12.5-4.7-4 0-6.2 1.9-6.2 4.2v.1c0 3.2 2.1 4.2 10.3 6.3 9.7 2.5 15.2 6 15.2 14.4v.1c0 9.5-7.3 14.9-17.6 14.9-7.1 0-14.4-2.5-20.2-7.6zM44.9 51.5h19.6c11.4 0 18.4 6.8 18.4 16.6v.1c0 11.1-8.6 16.9-19.4 16.9h-8v14.4H44.9v-48zm18.9 24.2c5.3 0 8.4-3.2 8.4-7.3v-.1c0-4.7-3.3-7.3-8.6-7.3h-8.2v14.7h8.4zM97.8 51.2h9.7l20.6 48.3h-11l-4.4-10.8H92.4L88 99.5H77.3l20.5-48.3zm11.1 28.2l-6.4-15.6-6.4 15.6h12.8zM133.1 51.5H155c6.1 0 10.8 1.7 14 4.9 2.7 2.7 4.1 6.4 4.1 11v.1c0 7.7-4.2 12.6-10.3 14.9l11.7 17.1h-12.3l-10.3-15.3h-8.3v15.3H133v-48zm21.2 23.3c5.1 0 8.1-2.7 8.1-6.8v-.1c0-4.5-3.2-6.9-8.3-6.9h-10.5v13.8h10.7zM229.2 51.5h17.4c10.6 0 17.8 5.4 17.8 14.7v.1c0 10.1-8.7 15.3-18.7 15.3h-12.9v17.9h-3.6v-48zm16.7 26.8c8.9 0 14.9-4.7 14.9-11.8v-.1c0-7.6-5.9-11.6-14.5-11.6h-13.6v23.5h13.2zM321.5 92.5l2.3-2.7c5.3 4.9 10.1 7.1 17.2 7.1 7.2 0 12.1-4 12.1-9.5v-.1c0-5.1-2.7-8-13.6-10.2-11.5-2.3-16.2-6.2-16.2-13.5v-.1c0-7.1 6.5-12.6 15.4-12.6 7 0 11.6 1.9 16.4 5.8l-2.3 2.8c-4.5-3.9-9-5.4-14.3-5.4-7.1 0-11.7 4-11.7 9v.1c0 5.1 2.6 8.2 14 10.5 11.1 2.3 15.8 6.2 15.8 13.2v.1c0 7.7-6.6 13.1-15.9 13.1-7.6 0-13.5-2.5-19.2-7.6zM377.2 54.8h-16.7v-3.3h37v3.3h-16.7v44.7h-3.6V54.8z" />
-        <g>
-          <path
-            className="fillOne"
-            d="M190.9 71.7l16.6-20.2h12.9l-19.5 22.8 20.9 25.2h-13.6L190.9 78v21.4h-10.5v-48h10.5v20.3z" />
-        </g>
-        <path
-          className="fillTwo"
-          d="M310.5 40.6c-5.3 4-6.4 11.1-6.5 15.9-8.4-9.8 15.6-38.5-11.7-56.2 16.9 21.9-24.1 43.5-24.1 75.8 0 12.7 7.9 23.8 25.3 27.7 17-3.6 25.5-15 25.5-27.7-.1-18.9-11.9-25.2-8.5-35.5zm-17 52.8c-9.3 0-16.8-7.5-16.8-16.8s7.5-16.8 16.8-16.8 16.8 7.5 16.8 16.8-7.6 16.8-16.8 16.8z" />
-      </svg>
-    </a>
-    <a
-      className="nav__link"
-      onClick={[Function]}
-      style={Object {}}
-      title="DKIM Validator">
-      DKIM Validator
-    </a>
     <div
-      className="float--right">
+      className="nav__right">
       <a
         className="nav__link"
         href="">
@@ -94,15 +74,6 @@ exports[`Nav component should render correctly when logged in 1`] = `
         SparkPost Dashboard
       </a>
     </div>
-  </div>
-</nav>
-`;
-
-exports[`Nav component should render correctly when not logged in 1`] = `
-<nav
-  className="nav">
-  <div
-    className="container">
     <a
       className="nav__logoLink"
       href="http://sparkpost.com"
@@ -125,14 +96,31 @@ exports[`Nav component should render correctly when not logged in 1`] = `
       </svg>
     </a>
     <a
-      className="nav__link"
-      onClick={[Function]}
-      style={Object {}}
-      title="DKIM Validator">
-      DKIM Validator
+      className="nav__hamburger"
+      onClick={[Function]}>
+      <span />
     </a>
     <div
-      className="float--right">
+      className="nav__links">
+      <a
+        className="nav__link"
+        onClick={[Function]}
+        style={Object {}}
+        title="DKIM Validator">
+        DKIM Validator
+      </a>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Nav component should render correctly when not logged in 1`] = `
+<nav
+  className="nav">
+  <div
+    className="container">
+    <div
+      className="nav__right">
       <a
         className="nav__link"
         href="http://app.sparkpost.com/auth">
@@ -142,6 +130,42 @@ exports[`Nav component should render correctly when not logged in 1`] = `
         className="button button--blue nav__button"
         href="http://app.sparkpost.com/sign-up">
         Sign Up
+      </a>
+    </div>
+    <a
+      className="nav__logoLink"
+      href="http://sparkpost.com"
+      title="SparkPost">
+      <svg
+        className="logo logo--default"
+        viewBox="0 0 398 104"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          className="fillOne"
+          d="M.5 92.5L6.7 85c4.3 3.6 8.8 5.8 14.3 5.8 4.3 0 6.9-1.7 6.9-4.5v-.1c0-2.7-1.6-4-9.7-6.1-9.5-2.5-15.8-5.2-15.8-14.7v-.1c0-8.7 7-14.5 16.8-14.5 7 0 12.9 2.2 17.8 6.1l-5.5 7.9c-4.2-2.9-8.4-4.7-12.5-4.7-4 0-6.2 1.9-6.2 4.2v.1c0 3.2 2.1 4.2 10.3 6.3 9.7 2.5 15.2 6 15.2 14.4v.1c0 9.5-7.3 14.9-17.6 14.9-7.1 0-14.4-2.5-20.2-7.6zM44.9 51.5h19.6c11.4 0 18.4 6.8 18.4 16.6v.1c0 11.1-8.6 16.9-19.4 16.9h-8v14.4H44.9v-48zm18.9 24.2c5.3 0 8.4-3.2 8.4-7.3v-.1c0-4.7-3.3-7.3-8.6-7.3h-8.2v14.7h8.4zM97.8 51.2h9.7l20.6 48.3h-11l-4.4-10.8H92.4L88 99.5H77.3l20.5-48.3zm11.1 28.2l-6.4-15.6-6.4 15.6h12.8zM133.1 51.5H155c6.1 0 10.8 1.7 14 4.9 2.7 2.7 4.1 6.4 4.1 11v.1c0 7.7-4.2 12.6-10.3 14.9l11.7 17.1h-12.3l-10.3-15.3h-8.3v15.3H133v-48zm21.2 23.3c5.1 0 8.1-2.7 8.1-6.8v-.1c0-4.5-3.2-6.9-8.3-6.9h-10.5v13.8h10.7zM229.2 51.5h17.4c10.6 0 17.8 5.4 17.8 14.7v.1c0 10.1-8.7 15.3-18.7 15.3h-12.9v17.9h-3.6v-48zm16.7 26.8c8.9 0 14.9-4.7 14.9-11.8v-.1c0-7.6-5.9-11.6-14.5-11.6h-13.6v23.5h13.2zM321.5 92.5l2.3-2.7c5.3 4.9 10.1 7.1 17.2 7.1 7.2 0 12.1-4 12.1-9.5v-.1c0-5.1-2.7-8-13.6-10.2-11.5-2.3-16.2-6.2-16.2-13.5v-.1c0-7.1 6.5-12.6 15.4-12.6 7 0 11.6 1.9 16.4 5.8l-2.3 2.8c-4.5-3.9-9-5.4-14.3-5.4-7.1 0-11.7 4-11.7 9v.1c0 5.1 2.6 8.2 14 10.5 11.1 2.3 15.8 6.2 15.8 13.2v.1c0 7.7-6.6 13.1-15.9 13.1-7.6 0-13.5-2.5-19.2-7.6zM377.2 54.8h-16.7v-3.3h37v3.3h-16.7v44.7h-3.6V54.8z" />
+        <g>
+          <path
+            className="fillOne"
+            d="M190.9 71.7l16.6-20.2h12.9l-19.5 22.8 20.9 25.2h-13.6L190.9 78v21.4h-10.5v-48h10.5v20.3z" />
+        </g>
+        <path
+          className="fillTwo"
+          d="M310.5 40.6c-5.3 4-6.4 11.1-6.5 15.9-8.4-9.8 15.6-38.5-11.7-56.2 16.9 21.9-24.1 43.5-24.1 75.8 0 12.7 7.9 23.8 25.3 27.7 17-3.6 25.5-15 25.5-27.7-.1-18.9-11.9-25.2-8.5-35.5zm-17 52.8c-9.3 0-16.8-7.5-16.8-16.8s7.5-16.8 16.8-16.8 16.8 7.5 16.8 16.8-7.6 16.8-16.8 16.8z" />
+      </svg>
+    </a>
+    <a
+      className="nav__hamburger"
+      onClick={[Function]}>
+      <span />
+    </a>
+    <div
+      className="nav__links">
+      <a
+        className="nav__link"
+        onClick={[Function]}
+        style={Object {}}
+        title="DKIM Validator">
+        DKIM Validator
       </a>
     </div>
   </div>
@@ -153,36 +177,8 @@ exports[`Nav component should render correctly with a dkim path 1`] = `
   className="nav">
   <div
     className="container">
-    <a
-      className="nav__logoLink"
-      href="http://sparkpost.com"
-      title="SparkPost">
-      <svg
-        className="logo logo--default"
-        viewBox="0 0 398 104"
-        xmlns="http://www.w3.org/2000/svg">
-        <path
-          className="fillOne"
-          d="M.5 92.5L6.7 85c4.3 3.6 8.8 5.8 14.3 5.8 4.3 0 6.9-1.7 6.9-4.5v-.1c0-2.7-1.6-4-9.7-6.1-9.5-2.5-15.8-5.2-15.8-14.7v-.1c0-8.7 7-14.5 16.8-14.5 7 0 12.9 2.2 17.8 6.1l-5.5 7.9c-4.2-2.9-8.4-4.7-12.5-4.7-4 0-6.2 1.9-6.2 4.2v.1c0 3.2 2.1 4.2 10.3 6.3 9.7 2.5 15.2 6 15.2 14.4v.1c0 9.5-7.3 14.9-17.6 14.9-7.1 0-14.4-2.5-20.2-7.6zM44.9 51.5h19.6c11.4 0 18.4 6.8 18.4 16.6v.1c0 11.1-8.6 16.9-19.4 16.9h-8v14.4H44.9v-48zm18.9 24.2c5.3 0 8.4-3.2 8.4-7.3v-.1c0-4.7-3.3-7.3-8.6-7.3h-8.2v14.7h8.4zM97.8 51.2h9.7l20.6 48.3h-11l-4.4-10.8H92.4L88 99.5H77.3l20.5-48.3zm11.1 28.2l-6.4-15.6-6.4 15.6h12.8zM133.1 51.5H155c6.1 0 10.8 1.7 14 4.9 2.7 2.7 4.1 6.4 4.1 11v.1c0 7.7-4.2 12.6-10.3 14.9l11.7 17.1h-12.3l-10.3-15.3h-8.3v15.3H133v-48zm21.2 23.3c5.1 0 8.1-2.7 8.1-6.8v-.1c0-4.5-3.2-6.9-8.3-6.9h-10.5v13.8h10.7zM229.2 51.5h17.4c10.6 0 17.8 5.4 17.8 14.7v.1c0 10.1-8.7 15.3-18.7 15.3h-12.9v17.9h-3.6v-48zm16.7 26.8c8.9 0 14.9-4.7 14.9-11.8v-.1c0-7.6-5.9-11.6-14.5-11.6h-13.6v23.5h13.2zM321.5 92.5l2.3-2.7c5.3 4.9 10.1 7.1 17.2 7.1 7.2 0 12.1-4 12.1-9.5v-.1c0-5.1-2.7-8-13.6-10.2-11.5-2.3-16.2-6.2-16.2-13.5v-.1c0-7.1 6.5-12.6 15.4-12.6 7 0 11.6 1.9 16.4 5.8l-2.3 2.8c-4.5-3.9-9-5.4-14.3-5.4-7.1 0-11.7 4-11.7 9v.1c0 5.1 2.6 8.2 14 10.5 11.1 2.3 15.8 6.2 15.8 13.2v.1c0 7.7-6.6 13.1-15.9 13.1-7.6 0-13.5-2.5-19.2-7.6zM377.2 54.8h-16.7v-3.3h37v3.3h-16.7v44.7h-3.6V54.8z" />
-        <g>
-          <path
-            className="fillOne"
-            d="M190.9 71.7l16.6-20.2h12.9l-19.5 22.8 20.9 25.2h-13.6L190.9 78v21.4h-10.5v-48h10.5v20.3z" />
-        </g>
-        <path
-          className="fillTwo"
-          d="M310.5 40.6c-5.3 4-6.4 11.1-6.5 15.9-8.4-9.8 15.6-38.5-11.7-56.2 16.9 21.9-24.1 43.5-24.1 75.8 0 12.7 7.9 23.8 25.3 27.7 17-3.6 25.5-15 25.5-27.7-.1-18.9-11.9-25.2-8.5-35.5zm-17 52.8c-9.3 0-16.8-7.5-16.8-16.8s7.5-16.8 16.8-16.8 16.8 7.5 16.8 16.8-7.6 16.8-16.8 16.8z" />
-      </svg>
-    </a>
-    <a
-      className="nav__link is-active"
-      onClick={[Function]}
-      style={Object {}}
-      title="DKIM Validator">
-      DKIM Validator
-    </a>
     <div
-      className="float--right">
+      className="nav__right">
       <a
         className="nav__link"
         href="http://app.sparkpost.com/auth">
@@ -194,15 +190,6 @@ exports[`Nav component should render correctly with a dkim path 1`] = `
         Sign Up
       </a>
     </div>
-  </div>
-</nav>
-`;
-
-exports[`Nav component should render correctly with an spf path 1`] = `
-<nav
-  className="nav">
-  <div
-    className="container">
     <a
       className="nav__logoLink"
       href="http://sparkpost.com"
@@ -225,14 +212,31 @@ exports[`Nav component should render correctly with an spf path 1`] = `
       </svg>
     </a>
     <a
-      className="nav__link"
-      onClick={[Function]}
-      style={Object {}}
-      title="DKIM Validator">
-      DKIM Validator
+      className="nav__hamburger"
+      onClick={[Function]}>
+      <span />
     </a>
     <div
-      className="float--right">
+      className="nav__links">
+      <a
+        className="nav__link is-active"
+        onClick={[Function]}
+        style={Object {}}
+        title="DKIM Validator">
+        DKIM Validator
+      </a>
+    </div>
+  </div>
+</nav>
+`;
+
+exports[`Nav component should render correctly with an spf path 1`] = `
+<nav
+  className="nav">
+  <div
+    className="container">
+    <div
+      className="nav__right">
       <a
         className="nav__link"
         href="http://app.sparkpost.com/auth">
@@ -242,6 +246,42 @@ exports[`Nav component should render correctly with an spf path 1`] = `
         className="button button--blue nav__button"
         href="http://app.sparkpost.com/sign-up">
         Sign Up
+      </a>
+    </div>
+    <a
+      className="nav__logoLink"
+      href="http://sparkpost.com"
+      title="SparkPost">
+      <svg
+        className="logo logo--default"
+        viewBox="0 0 398 104"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          className="fillOne"
+          d="M.5 92.5L6.7 85c4.3 3.6 8.8 5.8 14.3 5.8 4.3 0 6.9-1.7 6.9-4.5v-.1c0-2.7-1.6-4-9.7-6.1-9.5-2.5-15.8-5.2-15.8-14.7v-.1c0-8.7 7-14.5 16.8-14.5 7 0 12.9 2.2 17.8 6.1l-5.5 7.9c-4.2-2.9-8.4-4.7-12.5-4.7-4 0-6.2 1.9-6.2 4.2v.1c0 3.2 2.1 4.2 10.3 6.3 9.7 2.5 15.2 6 15.2 14.4v.1c0 9.5-7.3 14.9-17.6 14.9-7.1 0-14.4-2.5-20.2-7.6zM44.9 51.5h19.6c11.4 0 18.4 6.8 18.4 16.6v.1c0 11.1-8.6 16.9-19.4 16.9h-8v14.4H44.9v-48zm18.9 24.2c5.3 0 8.4-3.2 8.4-7.3v-.1c0-4.7-3.3-7.3-8.6-7.3h-8.2v14.7h8.4zM97.8 51.2h9.7l20.6 48.3h-11l-4.4-10.8H92.4L88 99.5H77.3l20.5-48.3zm11.1 28.2l-6.4-15.6-6.4 15.6h12.8zM133.1 51.5H155c6.1 0 10.8 1.7 14 4.9 2.7 2.7 4.1 6.4 4.1 11v.1c0 7.7-4.2 12.6-10.3 14.9l11.7 17.1h-12.3l-10.3-15.3h-8.3v15.3H133v-48zm21.2 23.3c5.1 0 8.1-2.7 8.1-6.8v-.1c0-4.5-3.2-6.9-8.3-6.9h-10.5v13.8h10.7zM229.2 51.5h17.4c10.6 0 17.8 5.4 17.8 14.7v.1c0 10.1-8.7 15.3-18.7 15.3h-12.9v17.9h-3.6v-48zm16.7 26.8c8.9 0 14.9-4.7 14.9-11.8v-.1c0-7.6-5.9-11.6-14.5-11.6h-13.6v23.5h13.2zM321.5 92.5l2.3-2.7c5.3 4.9 10.1 7.1 17.2 7.1 7.2 0 12.1-4 12.1-9.5v-.1c0-5.1-2.7-8-13.6-10.2-11.5-2.3-16.2-6.2-16.2-13.5v-.1c0-7.1 6.5-12.6 15.4-12.6 7 0 11.6 1.9 16.4 5.8l-2.3 2.8c-4.5-3.9-9-5.4-14.3-5.4-7.1 0-11.7 4-11.7 9v.1c0 5.1 2.6 8.2 14 10.5 11.1 2.3 15.8 6.2 15.8 13.2v.1c0 7.7-6.6 13.1-15.9 13.1-7.6 0-13.5-2.5-19.2-7.6zM377.2 54.8h-16.7v-3.3h37v3.3h-16.7v44.7h-3.6V54.8z" />
+        <g>
+          <path
+            className="fillOne"
+            d="M190.9 71.7l16.6-20.2h12.9l-19.5 22.8 20.9 25.2h-13.6L190.9 78v21.4h-10.5v-48h10.5v20.3z" />
+        </g>
+        <path
+          className="fillTwo"
+          d="M310.5 40.6c-5.3 4-6.4 11.1-6.5 15.9-8.4-9.8 15.6-38.5-11.7-56.2 16.9 21.9-24.1 43.5-24.1 75.8 0 12.7 7.9 23.8 25.3 27.7 17-3.6 25.5-15 25.5-27.7-.1-18.9-11.9-25.2-8.5-35.5zm-17 52.8c-9.3 0-16.8-7.5-16.8-16.8s7.5-16.8 16.8-16.8 16.8 7.5 16.8 16.8-7.6 16.8-16.8 16.8z" />
+      </svg>
+    </a>
+    <a
+      className="nav__hamburger"
+      onClick={[Function]}>
+      <span />
+    </a>
+    <div
+      className="nav__links">
+      <a
+        className="nav__link"
+        onClick={[Function]}
+        style={Object {}}
+        title="DKIM Validator">
+        DKIM Validator
       </a>
     </div>
   </div>

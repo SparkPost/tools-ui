@@ -11,7 +11,8 @@ class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sticky: false
+      sticky: false,
+      open: false
     };
 
     this.handleScroll = _.throttle(this.handleScroll.bind(this), 400);
@@ -31,9 +32,15 @@ class Nav extends Component {
     });
   }
 
+  toggleMenu() {
+    this.setState({
+      open: !this.state.open
+    });
+  }
+
   renderLoggedOutLinks() {
     return (
-      <div className='float--right'>
+      <div className='nav__right'>
         <a href='http://app.sparkpost.com/auth' className='nav__link'>Login</a>
         <a href='http://app.sparkpost.com/sign-up' className='button button--blue nav__button'>Sign Up</a>
       </div>
@@ -42,7 +49,7 @@ class Nav extends Component {
 
   renderLoggedInLinks() {
     return (
-      <div className='float--right'>
+      <div className='nav__right'>
         <a href='' className='nav__link'>Logout</a>
         <a href='http://app.sparkpost.com/dashboard' className='button button--blue nav__button'>SparkPost Dashboard</a>
       </div>
@@ -51,9 +58,10 @@ class Nav extends Component {
 
   render() {
     const { loggedIn, path } = this.props;
-    const { sticky } = this.state;
+    const { sticky, open } = this.state;
     const navClasses = classNames('nav', {
-      'nav--sticky': sticky
+      'is-stickied': sticky,
+      'is-open': open
     });
 
     const dkimLink = classNames('nav__link', { 'is-active': path.includes('/dkim')});
@@ -61,18 +69,24 @@ class Nav extends Component {
     return (
       <nav className={navClasses}>
         <div className='container'>
+
+          {loggedIn ? this.renderLoggedInLinks() : this.renderLoggedOutLinks()}
+
           <a href='http://sparkpost.com' className='nav__logoLink' title='SparkPost'>
             <Logo/>
           </a>
 
-          <Link
-            to='/dkim'
-            title='DKIM Validator'
-            className={dkimLink}>
-            DKIM Validator
-          </Link>
+          <a className='nav__hamburger' onClick={() => this.toggleMenu()}><span></span></a>
 
-          {loggedIn ? this.renderLoggedInLinks() : this.renderLoggedOutLinks()}
+          <div className='nav__links'>
+            <Link
+              to='/dkim'
+              title='DKIM Validator'
+              className={dkimLink}>
+              DKIM Validator
+            </Link>
+          </div>
+
         </div>
       </nav>
     );

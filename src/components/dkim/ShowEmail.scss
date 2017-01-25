@@ -1,0 +1,14 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+// Responsive box model helpers don't exist
+// This is here only to produce a 1rem gap between the input and button on mobile
+.showEmail {
+  &__bump {
+    margin-top: rem(18);
+
+    @media screen and (min-width: break(md)) {
+      margin-top: 0;
+    }
+  }
+}

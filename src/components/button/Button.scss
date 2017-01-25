@@ -3,16 +3,21 @@
 
 .actionLink {
   display: inline-block;
-  padding: 0 rem(12);
+  padding: 0 rem(6);
 
   color: color(orange);
   font-weight: 400;
-  font-size: rem(15);
+  font-size: rem(14);
 
   &:hover {
     cursor: pointer;
     text-decoration: none;
     color: color(orange--dark);
+  }
+
+  @media screen and (min-width: break(md)) {
+    padding: 0 rem(12);
+    font-size: rem(15);
   }
 }
 

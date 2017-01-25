@@ -11,14 +11,18 @@ $nav-height: rem(57);
   transition: 0.25s;
   z-index: 10;
 
-  &.nav--sticky {
+  &.is-stickied, &.is-open {
     background: grayscale(white);
     box-shadow: shadow(1);
   }
 
+  &__right {
+    float: right;
+  }
+
   &__link {
-    display: inline-block;
-    padding: 0 rem(30);
+    display: block;
+    padding: 0;
 
     font-family: $gotham-regular;
     font-size: rem(12);
@@ -26,11 +30,28 @@ $nav-height: rem(57);
     color: grayscale(4);
     font-weight: 400;
 
+    border-top: 1px solid grayscale(9);
+
     &.is-active {
       position: relative;
       color: grayscale(2);
 
       &:after {
+        display: none;
+      }
+    }
+
+    &:hover {
+      color: grayscale(2);
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: break(md)) {
+      display: inline-block;
+      padding: 0 rem(30);
+      border-top: none;
+
+      &.is-active:after {
         display: block;
         content: '';
         position: absolute;
@@ -41,15 +62,81 @@ $nav-height: rem(57);
         background: color(orange);
       }
     }
+  }
 
-    &:hover {
-      color: grayscale(2);
-      text-decoration: none;
+  &__links {
+    display: none;
+
+    .is-open & {
+      display: block;
+    }
+
+    @media screen and (min-width: break(md)) {
+      .is-open &, & {
+        display: inline-block;;
+      }
+    }
+  }
+
+  &__hamburger {
+    position: relative;
+    display: block;
+    width: rem(33);
+    height: $nav-height;
+
+    @media screen and (min-width: break(md)) {
+      display: none;
+    }
+
+    .is-open & {
+      cursor: pointer;
+
+      span {
+        background: transparent;
+      }
+
+      span:after, span:before {
+        background: grayscale(2);
+      }
+
+      span:after {
+        transform: translate(0, -7px) rotate(45deg);
+      }
+      span:before {
+        transform: translate(0, 7px) rotate(-45deg);
+      }
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 3px;
+      width: 75%;
+      background: grayscale(5);
+      border-radius: 2px;
+      transition: 0.1s;
+
+      &:before, &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: grayscale(5);
+        border-radius: 2px;
+        transition: 0.1s;
+      }
+
+      &:before { top: -7px; }
+      &:after { top: 7px; }
     }
   }
 
   &__button.button {
-    display: inline-block;
+    display: none;
     padding: 0 1rem;
     margin: 0;
 
@@ -60,12 +147,25 @@ $nav-height: rem(57);
       border: none;
       text-decoration: none;
     }
+
+    @media screen and (min-width: break(md)) {
+      display: inline-block;
+    }
   }
 
   &__logoLink {
     display: inline-block;
-    margin-right: 1rem;
     height: $nav-height;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    @media screen and (min-width: break(md)) {
+      position: static;
+      transform: none;
+      margin-right: 1rem;
+    }
   }
 
   .logo {
