@@ -16,7 +16,7 @@ exports[`ResultDetailHeader component should render when logged in 1`] = `
           Share
         </a>
         <div
-          className="popover copyPopover popover--l popover--bottom popover--rightAligned false">
+          className="popover copyPopover popover--l popover--rightAligned popover--bottom">
           <h6
             className="text--left copyPopover__label">
             <i
@@ -97,7 +97,7 @@ exports[`ResultDetailHeader component should render when not logged in 1`] = `
           Share
         </a>
         <div
-          className="popover copyPopover popover--l popover--bottom popover--rightAligned false">
+          className="popover copyPopover popover--l popover--rightAligned popover--bottom">
           <h6
             className="text--left copyPopover__label">
             <i
@@ -178,7 +178,7 @@ exports[`ResultDetailHeader component should render with rows 1`] = `
           Share
         </a>
         <div
-          className="popover copyPopover popover--l popover--bottom popover--rightAligned false">
+          className="popover copyPopover popover--l popover--rightAligned popover--bottom">
           <h6
             className="text--left copyPopover__label">
             <i

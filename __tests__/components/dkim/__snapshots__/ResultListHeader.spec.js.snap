@@ -16,7 +16,7 @@ exports[`ResultListHeader component should render 1`] = `
           Share
         </a>
         <div
-          className="popover copyPopover popover--l popover--bottom popover--rightAligned false">
+          className="popover copyPopover popover--l popover--rightAligned popover--bottom">
           <h6
             className="text--left copyPopover__label">
             <i
@@ -67,7 +67,7 @@ exports[`ResultListHeader component should render when logged in 1`] = `
           Share
         </a>
         <div
-          className="popover copyPopover popover--l popover--bottom popover--rightAligned false">
+          className="popover copyPopover popover--l popover--rightAligned popover--bottom">
           <h6
             className="text--left copyPopover__label">
             <i
@@ -118,7 +118,7 @@ exports[`ResultListHeader component should render when not logged in 1`] = `
           Share
         </a>
         <div
-          className="popover copyPopover popover--l popover--bottom popover--rightAligned false">
+          className="popover copyPopover popover--l popover--rightAligned popover--bottom">
           <h6
             className="text--left copyPopover__label">
             <i
@@ -169,7 +169,7 @@ exports[`ResultListHeader component should render with an error present 1`] = `
           Share
         </a>
         <div
-          className="popover copyPopover popover--l popover--bottom popover--rightAligned false">
+          className="popover copyPopover popover--l popover--rightAligned popover--bottom">
           <h6
             className="text--left copyPopover__label">
             <i

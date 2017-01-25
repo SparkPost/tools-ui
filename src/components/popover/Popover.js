@@ -5,7 +5,7 @@ import Icon from 'components/Icon';
 import './Popover.scss';
 
 /**
- * Produces a popover that copies url to clipboard on click
+ * Produces a popover that copies props.stringToCopy to clipboard on click
  */
 class CopyPopover extends Component {
   constructor(props) {
@@ -13,6 +13,8 @@ class CopyPopover extends Component {
     this.state = {
       open: false
     };
+
+    this.inputToCopy = null;
 
     // Cannot use an arrow function in this case or it will not unmount
     this.handleClickOutside = this.handleClickOutside.bind(this);
@@ -35,30 +37,32 @@ class CopyPopover extends Component {
 
   handleShareClick() {
     this.setState({ open: true });
-
-    // TODO We advise against it because string refs have some issues, are considered legacy, and are likely to be removed in one of the future releases. https://facebook.github.io/react/docs/refs-and-the-dom.html
-    this.refs.stringToCopy.select();
-
+    this.inputToCopy.select();
     document.execCommand('copy');
-    this.refs.stringToCopy.blur();
+    this.inputToCopy.blur();
   }
 
   render() {
-    const { children, placement, stringToCopy } = this.props;
+    const { children, placement, stringToCopy, block } = this.props;
     const { open } = this.state;
-    const classes = classNames('popover copyPopover popover--l popover--rightAligned', {
+
+    const popoverClasses = classNames('popover copyPopover popover--l popover--rightAligned', {
       [`popover--${placement}`]: placement,
       'is-open': open
     });
 
+    const groupClasses = classNames('popover__group', {
+      'h-block': block
+    });
+
     return (
-      <span className="popover__group" onClick={() => this.handleShareClick()}>
+      <span className={groupClasses} onClick={() => this.handleShareClick()}>
         {children}
-        <div className={classes}>
+        <div className={popoverClasses}>
           <h6 className='text--left copyPopover__label'><Icon name='check-circle' /> Copied to Clipboard!</h6>
           <input className='input__text input__text--s copyPopover__input'
-            value={stringToCopy}
-            ref='stringToCopy' readOnly />
+            value={stringToCopy || window.location.href}
+            ref={(input) => { this.inputToCopy = input; }} readOnly />
         </div>
       </span>
     );
@@ -66,13 +70,17 @@ class CopyPopover extends Component {
 }
 
 CopyPopover.defaultProps = {
-  stringToCopy: window.location.href,
-  placement: 'bottom'
+  // Setting window.location.href here does not work
+  stringToCopy: null,
+  placement: 'bottom',
+  block: false
 };
 
 CopyPopover.propTypes = {
+  children: React.PropTypes.element.isRequired,
   stringToCopy: React.PropTypes.string,
-  placement: React.PropTypes.string
+  placement: React.PropTypes.string,
+  block: React.PropTypes.bool
 };
 
 export { CopyPopover };

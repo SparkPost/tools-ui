@@ -75,7 +75,7 @@ export default class HomePage extends Component {
     const { loading } = this.state;
     return (
       <div className='flex center-xs'>
-        <div className='col-xs-12 col-md-10 col-lg-7'>
+        <div className='col-xs-12 col-md-10 col-lg-8'>
           <h1>DKIM Validator</h1>
           <p className='marginBottom--lg'>{INTRO_TEXT}</p>
           {loading ? this.renderLoading() : this.renderGenerateOrEmail()}
