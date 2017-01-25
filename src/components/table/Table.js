@@ -10,7 +10,7 @@ const Row = ({ values }) => <tr className='table__row'>{values.map((v, i) => <Ce
  * and n regular rows below
  */
 const Table = ({ headers, rows }) => (
-  <table className='table'>
+  <table className='table table--transparent'>
     <thead className='table__head'>
       <tr className='table__row'>{headers.map((h, i) => <HeaderCell value={h} key={`header-${i}`} />)}</tr>
     </thead>
@@ -37,7 +37,7 @@ const VerticalTable = ({ rows }) => {
     </tr>
   ));
   return (
-    <table className='table'>
+    <table className='table table--transparent'>
       <tbody className='table__body'>
         {rows}
       </tbody>

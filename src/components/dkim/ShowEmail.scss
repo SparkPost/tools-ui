@@ -1,7 +1,8 @@
 @import "~@sparkpost/styles/src/assets/scss/shared/config";
 @import "~@sparkpost/styles/src/assets/scss/shared/functions";
 
-// TODO remove when responsive box model helpers are in place in @sparkpost/styles
+// Responsive box model helpers don't exist
+// This is here only to produce a 1rem gap between the input and button on mobile
 .showEmail {
   &__bump {
     margin-top: rem(18);

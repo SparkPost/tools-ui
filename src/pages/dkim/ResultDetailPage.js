@@ -64,7 +64,7 @@ export default class ResultDetailPage extends Component {
       <div>
         <ResultDetailHeader rows={detailTableRows} />
         <div className='panel'>
-          <div className='panel__body padding--none'>
+          <div className='panel__body padding--none dkimResultDetailTable'>
             <Table headers={sigTableHeaders} rows={sigTableRows} />
           </div>
         </div>
