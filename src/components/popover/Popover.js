@@ -60,7 +60,8 @@ class CopyPopover extends Component {
         {children}
         <div className={popoverClasses}>
           <h6 className='text--left copyPopover__label'><Icon name='check-circle' /> Copied to Clipboard!</h6>
-          <input className='input__text input__text--s copyPopover__input'
+          <p className='copyPopover__copiedString'>{stringToCopy || window.location.href}</p>
+          <input className='copyPopover__hidden'
             value={stringToCopy || window.location.href}
             ref={(input) => { this.inputToCopy = input; }} readOnly />
         </div>

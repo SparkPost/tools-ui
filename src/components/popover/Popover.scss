@@ -20,17 +20,25 @@
     }
   }
 
-  &__input.input__text {
-    border: none;
+  &__copiedString {
     padding: 0 0 0 rem(21);
+    margin: 0;
 
     font-size: rem(12);
     color: grayscale(5);
-    line-height: rem(18);
+    line-height: rem(15);
+    text-align: left;
+    word-break: break-all;
 
     &:hover, &:active, &:focus {
       border: none;
     }
+  }
+
+  &__hidden {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
   }
 
   &.popover.popover--l {
