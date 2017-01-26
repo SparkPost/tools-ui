@@ -17,8 +17,12 @@ exports[`CopyPopover component should render when supplied a string to copy 1`] 
         className="fa fa-check-circle" />
        Copied to Clipboard!
     </h6>
+    <p
+      className="copyPopover__copiedString">
+      Copy me!
+    </p>
     <input
-      className="input__text input__text--s copyPopover__input"
+      className="copyPopover__hidden"
       readOnly={true}
       value="Copy me!" />
   </div>
@@ -44,8 +48,12 @@ exports[`CopyPopover component should render when supplied a string to copy and 
         className="fa fa-check-circle" />
        Copied to Clipboard!
     </h6>
+    <p
+      className="copyPopover__copiedString">
+      Copy me!
+    </p>
     <input
-      className="input__text input__text--s copyPopover__input"
+      className="copyPopover__hidden"
       readOnly={true}
       value="Copy me!" />
   </div>
@@ -71,8 +79,12 @@ exports[`CopyPopover component should render with only children prop 1`] = `
         className="fa fa-check-circle" />
        Copied to Clipboard!
     </h6>
+    <p
+      className="copyPopover__copiedString">
+      http://localhost/
+    </p>
     <input
-      className="input__text input__text--s copyPopover__input"
+      className="copyPopover__hidden"
       readOnly={true}
       value="http://localhost/" />
   </div>

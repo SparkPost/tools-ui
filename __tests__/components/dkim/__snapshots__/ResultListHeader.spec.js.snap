@@ -23,8 +23,12 @@ exports[`ResultListHeader component should render 1`] = `
               className="fa fa-check-circle" />
              Copied to Clipboard!
           </h6>
+          <p
+            className="copyPopover__copiedString">
+            http://localhost/
+          </p>
           <input
-            className="input__text input__text--s copyPopover__input"
+            className="copyPopover__hidden"
             readOnly={true}
             value="http://localhost/" />
         </div>
@@ -74,8 +78,12 @@ exports[`ResultListHeader component should render when logged in 1`] = `
               className="fa fa-check-circle" />
              Copied to Clipboard!
           </h6>
+          <p
+            className="copyPopover__copiedString">
+            http://localhost/
+          </p>
           <input
-            className="input__text input__text--s copyPopover__input"
+            className="copyPopover__hidden"
             readOnly={true}
             value="http://localhost/" />
         </div>
@@ -125,8 +133,12 @@ exports[`ResultListHeader component should render when not logged in 1`] = `
               className="fa fa-check-circle" />
              Copied to Clipboard!
           </h6>
+          <p
+            className="copyPopover__copiedString">
+            http://localhost/
+          </p>
           <input
-            className="input__text input__text--s copyPopover__input"
+            className="copyPopover__hidden"
             readOnly={true}
             value="http://localhost/" />
         </div>
@@ -176,8 +188,12 @@ exports[`ResultListHeader component should render with an error present 1`] = `
               className="fa fa-check-circle" />
              Copied to Clipboard!
           </h6>
+          <p
+            className="copyPopover__copiedString">
+            http://localhost/
+          </p>
           <input
-            className="input__text input__text--s copyPopover__input"
+            className="copyPopover__hidden"
             readOnly={true}
             value="http://localhost/" />
         </div>

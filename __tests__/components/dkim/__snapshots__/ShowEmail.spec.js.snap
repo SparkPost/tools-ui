@@ -38,8 +38,12 @@ exports[`ShowEmail component should render 1`] = `
                     className="fa fa-check-circle" />
                    Copied to Clipboard!
                 </h6>
+                <p
+                  className="copyPopover__copiedString">
+                  some@email.com
+                </p>
                 <input
-                  className="input__text input__text--s copyPopover__input"
+                  className="copyPopover__hidden"
                   readOnly={true}
                   value="some@email.com" />
               </div>
