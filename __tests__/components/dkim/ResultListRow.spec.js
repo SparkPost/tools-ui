@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ResultListRow from 'components/dkim/ResultListRow';
+import ResultListRow from 'pages/dkim/components/ResultListRow';
 
 describe('ResultListRow component', () => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ResultDetailHeader from 'components/dkim/ResultDetailHeader';
+import ResultDetailHeader from 'pages/dkim/components/ResultDetailHeader';
 
 describe('ResultDetailHeader component', () => {
 

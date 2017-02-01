@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ResultListHeader from 'components/dkim/ResultListHeader';
+import ResultListHeader from 'pages/dkim/components/ResultListHeader';
 
 describe('ResultListHeader component', () => {
 

@@ -4,8 +4,8 @@ import cookie from 'js-cookie';
 import config from 'config/index';
 import { INTRO_TEXT, COOKIE_NAME } from './constants';
 import { ActionButton } from 'components/button/Button';
-import ShowEmail from 'components/dkim/ShowEmail';
-import GenerateEmail from 'components/dkim/GenerateEmail';
+import ShowEmail from './components/ShowEmail';
+import GenerateEmail from './components/GenerateEmail';
 
 export default class HomePage extends Component {
   constructor(props) {

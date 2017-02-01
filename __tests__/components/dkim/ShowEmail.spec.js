@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import ShowEmail from 'components/dkim/ShowEmail';
+import ShowEmail from 'pages/dkim/components/ShowEmail';
 
 describe('ShowEmail component', () => {
 

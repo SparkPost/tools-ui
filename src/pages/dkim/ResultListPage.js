@@ -3,8 +3,8 @@ import axios from 'axios';
 import config from 'config/index';
 import moment from 'moment';
 
-import ResultListRow from 'components/dkim/ResultListRow';
-import ResultListHeader from 'components/dkim/ResultListHeader';
+import ResultListRow from './components/ResultListRow';
+import ResultListHeader from './components/ResultListHeader';
 import ErrorMessage from 'components/errors/ErrorMessage';
 import { LIST_ERROR_MESSAGE } from './constants';
 
