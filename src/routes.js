@@ -7,6 +7,7 @@ import DKIMDetail from 'pages/dkim/ResultDetailPage';
 import NotFound from 'pages/notFound/NotFound';
 import SPFQuery from 'pages/spf/Query';
 import SPFResults from 'pages/spf/ResultsPage';
+import SPFBuilder from 'pages/builder/Builder';
 
 export default (
   <Route>
@@ -16,6 +17,8 @@ export default (
       <Route path='dkim' component={DKIMHome} />
       <Route path='dkim/results/:email' component={DKIMResults} />
       <Route path='dkim/results/:email/:detailId' component={DKIMDetail} />
+
+      <Route path='spf/builder' component={SPFBuilder} />
 
       <Route path='spf/inspector' component={SPFQuery} />
       <Redirect from='/spf' to='/spf/inspector' />

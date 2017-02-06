@@ -48,7 +48,7 @@ $nav-height: rem(57);
       text-decoration: none;
     }
 
-    @media screen and (min-width: break(md)) {
+    @media screen and (min-width: break(lg)) {
       display: inline-block;
       padding: 0 rem(30);
       border-top: none;
@@ -73,7 +73,7 @@ $nav-height: rem(57);
       display: block;
     }
 
-    @media screen and (min-width: break(md)) {
+    @media screen and (min-width: break(lg)) {
       .is-open &, & {
         display: inline-block;;
       }
@@ -86,7 +86,7 @@ $nav-height: rem(57);
     width: rem(33);
     height: $nav-height;
 
-    @media screen and (min-width: break(md)) {
+    @media screen and (min-width: break(lg)) {
       display: none;
     }
 
@@ -150,7 +150,7 @@ $nav-height: rem(57);
       text-decoration: none;
     }
 
-    @media screen and (min-width: break(md)) {
+    @media screen and (min-width: break(lg)) {
       display: inline-block;
     }
   }
@@ -163,7 +163,7 @@ $nav-height: rem(57);
     left: 50%;
     transform: translate(-50%, 0);
 
-    @media screen and (min-width: break(md)) {
+    @media screen and (min-width: break(lg)) {
       position: static;
       transform: none;
       margin-right: 1rem;

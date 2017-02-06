@@ -70,7 +70,8 @@ export class Nav extends Component {
     });
 
     const dkimLink = classNames('nav__link', { 'is-active': location.pathname.includes('/dkim')});
-    const spfLink = classNames('nav__link', { 'is-active': location.pathname.includes('/spf/inspector')});
+    const inspectorLink = classNames('nav__link', { 'is-active': location.pathname.includes('/spf/inspector')});
+    const builderLink = classNames('nav__link', { 'is-active': location.pathname.includes('/spf/builder')});
 
     return (
       <nav className={navClasses}>
@@ -91,14 +92,21 @@ export class Nav extends Component {
               className={dkimLink}>
               DKIM Validator
             </Link>
-          </div>
 
-          <Link
-            to='/spf/inspector'
-            title='SPF Inspector'
-            className={spfLink}>
-            SPF Inspector
-          </Link>
+            <Link
+              to='/spf/inspector'
+              title='SPF Inspector'
+              className={inspectorLink}>
+              SPF Inspector
+            </Link>
+
+            <Link
+              to='/spf/builder'
+              title='SPF Builder'
+              className={builderLink}>
+              SPF Builder
+            </Link>
+          </div>
 
         </div>
       </nav>
