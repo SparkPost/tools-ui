@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form';
 import authReducer from './auth';
 import spfTreeReducer from './spfTree';
 import spfInspectReducer from './spfInspect';
@@ -10,7 +11,8 @@ const reducers = {
     tree: spfTreeReducer,
     details: spfInspectReducer
   }),
-  spfHistory: spfHistoryReducer
+  spfHistory: spfHistoryReducer,
+  form: formReducer
 };
 
 export default combineReducers(reducers);

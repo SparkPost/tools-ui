@@ -43,6 +43,7 @@
     "react-dev-utils": "^0.4.2",
     "react-test-renderer": "^15.4.2",
     "recursive-readdir": "2.1.0",
+    "redux-form": "^6.5.0",
     "sass-loader": "^4.1.1",
     "strip-ansi": "3.0.1",
     "style-loader": "0.13.1",
