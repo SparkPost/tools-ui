@@ -34,3 +34,16 @@ $nav-height: rem(60);
     }
   }
 }
+
+p {
+  color: grayscale(4);
+}
+
+
+code {
+  display: block;
+  background: none;
+  white-space: normal;
+  word-break: normal;;
+  color: grayscale(3);
+}
