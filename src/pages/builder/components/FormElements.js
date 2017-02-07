@@ -19,7 +19,7 @@ export const TextInput = ({ input, prefix, extraClasses, placeholder, meta: { to
   );
 };
 
-export const UseDefault = ({ input, domain, meta: { touched }}) => {
+export const UseDefault = ({ input, domain }) => {
   const toggleText = !input.value ? 'Add' : 'Remove';
   const domainEntered = domain !== 'your domain';
 
@@ -40,7 +40,7 @@ export const UseDefault = ({ input, domain, meta: { touched }}) => {
 };
 
 const Host = ({ host, index, prefix, onRemove }) => (
-  <div className='panel__body'>
+  <div className='panel__body panel__body--forceBorder'>
     <div className='flex middle-xs'>
       <div className='col-xs-9'>
         <Field name={`${host}.name`} component={TextInput} prefix={prefix} extraClasses='builder-input--ghost'/>
@@ -52,10 +52,10 @@ const Host = ({ host, index, prefix, onRemove }) => (
   </div>
 );
 
-export const Hosts = ({ fields, prefix = '', meta: { touched, error } }) => (
-  <div className='panel'>
-    {fields.map((host, index) => <Host key={index} host={host} prefix={prefix} index={index} onRemove={() => fields.remove(index)}/>)}
-    <div className='panel__body clearfix'>
+export const Hosts = ({ fields, prefix = '' }) => (
+  <div>
+    {fields.length > 0 && fields.map((host, index) => <Host key={index} host={host} prefix={prefix} index={index} onRemove={() => fields.remove(index)}/>)}
+    <div className='panel__body panel__body--forceBorder clearfix'>
       <div className='float--right'>
         <ActionLink onClick={() => fields.push({})}>Add Host</ActionLink>
       </div>

@@ -38,3 +38,7 @@ $fa-font-path: "~@sparkpost/styles/src/assets/fonts";
   position: static;
   line-height: 2em;
 }
+
+.panel__body--forceBorder {
+  border-top: 1px solid grayscale(9) !important;
+}

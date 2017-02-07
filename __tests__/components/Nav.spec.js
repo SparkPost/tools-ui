@@ -32,8 +32,13 @@ describe('Nav component', () => {
     expect(renderer.create(<Nav location={location} logout={logout} />)).toMatchSnapshot();
   });
 
-  test('should render correctly with an spf path', () => {
-    location = { ...location, pathname: '/spf/path' };
+  test('should render correctly with an inspector path', () => {
+    location = { ...location, pathname: '/spf/inspector' };
+    expect(renderer.create(<Nav location={location} logout={logout} />)).toMatchSnapshot();
+  });
+
+  test('should render correctly with a builder path', () => {
+    location = { ...location, pathname: '/spf/builder' };
     expect(renderer.create(<Nav location={location} logout={logout} />)).toMatchSnapshot();
   });
 

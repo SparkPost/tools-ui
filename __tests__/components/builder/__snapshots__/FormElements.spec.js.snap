@@ -1,0 +1,93 @@
+exports[`Hosts component should render correctly with no Hosts 1`] = `
+<div>
+  <div
+    className="panel__body panel__body--forceBorder clearfix">
+    <div
+      className="float--right">
+      <a
+        className="actionLink"
+        onClick={[Function]}
+        style={Object {}}
+        title="">
+        Add Host
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextInput component should render correctly with all props 1`] = `
+<div
+  className="input__group builder-inputGroup--prefix">
+  <input
+    autoFocus={true}
+    className="input__text builder-input a class"
+    placeholder="a placeholder"
+    type="text" />
+  <span
+    className="input__prefix">
+    prefix
+    :
+  </span>
+</div>
+`;
+
+exports[`UseDefault component should render correctly when default turned off 1`] = `
+<div
+  className="panel__body">
+  <div
+    className="flex middle-xs">
+    <div
+      className="col-xs-9">
+      <h6
+        className="marginBottom--none">
+        test.com
+      </h6>
+      <p
+        className="marginBottom--none">
+        Current Domain
+      </p>
+    </div>
+    <div
+      className="col-xs-3 text--right">
+      <a
+        className="actionLink"
+        onClick={[Function]}
+        style={Object {}}
+        title="">
+        Add
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`UseDefault component should render correctly when default turned on 1`] = `
+<div
+  className="panel__body">
+  <div
+    className="flex middle-xs">
+    <div
+      className="col-xs-9">
+      <h6
+        className="marginBottom--none">
+        test.com
+      </h6>
+      <p
+        className="marginBottom--none">
+        Current Domain
+      </p>
+    </div>
+    <div
+      className="col-xs-3 text--right">
+      <a
+        className="actionLink"
+        onClick={[Function]}
+        style={Object {}}
+        title="">
+        Remove
+      </a>
+    </div>
+  </div>
+</div>
+`;

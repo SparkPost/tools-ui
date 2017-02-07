@@ -26,23 +26,23 @@ class Form extends Component {
             </div>
           </div>
 
-          <div className='panel marginBottom--none'>
+          <div className='panel'>
             <div className='panel__body'>
               <h4 className='marginBottom--xs'>MX Records</h4>
               <p>Which domain’s MX records should be allowed to send mail for {domain}? Learn more about the MX mechanism.</p>
             </div>
             <Field name="mx.useDefault" component={UseDefault} domain={domain}/>
+            <FieldArray name="mx.hosts" component={Hosts} prefix='mx' />
           </div>
-          <FieldArray name="mx.hosts" component={Hosts} prefix='mx' />
 
-          <div className='panel marginBottom--none'>
+          <div className='panel'>
             <div className='panel__body'>
               <h4 className='marginBottom--xs'>A Records</h4>
               <p>Which domain’s A records should be allowed send mail for {domain}? Learn more about the A mechanism.</p>
             </div>
             <Field name="a.useDefault" component={UseDefault} domain={domain}/>
+            <FieldArray name="a.hosts" component={Hosts} prefix='a' />
           </div>
-          <FieldArray name="a.hosts" component={Hosts} prefix='a' />
 
           <div className='panel'>
             <div className='panel__body'>
@@ -51,13 +51,13 @@ class Form extends Component {
             </div>
           </div>
 
-          <div className='panel marginBottom--none'>
+          <div className='panel'>
             <div className='panel__body'>
               <h4 className='marginBottom--xs'>Includes</h4>
               <p>Add any other domains whos SPF records should be included as part of {domain}’s SPF record, such as third party services.</p>
             </div>
+            <FieldArray name="include" component={Hosts} prefix='include' />
           </div>
-          <FieldArray name="include" component={Hosts} prefix='include' />
 
           <div className='panel'>
             <div className='panel__body'>
