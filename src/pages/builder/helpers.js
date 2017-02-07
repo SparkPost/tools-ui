@@ -1,4 +1,3 @@
-// TODO move closer to builder components?
 // TODO also check if valid before adding to string?
 export const mx = (useDefault, hosts) => {
   const mxDefault = useDefault ? 'mx' : '';

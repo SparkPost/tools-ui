@@ -1,0 +1,46 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.builder-record {
+  position: relative;
+
+  &__ghost.panel {
+    position: absolute;
+    top: 0;
+    width: 0px;
+    height: 0;
+  }
+
+  &.is-stickied .builder-record__ghost {
+    position: static;
+    height: rem(280);
+  }
+
+  &__panel.panel {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  &.is-stickied .builder-record__panel.panel {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 0);
+    z-index: 10;
+
+    width: 100%;
+
+    @media screen and (min-width: break(sm)) {
+      bottom: rem(18);
+      width: 90%;
+    }
+
+    @media screen and (min-width: break(md)) {
+      width: 80%;
+    }
+
+    @media screen and (min-width: break(lg)) {
+      width: 60%;
+    }
+  }
+}

@@ -1,22 +1,58 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
+import _ from 'lodash';
 
 import { ActionLink } from 'components/button/Button';
 import { CopyPopover } from 'components/popover/Popover';
-import buildRecord from 'helpers/spfBuilder';
+import buildRecord from '../helpers';
+
+import './Record.scss';
 
 class Record extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      sticky: true
+    };
+
+    this.ghost = null;
+    this.panel = null;
+    this.handleScroll = _.throttle(this.handleScroll.bind(this), 200);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(e) {
+    const ghostTop = this.ghost.getBoundingClientRect().top;
+    const panelTop = this.panel.getBoundingClientRect().top;
+    const panelBottom = this.panel.getBoundingClientRect().bottom;
+    const windowHeight = window.innerHeight;
+
+    if (this.state.sticky && ghostTop <= panelTop) {
+      this.setState({ sticky: false });
+    } else if (!this.state.sticky && windowHeight < panelBottom + 18) {
+      this.setState({ sticky: true });
+    }
   }
 
   render() {
     const { form } = this.props;
     const record = buildRecord(form.values);
 
+    const classes = classnames('col-xs-12 col-md-10 col-lg-7 builder-record', {
+      'is-stickied': this.state.sticky
+    });
+
     return (
-      <div className='col-xs-12 col-md-9'>
-        <div className='panel panel--accent'>
+      <div className={classes}>
+        <div className='panel panel--accent builder-record__panel' ref={(panel) => this.panel = panel}>
           <div className='panel__body'>
             <div className='float--right'>
               <CopyPopover stringToCopy={record}><ActionLink>Copy</ActionLink></CopyPopover>
@@ -26,6 +62,7 @@ class Record extends Component {
             <p>Once added to your DNS, inspect your SPF record to make sure it is valid.</p>
           </div>
         </div>
+        <div className='builder-record__ghost' ref={(ghost) => this.ghost = ghost} />
       </div>
     );
   }
