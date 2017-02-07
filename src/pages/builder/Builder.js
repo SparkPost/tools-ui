@@ -4,39 +4,9 @@ import Record from './components/Record';
 import Form from './components/Form';
 import { INTRO_TEXT } from './constants';
 
-const intialState = {
-  domain: 'domain.com',
-  mx: {
-    useDefault: true,
-    hosts: [
-      'example.mydomain.com/24'
-    ]
-  },
-  a: {
-    useDefault: true,
-    hosts: [
-      'example.mydomain.com/24'
-    ]
-  },
-  ip: [
-    {
-      type: 'ip4',
-      address: '38.95.177.2'
-    }
-  ],
-  include: [
-    'domain.com',
-    'google.com'
-  ],
-  all: 'dasf'
-};
-
-
 class Builder extends Component {
   constructor(props) {
     super(props);
-
-    this.state = intialState;
   }
 
   render() {
@@ -47,7 +17,7 @@ class Builder extends Component {
           <p className='marginBottom--lg'>{INTRO_TEXT}</p>
         </div>
         <Form />
-        <Record {...this.state} />
+        <Record />
       </div>
     );
   }
