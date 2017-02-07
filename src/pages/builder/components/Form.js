@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 
 import validate from './validate';
+import { initialValues } from '../constants';
 import { TextInput, UseDefault, Hosts } from './FormElements';
 
 class Form extends Component {
@@ -69,22 +70,6 @@ class Form extends Component {
     );
   }
 }
-
-// TODO move to constants
-// Returning empty arrays here to prevent 'undefined'
-const initialValues = {
-  mx: {
-    useDefault: true,
-    hosts: []
-  },
-  a: {
-    useDefault: true,
-    hosts: []
-  },
-  ip: [],
-  include: [],
-  all: ''
-};
 
 
 const mapStateToProps = ({ form }) => ({ form: form.spfBuilder });
