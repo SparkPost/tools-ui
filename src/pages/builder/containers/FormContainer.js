@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 
-import validate from '../validate';
+import validate from '../helpers/validate';
 import { initialValues, ALL_TEXT } from '../constants';
 import { TextInput, UseDefault, Hosts, Radio } from '../components/FormElements';
 import IpRangesContainer from '../containers/IpRangesContainer';

@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 import { ActionLink } from 'components/button/Button';
 import { CopyPopover } from 'components/popover/Popover';
-import buildRecord from '../helpers';
+import assembleRecord from '../helpers/assembleRecord';
 
 import './RecordContainer.scss';
 
@@ -45,7 +45,7 @@ class RecordContainer extends Component {
 
   render() {
     const { form } = this.props;
-    const record = buildRecord(form.values);
+    const record = assembleRecord(form.values);
 
     const classes = classnames('col-xs-12 col-md-10 col-lg-7 builder-record', {
       'is-stickied': this.state.sticky
