@@ -11,7 +11,7 @@ export const a = (useDefault, hosts) => {
   return `${aDefault} ${aHosts}`;
 };
 
-export const ip = (ips) => ips.map(({ type, address }) => `${type}:${address}`).join(' ');
+export const ip = (ips) => ips.map(({ type, address }) => address && `${type}:${address}`).join(' ');
 
 export const include = (includes) => includes.map((host) => host.name && `include:${host.name}`).join(' ');
 

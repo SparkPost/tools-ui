@@ -2,20 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 
-import validate from './validate';
+import validate from '../validate';
 import { initialValues, ALL_TEXT } from '../constants';
-import { TextInput, UseDefault, Hosts, Radio } from './FormElements';
+import { TextInput, UseDefault, Hosts, Radio } from '../components/FormElements';
+import IpRangesContainer from '../containers/IpRangesContainer';
 
-class Form extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+class FormContainer extends Component {
   render() {
     const { form } = this.props;
 
     // Check if domain is valid
-    const domain = form.syncErrors && form.syncErrors.domain ? 'your domain' : form.values.domain;
+    const domain = form.syncErrors && form.syncErrors.domain ? 'your domain' : <strong>{form.values.domain}</strong>;
 
     return (
         <div className='col-xs-12 col-md-10 col-lg-7'>
@@ -48,8 +45,9 @@ class Form extends Component {
           <div className='panel'>
             <div className='panel__body'>
               <h4 className='marginBottom--xs'>IP Network Ranges</h4>
-              <p>Add IPv4 or IPv6 ranges in CIDR format that should be allowed to send for {domain}</p>
+              <p>Add IPv4 or IPv6 ranges in CIDR format that should be allowed to send for {domain}.</p>
             </div>
+            <FieldArray name="ip" component={IpRangesContainer} />
           </div>
 
           <div className='panel'>
@@ -82,4 +80,4 @@ export default reduxForm({
   form: 'spfBuilder',
   initialValues,
   validate
-})(connect(mapStateToProps)(Form));
+})(connect(mapStateToProps)(FormContainer));

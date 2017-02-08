@@ -44,7 +44,7 @@ exports[`UseDefault component should render correctly when default turned off 1`
         test.com
       </h6>
       <p
-        className="marginBottom--none">
+        className="builder-smalltext marginBottom--none">
         Current Domain
       </p>
     </div>
@@ -74,7 +74,7 @@ exports[`UseDefault component should render correctly when default turned on 1`]
         test.com
       </h6>
       <p
-        className="marginBottom--none">
+        className="builder-smalltext marginBottom--none">
         Current Domain
       </p>
     </div>

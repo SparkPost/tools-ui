@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 
-import Record from './components/Record';
-import Form from './components/Form';
+import Record from './containers/RecordContainer';
+import Form from './containers/FormContainer';
 import { INTRO_TEXT } from './constants';
 
 class Builder extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className='flex center-xs'>

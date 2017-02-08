@@ -34,4 +34,11 @@
   .builder-inputGroup--mx & { padding-left: rem(27); }
   .builder-inputGroup--a & { padding-left: rem(13); }
   .builder-inputGroup--include & { padding-left: rem(57); }
+  .builder-inputGroup--ip4 & { padding-left: rem(28); }
+  .builder-inputGroup--ip6 & { padding-left: rem(27); }
+}
+
+.builder-smalltext {
+  font-size: rem(14);
+  line-height: rem(18);
 }

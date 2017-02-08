@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 import classnames from 'classnames';
 import _ from 'lodash';
 
@@ -7,9 +8,9 @@ import { ActionLink } from 'components/button/Button';
 import { CopyPopover } from 'components/popover/Popover';
 import buildRecord from '../helpers';
 
-import './Record.scss';
+import './RecordContainer.scss';
 
-class Record extends Component {
+class RecordContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,7 +60,7 @@ class Record extends Component {
             </div>
             <h4 className='marginBottom--xs'>Go to your DNS Provider and Add this TXT Record</h4>
             <code className='marginBottom--xs'>{record}</code>
-            <p>Once added to your DNS, inspect your SPF record to make sure it is valid.</p>
+            <p>Once added to your DNS, <Link to='/spf/inspector'>inspect your SPF record</Link> to make sure it is valid.</p>
           </div>
         </div>
         <div className='builder-record__ghost' ref={(ghost) => this.ghost = ghost} />
@@ -69,4 +70,4 @@ class Record extends Component {
 }
 
 const mapStateToProps = ({ form }) => ({ form: form.spfBuilder });
-export default connect(mapStateToProps)(Record);
+export default connect(mapStateToProps)(RecordContainer);
