@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import { ActionLink } from 'components/button/Button';
+import { ActionLink, ActionButton } from 'components/button/Button';
 import classnames from 'classnames';
 
 import './FormElements.scss';
@@ -39,7 +39,7 @@ export const UseDefault = ({ input, domain }) => {
   );
 };
 
-const Host = ({ host, index, prefix, onRemove }) => (
+const Host = ({ host, prefix, onRemove }) => (
   <div className='panel__body panel__body--forceBorder'>
     <div className='flex middle-xs'>
       <div className='col-xs-9'>
@@ -62,3 +62,11 @@ export const Hosts = ({ fields, prefix = '' }) => (
     </div>
   </div>
 );
+
+export const Radio = ({ input, label}) => {
+  const buttonClasses = classnames('button col-xs', {
+    'button--orange is-pressed': input.value === label,
+    'button--muted': input.value !== label
+  });
+  return <ActionButton action={() => input.onChange(label)} extraClasses={buttonClasses}>{label}</ActionButton>;
+};

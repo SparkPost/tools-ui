@@ -11,5 +11,10 @@ export const initialValues = {
   },
   ip: [],
   include: [],
-  all: ''
+  all: 'Fail'
+};
+
+export const ALL_TEXT = {
+  'Fail': 'Non-compliant email will not be accepted.',
+  'Soft Fail': 'Non-compliant email will be accepted but marked or tagged as non-compliant.'
 };

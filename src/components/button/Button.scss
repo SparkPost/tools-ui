@@ -16,10 +16,11 @@
   font-weight: 400;
   font-size: rem(14);
 
-  &:hover {
+  &:hover, &:active, &:focus {
     cursor: pointer;
     text-decoration: none;
     color: color(orange--dark);
+    background: grayscale(9);
   }
 
   @media screen and (min-width: break(md)) {

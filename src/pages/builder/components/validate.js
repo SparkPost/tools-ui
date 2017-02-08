@@ -10,7 +10,12 @@ const validate = (values) => {
 
   // Test first domain input
   if (!domain.test(values.domain)) {
-    errors.domain = 'Invalid Domain';
+    errors.domain = 'Must be a valid domain';
+  }
+
+  // Example of a required field
+  if (!values.domain) {
+    errors.domain = 'Domain required';
   }
 
   // Test MX host field array
@@ -18,8 +23,8 @@ const validate = (values) => {
 
   values.mx.hosts.forEach((host, index) => {
     const mxErrors = {};
-    if (!domain.test(host.name)) {
-      mxErrors.name = 'Invalid Domain';
+    if (host.name && !domain.test(host.name)) {
+      mxErrors.name = 'Invalid hostname';
       mxHostErrors[index] = mxErrors;
     }
   });
@@ -33,8 +38,8 @@ const validate = (values) => {
 
   values.a.hosts.forEach((host, index) => {
     const aErrors = {};
-    if (!domain.test(host.name)) {
-      aErrors.name = 'Invalid Domain';
+    if (host.name && !domain.test(host.name)) {
+      aErrors.name = 'Invalid hostname';
       aHostErrors[index] = aErrors;
     }
   });

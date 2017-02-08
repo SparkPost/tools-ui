@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 
 import validate from './validate';
-import { initialValues } from '../constants';
-import { TextInput, UseDefault, Hosts } from './FormElements';
+import { initialValues, ALL_TEXT } from '../constants';
+import { TextInput, UseDefault, Hosts, Radio } from './FormElements';
 
 class Form extends Component {
   constructor(props) {
@@ -64,6 +64,11 @@ class Form extends Component {
             <div className='panel__body'>
               <h4 className='marginBottom--none'>How Strict should this SPF Record Be?</h4>
               <p>This mechanism tells a recipients servers what to do to non-compliant messages.</p>
+              <div className='button-group marginBottom--md marginLeft--none marginRight--none flex'>
+                <Field name='all' component={Radio} label='Fail' />
+                <Field name='all' component={Radio} label='Soft Fail'/>
+              </div>
+              <p>{ALL_TEXT[form.values.all]}</p>
             </div>
           </div>
         </div>
