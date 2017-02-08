@@ -19,15 +19,15 @@ class FormContainer extends Component {
 
           <div className='panel'>
             <div className='panel__body'>
-              <h4 className='marginBottom--xs'>Enter your domain</h4>
+              <h4 className='marginBottom--md'>Enter your domain</h4>
               <Field name="domain" component={TextInput} placeholder='eg. mydomain.com' />
             </div>
           </div>
 
           <div className='panel'>
             <div className='panel__body'>
-              <h4 className='marginBottom--xs'>MX Records</h4>
-              <p>Which domain’s MX records should be allowed to send mail for {domain}? Learn more about the MX mechanism.</p>
+              <h4 className='marginBottom--xxs'>MX Records</h4>
+              <p className='marginBottom--md'>Which domain’s MX records should be allowed to send mail for {domain}?</p>
             </div>
             <Field name="mx.useDefault" component={UseDefault} domain={domain}/>
             <FieldArray name="mx.hosts" component={Hosts} prefix='mx' />
@@ -35,8 +35,8 @@ class FormContainer extends Component {
 
           <div className='panel'>
             <div className='panel__body'>
-              <h4 className='marginBottom--xs'>A Records</h4>
-              <p>Which domain’s A records should be allowed send mail for {domain}? Learn more about the A mechanism.</p>
+              <h4 className='marginBottom--xxs'>A Records</h4>
+              <p className='marginBottom--md'>Which domain’s A records should be allowed send mail for {domain}?</p>
             </div>
             <Field name="a.useDefault" component={UseDefault} domain={domain}/>
             <FieldArray name="a.hosts" component={Hosts} prefix='a' />
@@ -44,24 +44,24 @@ class FormContainer extends Component {
 
           <div className='panel'>
             <div className='panel__body'>
-              <h4 className='marginBottom--xs'>IP Network Ranges</h4>
-              <p>Add IPv4 or IPv6 ranges in CIDR format that should be allowed to send for {domain}.</p>
+              <h4 className='marginBottom--xxs'>IP Network Ranges</h4>
+              <p className='marginBottom--md'>Add IPv4 or IPv6 ranges in CIDR format that should be allowed to send for {domain}.</p>
             </div>
             <FieldArray name="ip" component={IpRangesContainer} />
           </div>
 
           <div className='panel'>
             <div className='panel__body'>
-              <h4 className='marginBottom--xs'>Includes</h4>
-              <p>Add any other domains whos SPF records should be included as part of {domain}’s SPF record, such as third party services.</p>
+              <h4 className='marginBottom--xxs'>Includes</h4>
+              <p className='marginBottom--md'>Add any other domains whos SPF records should be included as part of {domain}’s SPF record, such as third party services.</p>
             </div>
             <FieldArray name="include" component={Hosts} prefix='include' />
           </div>
 
           <div className='panel'>
             <div className='panel__body'>
-              <h4 className='marginBottom--none'>How Strict should this SPF Record Be?</h4>
-              <p>This mechanism tells a recipients servers what to do to non-compliant messages.</p>
+              <h4 className='marginBottom--xxs'>How Strict should this SPF Record Be?</h4>
+              <p className='marginBottom--lg'>This mechanism tells a recipients servers what to do to non-compliant messages.</p>
               <div className='button-group marginBottom--md marginLeft--none marginRight--none flex'>
                 <Field name='all' component={Radio} label='Fail' />
                 <Field name='all' component={Radio} label='Soft Fail'/>

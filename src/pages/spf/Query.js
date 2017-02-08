@@ -34,8 +34,8 @@ class Query extends Component {
     return (
       <div className='panel panel--accent text--left'>
         <div className='panel__body'>
-          <h4>Inspect a Domain</h4>
-          <p className='paddingBottom--md text--muted'>Enter a domain to inspect, e.g., sparkpost.com.</p>
+          <h4 className='marginBottom--xxs'>Inspect a Domain</h4>
+          <p className='paddingBottom--md'>Enter a domain to inspect, e.g., sparkpost.com.</p>
           { this.renderForm() }
         </div>
       </div>
@@ -50,11 +50,11 @@ class Query extends Component {
           <div className='col-xs-12 col-md-8'>
             <div className={classNames('input__group', {'has-error': this.state.domainError })}>
               <input className='input__text input--full' type='text' onChange={(e) => this.setState({domain: e.target.value}) } placeholder='mydomain.com' />
-              <div className="input__error">Please enter a valid domain.</div>
+              {this.state.domainError && <span className="input__error">Please enter a valid domain.</span>}
             </div>
           </div>
 
-          <div className='col-xs-12 col-md-4'>
+          <div className='col-xs-12 col-md-4 responsiveBump'>
             <button type='submit' className='button button--orange button--full'>View Results</button>
           </div>
 
@@ -68,7 +68,7 @@ class Query extends Component {
       <div className='flex center-xs'>
         <div className='col-xs-12 col-md-10 col-lg-7'>
           <h1>SPF Inspector</h1>
-          <p className='marginBottom--lg text--muted'>{INTRO_TEXT}</p>
+          <p className='marginBottom--lg'>{INTRO_TEXT}</p>
           { this.renderPanel() }
           { this.props.loggedIn && <HistoryList /> }
         </div>

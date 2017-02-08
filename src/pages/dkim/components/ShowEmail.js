@@ -10,8 +10,8 @@ export default (props) => {
   return (
     <div className='panel panel--accent text--left'>
       <div className='panel__body'>
-        <h4>Validate your DKIM Signature</h4>
-        <p className='paddingBottom--md text--muted'>Send an email to this generated email address, then view your results.</p>
+        <h4 className='marginBottom--xxs'>Validate your DKIM Signature</h4>
+        <p className='paddingBottom--md'>Send an email to this generated email address, then view your results.</p>
         <div className='flex'>
           <div className='col-xs-12 col-md-8 col-lg-9'>
             <div className='input__group'>
@@ -23,7 +23,7 @@ export default (props) => {
               </div>
             </div>
           </div>
-          <div className='col-xs-12 col-md-4 col-lg-3 showEmail__bump'>
+          <div className='col-xs-12 col-md-4 col-lg-3 responsiveBump'>
             <LinkButton type='orange' fullWidth={true} to={`/dkim/results/${email}`}>View Results</LinkButton>
           </div>
         </div>

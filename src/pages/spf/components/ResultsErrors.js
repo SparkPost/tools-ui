@@ -1,5 +1,4 @@
 import React from 'react';
-import { ActionLink } from 'components/button/Button';
 import Icon from 'components/Icon';
 
 import './ResultsErrors.scss';
@@ -37,7 +36,7 @@ export default (props) => {
   return (
     <div className='panel spf-resultsErrors'>
       <div className='panel__heading'>
-        <div className='float--right'><ActionLink>How do I fix errors?</ActionLink></div>
+        {/* <div className='float--right'><ActionLink>How do I fix errors?</ActionLink></div> */}
         { renderSummary() }
       </div>
       { errors.map((error, idx) => renderRow(error, idx, 'error')) }
