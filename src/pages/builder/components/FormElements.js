@@ -78,7 +78,7 @@ export const IpRange = ({ host, prefix, onRemove }) => (
       <div className='col-xs-7'>
         <Field name={`${host}.address`} component={TextInput} prefix={prefix} extraClasses='builder-input--ghost'/>
       </div>
-      <div className='col-xs-2 text--right'>
+      <div className='col-xs-2 text--right paddingLeft--none'>
         <ActionLink onClick={onRemove}>Remove</ActionLink>
       </div>
     </div>
