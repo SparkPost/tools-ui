@@ -7,7 +7,7 @@ import { SpLoginLink, SpSignUpLink } from 'components/button/Button';
 import config from 'config/index';
 import { logout } from 'actions/auth';
 
-import { Logo } from 'components/logo/Logo';
+import { Logo, Property } from 'components/logo/Logo';
 
 import './Nav.scss';
 
@@ -79,9 +79,11 @@ export class Nav extends Component {
 
           {loggedIn ? this.renderLoggedInLinks() : this.renderLoggedOutLinks()}
 
-          <a href='http://sparkpost.com' className='nav__logoLink' title='SparkPost'>
-            <Logo/>
-          </a>
+          <div className='logo__wrapper'>
+            <a href='http://sparkpost.com' title='SparkPost'><Logo/></a>
+            <div className='logo__divider marginLeft--xs marginRight--xs' />
+            <a href='http://sparkpost.com' title='SparkPost'><Property/></a>
+          </div>
 
           <a className='nav__hamburger' onClick={() => this.toggleMenu()}><span></span></a>
 

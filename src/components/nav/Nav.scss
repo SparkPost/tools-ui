@@ -155,25 +155,21 @@ $nav-height: rem(57);
     }
   }
 
-  &__logoLink {
+  .logo__wrapper {
     display: inline-block;
-    height: $nav-height;
+    height: rem(30);
 
     position: absolute;
     left: 50%;
+    top: 6px;
     transform: translate(-50%, 0);
 
     @media screen and (min-width: break(lg)) {
-      position: static;
+      position: relative;
+      top: 3px;
+      left: auto;
+      margin-right: rem(24);
       transform: none;
-      margin-right: 1rem;
     }
-  }
-
-  .logo {
-    position: relative;
-    top: 6px;
-    height: rem(33);
-    width: auto;
   }
 }

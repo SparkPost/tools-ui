@@ -30,31 +30,13 @@ $fa-font-path: "~@sparkpost/styles/src/assets/fonts";
 @import "~@sparkpost/styles/src/assets/scss/components/popover";
 
 @import "./layout";
-@import "./_helpers";
+@import "./helpers";
 
 // Styleguide overrides
-.input__error {
-  display: block;
-  position: static;
-  line-height: 2em;
-}
-
-.panel__body--forceBorder {
-  border-top: 1px solid grayscale(9) !important;
-}
-
-p {
-  color: grayscale(4);
-}
-
 code {
   display: block;
   background: none;
   white-space: normal;
   word-break: normal;;
   color: grayscale(3);
-}
-
-strong {
-  color: grayscale(2);
 }
