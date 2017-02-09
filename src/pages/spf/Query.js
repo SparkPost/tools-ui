@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { INTRO_TEXT } from './constants';
 import HistoryList from './components/HistoryList';
 
-class Query extends Component {
+export class Query extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Query from 'pages/spf/Query';
+import { Query } from 'pages/spf/Query';
 
 describe('Query Snapshots', () => {
   test('baseline snapshot', () => {

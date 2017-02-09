@@ -7,7 +7,7 @@ import { CTA, LINKS } from 'components/footer/constants';
 
 import './Footer.scss';
 
-class Footer extends Component {
+export class Footer extends Component {
   render() {
     const { loggedIn } = this.props;
 
