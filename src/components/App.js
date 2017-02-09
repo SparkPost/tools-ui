@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 import Nav from 'components/nav/Nav';
 import Footer from 'components/footer/Footer';
 import { checkLogin } from 'actions/auth';
@@ -13,9 +14,9 @@ export class App extends Component {
   }
 
   render() {
-    const { children, location } = this.props;
+    const { children, location, loggedIn } = this.props;
     return (
-      <div className='pageWrapper'>
+      <div className={classnames('pageWrapper', { 'pageWrapper--loggedIn': loggedIn })}>
         <div className='container container--tool'>
           {children}
         </div>
@@ -27,4 +28,5 @@ export class App extends Component {
 
 }
 
-export default connect(null, { checkLogin })(App);
+const mapStateToProps = ({ auth }) => ({ loggedIn: auth.loggedIn });
+export default connect(mapStateToProps, { checkLogin })(App);

@@ -16,10 +16,18 @@
     color: grayscale(white);
   }
 
+  &--loggedIn {
+    background: grayscale(white);
+  }
+
   &__nav {
     padding: rem(33) 0;
 
     border-top: 1px solid grayscale(2);
+
+    .footer--loggedIn & {
+      border-top: none;
+    }
 
     .logo {
       height: rem(30);
@@ -39,6 +47,13 @@
     &:hover {
       color: grayscale(white);
       text-decoration: none;
+    }
+
+    .footer--loggedIn & {
+      color: grayscale(4);
+      &:hover {
+        color: grayscale(1);
+      }
     }
 
     @media screen and (min-width: break(md)) {

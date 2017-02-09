@@ -5,7 +5,8 @@ html {
   }
 }
 
-$footer-height: 24rem; // Change this later
+$footer-height: 25rem;
+$footer-loggedIn-height: 6rem;
 $nav-height: rem(60);
 
 .pageWrapper {
@@ -16,6 +17,10 @@ $nav-height: rem(60);
 
   @media screen and (min-width: break(md)) {
     padding-bottom: $footer-height;
+
+    &--loggedIn {
+      padding-bottom: $footer-loggedIn-height;
+    }
   }
 }
 

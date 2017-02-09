@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import classNames from 'classnames';
 
@@ -77,12 +78,9 @@ class Query extends Component {
   }
 }
 
-Query.defaultProps = {
-  loggedIn: true // change this to enable history
-};
-
 Query.propTypes = {
   loggedIn: React.PropTypes.bool.isRequired
 };
 
-export default withRouter(Query);
+const mapStateToProps = ({ auth }) => ({ loggedIn: auth.loggedIn });
+export default withRouter(connect(mapStateToProps)(Query));
