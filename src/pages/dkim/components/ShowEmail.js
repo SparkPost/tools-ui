@@ -2,8 +2,6 @@ import React from 'react';
 import { LinkButton } from 'components/button/Button';
 import { CopyPopover } from 'components/popover/Popover';
 
-import './ShowEmail.scss';
-
 export default (props) => {
   const { email } = props;
 
