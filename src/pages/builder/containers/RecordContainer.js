@@ -14,56 +14,75 @@ class RecordContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sticky: true
+      sticky: false,
+      ghostHeight: 0,
+      panelWidth: 0
     };
 
     this.ghost = null;
     this.panel = null;
-    this.handleScroll = _.throttle(this.handleScroll.bind(this), 200);
+    this.handleScroll = _.throttle(this.handleScroll.bind(this), 70);
+    this.handleResize = _.throttle(this.handleResize.bind(this), 600);
   }
 
   componentDidMount() {
+    this.handleResize();
     window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleResize);
+  }
+
+  handleResize(e) {
+    this.setState({ panelWidth: this.ghost.getBoundingClientRect().width });
   }
 
   handleScroll(e) {
-    const ghostTop = this.ghost.getBoundingClientRect().top;
-    const panelTop = this.panel.getBoundingClientRect().top;
-    const panelBottom = this.panel.getBoundingClientRect().bottom;
+    const ghost = this.ghost.getBoundingClientRect();
+    const panel = this.panel.getBoundingClientRect();
     const windowHeight = window.innerHeight;
 
-    if (this.state.sticky && ghostTop <= panelTop) {
-      this.setState({ sticky: false });
-    } else if (!this.state.sticky && windowHeight < panelBottom + 18) {
-      this.setState({ sticky: true });
+    if (this.state.sticky) {
+      this.setState({ ghostHeight: panel.height });
+      if (ghost.bottom <= panel.bottom) {
+        this.setState({
+          ghostHeight: 0,
+          sticky: false
+        });
+      }
+    }
+    if (!this.state.sticky && windowHeight < panel.bottom + 18) {
+      this.setState({
+        ghostHeight: panel.height,
+        sticky: true
+      });
     }
   }
 
   render() {
     const { form } = this.props;
     const record = assembleRecord(form.values);
+    const { ghostHeight, panelWidth } = this.state;
 
     const classes = classnames('col-xs-12 col-md-10 col-lg-7 builder-record', {
-      'is-stickied': this.state.sticky
+      'is-stickied': form.values.domain && !form.syncErrors.domain && this.state.sticky
     });
 
     return (
       <div className={classes}>
-        <div className='panel panel--accent builder-record__panel' ref={(panel) => this.panel = panel}>
+        <div className='panel panel--accent builder-record__panel' ref={(panel) => this.panel = panel} style={{ width: `${panelWidth}px`}}>
           <div className='panel__body'>
             <div className='float--right'>
               <CopyPopover stringToCopy={record}><ActionLink>Copy</ActionLink></CopyPopover>
             </div>
-            <h4 className='marginBottom--xs'>Go to your DNS Provider and Add this TXT Record</h4>
-            <code className='marginBottom--xs'>{record}</code>
-            <p>Once added to your DNS, <Link to='/spf/inspector'>inspect your SPF record</Link> to make sure it is valid.</p>
+            <code className='marginBottom--sm'><strong>{record}</strong></code>
+            <p className='builder-record__instruction'>Add this TXT record to your DNS, then <Link to='/spf/inspector'>inspect your domain</Link> to ensure its SPF record valid.</p>
           </div>
         </div>
-        <div className='builder-record__ghost' ref={(ghost) => this.ghost = ghost} />
+        <div className='builder-record__ghost' ref={(ghost) => this.ghost = ghost} style={{ height: `${ghostHeight}px`}}/>
       </div>
     );
   }

@@ -3,44 +3,37 @@
 
 .builder-record {
   position: relative;
+  margin-bottom: rem(36);
 
   &__ghost.panel {
     position: absolute;
     top: 0;
-    width: 0px;
+    width: 100%;
     height: 0;
   }
 
   &.is-stickied .builder-record__ghost {
     position: static;
-    height: rem(280);
   }
 
   &__panel.panel {
-    width: 100%;
+    position: relative;
     margin-bottom: 0;
+    width: auto;
+    transition: box-shadow 0.35s;
   }
 
   &.is-stickied .builder-record__panel.panel {
     position: fixed;
     left: 50%;
-    bottom: 0;
+    bottom: rem(18);
+    box-shadow: shadow(3);
     transform: translate(-50%, 0);
     z-index: 10;
+  }
 
-    width: 100%;
-
-    @media screen and (min-width: break(sm)) {
-      bottom: rem(18);
-      width: 90%;
-    }
-
-    @media screen and (min-width: break(md)) {
-      width: 80%;
-    }
-
-    @media screen and (min-width: break(lg)) {
-      width: 60%;
-    }
+  &__instruction {
+    font-size: rem(14);
+    line-height: rem(18);
   }
 }
