@@ -35,7 +35,7 @@ export default (props) => {
           <div className={iconClasses}>{renderStatus(status)}</div>
           <div className='spf-historyRow__details'>
             <h5 className='spf-historyRow__domain'>{domain}</h5>
-            <p className='spf-historyRow__timestamp'>{timestamp}</p>
+            <p className='spf-historyRow__timestamp'>Tested on {timestamp}</p>
           </div>
           <div className='spf-historyRow__action'>Refresh<Icon name='chevron-right' /></div>
         </div>

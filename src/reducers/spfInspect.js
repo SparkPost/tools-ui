@@ -1,5 +1,5 @@
 /* eslint-disable complexity */
-import moment from 'moment';
+import { formatDate } from 'helpers/date';
 import _ from 'lodash';
 
 const initialState = {
@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
 
     case 'SPF_INSPECT_SUCCESS': {
       const { errors, warnings, authorized_netblocks, dns_lookups } = action.payload;
-      const timestamp = moment().format('MMM D YYYY[, at] h:mm A');
+      const timestamp = formatDate();
       return {
         ...state,
         results: {

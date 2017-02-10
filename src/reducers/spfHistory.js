@@ -1,3 +1,5 @@
+import { formatDate } from 'helpers/date';
+
 const initialState = {
   loading: false,
   error: null,
@@ -18,7 +20,10 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        list: action.payload.map(({ domain, status, timestamp }, id) => ({ id, domain, status, timestamp }))
+        list: action.payload.map(({ domain, status, timestamp }, id) => ({
+          id, domain, status,
+          timestamp: formatDate(timestamp)
+        }))
       };
     }
 
