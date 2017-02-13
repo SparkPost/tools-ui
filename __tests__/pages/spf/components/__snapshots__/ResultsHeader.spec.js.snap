@@ -10,7 +10,7 @@ exports[`ResultsHeader Snapshots baseline snapshot 1`] = `
           className="popover__group popover__hoverTrigger">
           <a
             className="actionLink"
-            href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+            href="https://TEST.sparkpost.com/sign-up?return=http://localhost/"
             onClick={null}
             title="Save Results">
             Save Results

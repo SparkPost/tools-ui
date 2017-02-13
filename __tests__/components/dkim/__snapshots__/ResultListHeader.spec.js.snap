@@ -9,7 +9,7 @@ exports[`ResultListHeader component should render 1`] = `
         className="popover__group popover__hoverTrigger">
         <a
           className="actionLink"
-          href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+          href="https://TEST.sparkpost.com/sign-up?return=http://localhost/"
           onClick={null}
           title="Save Results">
           Save Results
@@ -144,7 +144,7 @@ exports[`ResultListHeader component should render when not logged in 1`] = `
         className="popover__group popover__hoverTrigger">
         <a
           className="actionLink"
-          href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+          href="https://TEST.sparkpost.com/sign-up?return=http://localhost/"
           onClick={null}
           title="Save Results">
           Save Results
@@ -218,7 +218,7 @@ exports[`ResultListHeader component should render with an error present 1`] = `
         className="popover__group popover__hoverTrigger">
         <a
           className="actionLink"
-          href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+          href="https://TEST.sparkpost.com/sign-up?return=http://localhost/"
           onClick={null}
           title="Save Results">
           Save Results

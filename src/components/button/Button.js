@@ -67,7 +67,7 @@ const SaveResultsLink = () => {
   const currentUrl = getCurrentUrl(location);
   return (
     <HoverPopover placement='top' size='m' text='Create a free SparkPost account or login into your account to save results'>
-      <ActionLink external={`${config.appUrl}/auth?return=${currentUrl}`} className='actionLink' title='Save Results'>Save Results</ActionLink>
+      <ActionLink external={`${config.appUrl}/sign-up?return=${currentUrl}`} className='actionLink' title='Save Results'>Save Results</ActionLink>
     </HoverPopover>
   );
 };
