@@ -7,13 +7,27 @@ exports[`ResultsHeader Snapshots baseline snapshot 1`] = `
       <div
         className="float--right">
         <span
+          className="popover__group popover__hoverTrigger">
+          <a
+            className="actionLink"
+            href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+            onClick={null}
+            title="Save Results">
+            Save Results
+          </a>
+          <span
+            className="popover popover--top popover--m">
+            Create a free SparkPost account or login into your account to save results
+          </span>
+        </span>
+        <span
           className="popover__group"
           onClick={[Function]}>
           <a
             className="actionLink"
             onClick={[Function]}
             style={Object {}}
-            title="">
+            title="Share">
             Share
           </a>
           <div
@@ -43,7 +57,7 @@ exports[`ResultsHeader Snapshots baseline snapshot 1`] = `
           className="actionLink"
           onClick={[Function]}
           style={Object {}}
-          title="">
+          title="Refresh">
           Refresh
         </a>
       </div>

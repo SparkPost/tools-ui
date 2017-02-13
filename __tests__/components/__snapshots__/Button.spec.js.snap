@@ -87,7 +87,8 @@ exports[`snapshot tests LinkButton will render correctly with no options 1`] = `
 exports[`snapshot tests SpLoginLink will render correctly with all options 1`] = `
 <a
   className="sp-sign-in a-list of-classes"
-  href="https://TEST.sparkpost.com/auth?return=http://localhost/some/path?some=search">
+  href="https://TEST.sparkpost.com/auth?return=http://localhost/some/path?some=search"
+  title="Login">
   Log In
 </a>
 `;
@@ -95,13 +96,15 @@ exports[`snapshot tests SpLoginLink will render correctly with all options 1`] =
 exports[`snapshot tests SpLoginLink will render correctly with no options 1`] = `
 <a
   className="sp-sign-in"
-  href="https://TEST.sparkpost.com/auth?return=http://localhost" />
+  href="https://TEST.sparkpost.com/auth?return=http://localhost"
+  title="Login" />
 `;
 
 exports[`snapshot tests SpSignUpLink will render correctly with all options 1`] = `
 <a
   className="sp-sign-up a-list of-classes"
-  href="https://TEST.sparkpost.com/sign-up?return=http://localhost/some/path?some=search&src=SP-Tools">
+  href="https://TEST.sparkpost.com/sign-up?return=http://localhost/some/path?some=search&src=SP-Tools"
+  title="Sign Up">
   Sign Up
 </a>
 `;
@@ -109,5 +112,6 @@ exports[`snapshot tests SpSignUpLink will render correctly with all options 1`] 
 exports[`snapshot tests SpSignUpLink will render correctly with no options 1`] = `
 <a
   className="sp-sign-up"
-  href="https://TEST.sparkpost.com/sign-up?return=http://localhost&src=SP-Tools" />
+  href="https://TEST.sparkpost.com/sign-up?return=http://localhost&src=SP-Tools"
+  title="Sign Up" />
 `;

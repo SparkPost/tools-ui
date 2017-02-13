@@ -6,6 +6,20 @@ exports[`ResultListHeader component should render 1`] = `
     <div
       className="float--right">
       <span
+        className="popover__group popover__hoverTrigger">
+        <a
+          className="actionLink"
+          href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+          onClick={null}
+          title="Save Results">
+          Save Results
+        </a>
+        <span
+          className="popover popover--top popover--m">
+          Create a free SparkPost account or login into your account to save results
+        </span>
+      </span>
+      <span
         className="popover__group"
         onClick={[Function]}>
         <a
@@ -65,6 +79,7 @@ exports[`ResultListHeader component should render when logged in 1`] = `
     className="panel__body">
     <div
       className="float--right">
+      
       <span
         className="popover__group"
         onClick={[Function]}>
@@ -126,6 +141,20 @@ exports[`ResultListHeader component should render when not logged in 1`] = `
     <div
       className="float--right">
       <span
+        className="popover__group popover__hoverTrigger">
+        <a
+          className="actionLink"
+          href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+          onClick={null}
+          title="Save Results">
+          Save Results
+        </a>
+        <span
+          className="popover popover--top popover--m">
+          Create a free SparkPost account or login into your account to save results
+        </span>
+      </span>
+      <span
         className="popover__group"
         onClick={[Function]}>
         <a
@@ -185,6 +214,20 @@ exports[`ResultListHeader component should render with an error present 1`] = `
     className="panel__body">
     <div
       className="float--right">
+      <span
+        className="popover__group popover__hoverTrigger">
+        <a
+          className="actionLink"
+          href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+          onClick={null}
+          title="Save Results">
+          Save Results
+        </a>
+        <span
+          className="popover popover--top popover--m">
+          Create a free SparkPost account or login into your account to save results
+        </span>
+      </span>
       <span
         className="popover__group"
         onClick={[Function]}>

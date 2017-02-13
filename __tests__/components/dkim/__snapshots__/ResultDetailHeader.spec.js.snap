@@ -5,6 +5,7 @@ exports[`ResultDetailHeader component should render when logged in 1`] = `
     className="panel__body">
     <div
       className="float--right">
+      
       <span
         className="popover__group"
         onClick={[Function]}>
@@ -39,51 +40,53 @@ exports[`ResultDetailHeader component should render when logged in 1`] = `
         </div>
       </span>
     </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        1
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        2
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        3
-      </span>
-    </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        a
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        b
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        c
-      </span>
-    </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        cool
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        story
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        bro
-      </span>
-    </div>
+    <span>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          1
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          2
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          3
+        </span>
+      </div>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          a
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          b
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          c
+        </span>
+      </div>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          cool
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          story
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          bro
+        </span>
+      </div>
+    </span>
   </div>
 </div>
 `;
@@ -96,6 +99,20 @@ exports[`ResultDetailHeader component should render when not logged in 1`] = `
     <div
       className="float--right">
       <span
+        className="popover__group popover__hoverTrigger">
+        <a
+          className="actionLink"
+          href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+          onClick={null}
+          title="Save Results">
+          Save Results
+        </a>
+        <span
+          className="popover popover--top popover--m">
+          Create a free SparkPost account or login into your account to save results
+        </span>
+      </span>
+      <span
         className="popover__group"
         onClick={[Function]}>
         <a
@@ -129,51 +146,53 @@ exports[`ResultDetailHeader component should render when not logged in 1`] = `
         </div>
       </span>
     </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        1
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        2
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        3
-      </span>
-    </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        a
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        b
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        c
-      </span>
-    </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        cool
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        story
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        bro
-      </span>
-    </div>
+    <span>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          1
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          2
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          3
+        </span>
+      </div>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          a
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          b
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          c
+        </span>
+      </div>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          cool
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          story
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          bro
+        </span>
+      </div>
+    </span>
   </div>
 </div>
 `;
@@ -186,6 +205,20 @@ exports[`ResultDetailHeader component should render with rows 1`] = `
     <div
       className="float--right">
       <span
+        className="popover__group popover__hoverTrigger">
+        <a
+          className="actionLink"
+          href="https://TEST.sparkpost.com/auth?return=http://localhost/"
+          onClick={null}
+          title="Save Results">
+          Save Results
+        </a>
+        <span
+          className="popover popover--top popover--m">
+          Create a free SparkPost account or login into your account to save results
+        </span>
+      </span>
+      <span
         className="popover__group"
         onClick={[Function]}>
         <a
@@ -219,51 +252,53 @@ exports[`ResultDetailHeader component should render with rows 1`] = `
         </div>
       </span>
     </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        1
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        2
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        3
-      </span>
-    </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        a
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        b
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        c
-      </span>
-    </div>
-    <div
-      className="dkimResultDetailHeader">
-      <span
-        className="dkimResultDetailHeader__label">
-        cool
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        story
-      </span>
-      <span
-        className="dkimResultDetailHeader__value">
-        bro
-      </span>
-    </div>
+    <span>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          1
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          2
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          3
+        </span>
+      </div>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          a
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          b
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          c
+        </span>
+      </div>
+      <div
+        className="dkimResultDetailHeader">
+        <span
+          className="dkimResultDetailHeader__label">
+          cool
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          story
+        </span>
+        <span
+          className="dkimResultDetailHeader__value">
+          bro
+        </span>
+      </div>
+    </span>
   </div>
 </div>
 `;

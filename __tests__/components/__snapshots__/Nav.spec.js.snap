@@ -7,12 +7,14 @@ exports[`Nav component should render correctly by default 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/some/path?maybe=something">
+        href="https://TEST.sparkpost.com/auth?return=http://localhost/some/path?maybe=something"
+        title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/some/path?maybe=something&src=SP-Tools">
+        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/some/path?maybe=something&src=SP-Tools"
+        title="Sign Up">
         Sign Up
       </a>
     </div>
@@ -177,12 +179,14 @@ exports[`Nav component should render correctly when not logged in 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/some/path?maybe=something">
+        href="https://TEST.sparkpost.com/auth?return=http://localhost/some/path?maybe=something"
+        title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/some/path?maybe=something&src=SP-Tools">
+        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/some/path?maybe=something&src=SP-Tools"
+        title="Sign Up">
         Sign Up
       </a>
     </div>
@@ -262,12 +266,14 @@ exports[`Nav component should render correctly with a builder path 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/spf/builder?maybe=something">
+        href="https://TEST.sparkpost.com/auth?return=http://localhost/spf/builder?maybe=something"
+        title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/spf/builder?maybe=something&src=SP-Tools">
+        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/spf/builder?maybe=something&src=SP-Tools"
+        title="Sign Up">
         Sign Up
       </a>
     </div>
@@ -347,12 +353,14 @@ exports[`Nav component should render correctly with a dkim path 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/dkim/path?maybe=something">
+        href="https://TEST.sparkpost.com/auth?return=http://localhost/dkim/path?maybe=something"
+        title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/dkim/path?maybe=something&src=SP-Tools">
+        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/dkim/path?maybe=something&src=SP-Tools"
+        title="Sign Up">
         Sign Up
       </a>
     </div>
@@ -432,12 +440,14 @@ exports[`Nav component should render correctly with an inspector path 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/spf/inspector?maybe=something">
+        href="https://TEST.sparkpost.com/auth?return=http://localhost/spf/inspector?maybe=something"
+        title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/spf/inspector?maybe=something&src=SP-Tools">
+        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/spf/inspector?maybe=something&src=SP-Tools"
+        title="Sign Up">
         Sign Up
       </a>
     </div>
