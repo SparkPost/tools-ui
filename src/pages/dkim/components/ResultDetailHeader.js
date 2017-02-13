@@ -23,7 +23,7 @@ const ResultDetailHeader = ({ rows, loggedIn }) => (
   <div className='panel panel--accent'>
     <div className='panel__body'>
       <div className='float--right'>
-        {!loggedIn ? <SaveResultsLink/> : '' }
+        {!loggedIn && <SaveResultsLink/>}
         <CopyPopover>
           <ActionLink title='Share'>Share</ActionLink>
         </CopyPopover>

@@ -13,7 +13,7 @@ export default (props) => {
         {/*  Top section */}
         <div className='panel__body'>
           <div className='float--right'>
-            {!loggedIn ? <SaveResultsLink /> : '' }
+            {!loggedIn && <SaveResultsLink/>}
             <CopyPopover><ActionLink title='Share'>Share</ActionLink></CopyPopover>
             <ActionLink onClick={refresh} title='Refresh'>Refresh</ActionLink>
             </div>

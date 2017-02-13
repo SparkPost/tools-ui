@@ -9,7 +9,7 @@ export default ({ email, getResults, loggedIn }) => (
     <div className='panel__body'>
 
       <div className='float--right'>
-        {!loggedIn ? <SaveResultsLink/> : '' }
+        {!loggedIn && <SaveResultsLink/>}
         <CopyPopover>
           <ActionLink title='Share'>Share</ActionLink>
         </CopyPopover>

@@ -79,7 +79,6 @@ exports[`ResultListHeader component should render when logged in 1`] = `
     className="panel__body">
     <div
       className="float--right">
-      
       <span
         className="popover__group"
         onClick={[Function]}>
