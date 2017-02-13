@@ -84,4 +84,19 @@ CopyPopover.propTypes = {
   block: React.PropTypes.bool
 };
 
-export { CopyPopover };
+const HoverPopover = (props) => {
+  const { children, placement = 'top', text = '', size = 'm' } = props;
+  const popoverClasses = classNames('popover', {
+    [`popover--${placement}`]: placement,
+    [`popover--${size}`]: size
+  });
+
+  return (
+    <span className='popover__group popover__hoverTrigger'>
+      {children}
+      <span className={popoverClasses}>{text}</span>
+    </span>
+  );
+};
+
+export { CopyPopover, HoverPopover };

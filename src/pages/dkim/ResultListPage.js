@@ -49,14 +49,14 @@ class ResultListPage extends Component {
   }
 
   render() {
-    const { error, loading } = this.props;
+    const { error, loading, loggedIn } = this.props;
     const { email } = this.props.params;
 
     return (
       <div className='flex center-xs'>
         <div className='col-xs-12 col-md-10 col-lg-8'>
           {(error && !loading) && <ErrorMessage friendly={LIST_ERROR_MESSAGE} details={error.message} />}
-          <ResultListHeader email={email} getResults={() => this.props.getValidatorResults(email)}/>
+          <ResultListHeader loggedIn={loggedIn} email={email} getResults={() => this.props.getValidatorResults(email)}/>
           {loading ? this.renderLoading() : this.renderResults()}
         </div>
       </div>
@@ -64,9 +64,8 @@ class ResultListPage extends Component {
   }
 }
 
-const mapStateToProps = ({ dkim }) => ({ ...dkim.resultsList });
+const mapStateToProps = ({ auth: { loggedIn }, dkim }) => ({ loggedIn, ...dkim.resultsList });
 
 export default connect(mapStateToProps, {
   getValidatorResults
 })(ResultListPage);
-

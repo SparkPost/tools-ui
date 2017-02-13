@@ -16,7 +16,7 @@ class ResultsPage extends Component {
   }
 
   renderBody() {
-    const { tree, loading, error, params, results, collapseAll, expandAll } = this.props;
+    const { tree, loading, error, params, results, collapseAll, expandAll, loggedIn } = this.props;
     const { domain } = params;
 
     if (loading) {
@@ -35,12 +35,12 @@ class ResultsPage extends Component {
 
     return (
       <div>
-        <ResultsHeader {...results} domain={domain} refresh={() => this.props.inspect(domain)} />
+        <ResultsHeader {...results} domain={domain} loggedIn={loggedIn} refresh={() => this.props.inspect(domain)} />
         <ResultsErrors errors={results.spfErrors} warnings={results.spfWarnings} />
         <div className="panel marginBottom--none">
           <div className='panel__heading'>
             <div className='float--right'>
-              <ActionLink onClick={() => tree.root.expanded ? collapseAll() : expandAll()}>
+              <ActionLink title='Expand or Collapse All' onClick={() => tree.root.expanded ? collapseAll() : expandAll()}>
                 Expand/Collapse All
               </ActionLink>
             </div>
@@ -62,7 +62,7 @@ class ResultsPage extends Component {
   }
 }
 
-const mapStateToProps = ({ spfInspect: { tree, details }}) => ({ tree, ...details });
+const mapStateToProps = ({ auth: { loggedIn }, spfInspect: { tree, details }}) => ({ loggedIn, tree, ...details });
 
 export default connect(mapStateToProps, {
   inspect,

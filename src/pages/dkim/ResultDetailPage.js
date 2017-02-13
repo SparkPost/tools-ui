@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Table from 'components/table/Table';
 import ResultDetailHeader from './components/ResultDetailHeader';
 import { BackLink } from 'components/button/Button';
@@ -24,11 +23,11 @@ class ResultDetailPage extends Component {
   }
 
   renderDetails() {
-    const { detailTableRows, sigTableHeaders, sigTableRows, error } = this.props;
+    const { detailTableRows, sigTableHeaders, sigTableRows, error, loggedIn } = this.props;
     if (error) { return null; }
     return (
       <div>
-        <ResultDetailHeader rows={detailTableRows} />
+        <ResultDetailHeader loggedIn={loggedIn} rows={detailTableRows} />
         <div className='panel'>
           <div className='panel__body padding--none dkimResultDetailTable'>
             <Table headers={sigTableHeaders} rows={sigTableRows} />
@@ -53,7 +52,7 @@ class ResultDetailPage extends Component {
   }
 }
 
-const mapStateToProps = ({ dkim }) => ({ ...dkim.resultsDetail });
+const mapStateToProps = ({ auth: { loggedIn }, dkim }) => ({ loggedIn, ...dkim.resultsDetail });
 
 export default connect(mapStateToProps, {
   getValidatorDetailedResult

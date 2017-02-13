@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Icon from 'components/Icon';
+import { HoverPopover } from 'components/popover/Popover';
 import config from 'config/index';
 import getCurrentUrl from 'helpers/getCurrentUrl';
 import classNames from 'classnames';
@@ -45,32 +46,37 @@ const LinkButton = (props) => {
  * Can be used to link or execute an action
  */
 const ActionLink = (props) => {
-  const { to = null, onClick = null, title = '', children } = props;
+  const { to = null, external = null, onClick = null, title = '', children } = props;
 
-  return (
-    <Link to={to} onClick={onClick} className='actionLink' title={title}>
-      {children}
-    </Link>
-  );
+  if (external) {
+    return <a href={external} onClick={onClick} className='actionLink' title={title}>{children}</a>;
+  }
+
+  return <Link to={to} onClick={onClick} className='actionLink' title={title}>{children}</Link>;
 };
 
 /**
  * Produces a blue link to indicate browser back
  */
-const BackLink = (props) => {
-  const { to = null, title = '' } = props;
+const BackLink = ({ to = null, title = '' }) => <Link to={to} className='backLink' title={title}><Icon name='chevron-left' /> Back</Link>;
 
+/**
+ * Produces a Save Results action link
+ */
+const SaveResultsLink = () => {
+  const currentUrl = getCurrentUrl(location);
   return (
-    <Link to={to} className='backLink' title={title}><Icon name='chevron-left' /> Back</Link>
+    <HoverPopover placement='top' size='m' text='Create a free SparkPost account or login into your account to save results'>
+      <ActionLink external={`${config.appUrl}/auth?return=${currentUrl}`} className='actionLink' title='Save Results'>Save Results</ActionLink>
+    </HoverPopover>
   );
 };
-
 
 const SpLoginLink = ({ location = {}, classes, children }) => {
   const currentUrl = getCurrentUrl(location);
   const linkClasses = classNames('sp-sign-in', classes);
   return (
-    <a href={`${config.appUrl}/auth?return=${currentUrl}`} className={linkClasses}>{children}</a>
+    <a href={`${config.appUrl}/auth?return=${currentUrl}`} title='Login' className={linkClasses}>{children}</a>
   );
 };
 
@@ -78,8 +84,8 @@ const SpSignUpLink = ({ location = {}, classes, children }) => {
   const currentUrl = getCurrentUrl(location);
   const linkClasses = classNames('sp-sign-up', classes);
   return (
-    <a href={`${config.appUrl}/sign-up?return=${currentUrl}&src=SP-Tools`} className={linkClasses}>{children}</a>
+    <a href={`${config.appUrl}/sign-up?return=${currentUrl}&src=SP-Tools`} title='Sign Up' className={linkClasses}>{children}</a>
   );
 };
 
-export { ActionButton, LinkButton, ActionLink, BackLink, SpLoginLink, SpSignUpLink };
+export { ActionButton, LinkButton, ActionLink, BackLink, SpLoginLink, SpSignUpLink, SaveResultsLink };
