@@ -22,6 +22,7 @@ export default makeReducer({
     }),
     'SPF_GET_HISTORY_FAIL': (state, action) => ({
       ...state,
+      loading: false,
       error: action.payload
     })
   }

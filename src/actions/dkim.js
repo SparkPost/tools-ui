@@ -7,19 +7,10 @@ const COOKIE_NAME = '_dkimTestEmail';
  * for saved dkim addresses
  */
 
-function saveValidatorEmail() {
-  return (result) => {
-    const { email } = result;
-
-    const expires = new Date();
-    expires.setFullYear(expires.getFullYear() + 1);
-    cookie.set(COOKIE_NAME, email, { expires });
-
-    return {
-      type: 'DKIM_SAVED_EMAIL',
-      email: email
-    };
-  };
+function saveValidatorEmail({ results: { email } }) {
+  const expires = new Date();
+  expires.setFullYear(expires.getFullYear() + 1);
+  cookie.set(COOKIE_NAME, email, { expires });
 }
 
 export function deleteSavedValidatorEmail() {
@@ -48,7 +39,7 @@ export function getValidatorEmail() {
       url: '/messaging-tools/validator-emails',
       method: 'post',
       chain: {
-        success: saveValidatorEmail()
+        success: saveValidatorEmail
       }
     }
   };

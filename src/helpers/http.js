@@ -1,9 +1,12 @@
 import config from 'config/index';
 import axios from 'axios';
 
-const { authCookie, apiBase } = config;
+const { authCookie, apiBase, apiRequestTimeout } = config;
 
-const sparkpostRequest = axios.create({ baseURL: apiBase });
+const sparkpostRequest = axios.create({
+  baseURL: apiBase,
+  timeout: apiRequestTimeout
+});
 
 function useRefreshToken(refresh_token) {
   return sparkpostRequest({

@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { INTRO_TEXT } from './constants';
 import HistoryList from './components/HistoryList';
 
-export class Query extends Component {
+export class QueryPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -78,9 +78,5 @@ export class Query extends Component {
   }
 }
 
-Query.propTypes = {
-  loggedIn: React.PropTypes.bool.isRequired
-};
-
 const mapStateToProps = ({ auth }) => ({ loggedIn: auth.loggedIn });
-export default withRouter(connect(mapStateToProps)(Query));
+export default withRouter(connect(mapStateToProps)(QueryPage));

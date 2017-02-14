@@ -1,6 +1,7 @@
 export default {
   apiBase: 'no-default-set',
   appUrl: 'no-default-set',
+  apiRequestTimeout: 10000,
   authCookie: {
     name: 'website_auth',
     options: {

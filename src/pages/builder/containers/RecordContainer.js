@@ -79,7 +79,7 @@ class RecordContainer extends Component {
               <CopyPopover stringToCopy={record}><ActionLink>Copy</ActionLink></CopyPopover>
             </div>
             <code className='marginBottom--sm'><strong>{record}</strong></code>
-            <p className='builder-record__instruction'>Add this TXT record to your DNS, then <Link to='/spf/inspector/'>check out the inspector</Link> to make sure you've set it up correctly.</p>
+            {(form.values.domain && !form.syncErrors.domain) && <p className='builder-record__instruction'>Add this TXT record to your DNS, then <Link to={`/spf/inspector/${form.values.domain}`}>check out the inspector</Link> to make sure you've set it up correctly.</p>}
           </div>
         </div>
         <div className='builder-record__ghost' ref={(ghost) => this.ghost = ghost} style={{ height: `${ghostHeight}px`}}/>

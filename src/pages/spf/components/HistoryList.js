@@ -2,11 +2,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getHistory } from 'actions/spf';
 import HistoryRow from './HistoryRow';
+import ApiErrorMessage from 'components/errors/ApiErrorMessage';
 
 export class HistoryList extends Component {
 
   componentDidMount() {
     this.props.getHistory();
+  }
+
+  renderBody() {
+    const { loading, error } = this.props;
+
+    if (error) {
+      return this.renderError();
+    }
+
+    if (loading) {
+      return this.renderLoading();
+    }
+
+    return this.renderResults();
   }
 
   renderResults() {
@@ -31,13 +46,17 @@ export class HistoryList extends Component {
     );
   }
 
+  renderError() {
+    const { error } = this.props;
+    return <ApiErrorMessage friendly='Unable to load query history' error={error} />;
+  }
+
   render() {
-    const { loading } = this.props;
     return (
-        <div className='text--left'>
-          <h4 className='marginBottom--xs'>SPF History</h4>
-          {loading ? this.renderLoading() : this.renderResults()}
-        </div>
+      <div className='text--left'>
+        <h4 className='marginBottom--xs'>SPF History</h4>
+        {this.renderBody()}
+      </div>
     );
   }
 }

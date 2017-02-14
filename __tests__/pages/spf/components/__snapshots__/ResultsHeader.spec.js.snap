@@ -69,22 +69,6 @@ exports[`ResultsHeader Snapshots baseline snapshot 1`] = `
         Tested on 
       </p>
     </div>
-    <div
-      className="panel__body">
-      <div
-        className="flex">
-        <div
-          className="col-xs-3">
-          <b />
-           Authorized Netblocks
-        </div>
-        <div
-          className="col-xs-3">
-          <b />
-           DNS Lookups
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;

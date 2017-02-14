@@ -4,7 +4,7 @@ import _ from 'lodash';
 import ResultsHeader from './components/ResultsHeader';
 import ResultsErrors from './components/ResultsErrors';
 import { BackLink, ActionLink } from 'components/button/Button';
-import { ErrorMessage } from 'components/errors/ErrorMessage';
+import ApiErrorMessage from 'components/errors/ApiErrorMessage';
 import { inspect, expandAll, collapseAll, expand, collapse } from 'actions/spf';
 
 import SPFNode from './components/SPFNode';
@@ -16,26 +16,39 @@ class ResultsPage extends Component {
   }
 
   renderBody() {
-    const { tree, loading, error, params, results, collapseAll, expandAll, loggedIn } = this.props;
-    const { domain } = params;
-
-    if (loading) {
-      return (
-        <div className='panel panel--accent'>
-          <div className='panel__body text--center paddingTop--xxl paddingBottom--xxl'>
-            <h4 className='text--muted'>Inspecting {domain}...</h4>
-          </div>
-        </div>
-      );
-    }
+    const { loading, error } = this.props;
 
     if (error) {
-      return <ErrorMessage message={error.message || error}></ErrorMessage>;
+      return this.renderError();
     }
 
+    if (loading) {
+      return this.renderLoading();
+    }
+
+    return this.renderResults();
+  }
+
+  renderError() {
+    const { params: { domain }, error } = this.props;
+    return <ApiErrorMessage friendly={`Currently unable to get results for ${domain}, please try again.`} error={error} />;
+  }
+
+  renderLoading() {
+    const { params: { domain } } = this.props;
+    return (
+      <div className='panel panel--accent'>
+        <div className='panel__body text--center paddingTop--xxl paddingBottom--xxl'>
+          <h4 className='text--muted'>Inspecting {domain}...</h4>
+        </div>
+      </div>
+    );
+  }
+
+  renderResults() {
+    const { tree, params: { domain }, results, collapseAll, expandAll } = this.props;
     return (
       <div>
-        <ResultsHeader {...results} domain={domain} loggedIn={loggedIn} refresh={() => this.props.inspect(domain)} />
         <ResultsErrors errors={results.spfErrors} warnings={results.spfWarnings} />
         <div className="panel marginBottom--none">
           <div className='panel__heading'>
@@ -53,9 +66,11 @@ class ResultsPage extends Component {
   }
 
   render() {
+    const { loading, results, inspect, loggedIn, params: { domain } } = this.props;
     return (
       <div>
         <BackLink to='/spf/inspector' title='Back to SPF Inspector' />
+        {!loading && <ResultsHeader {...results} loggedIn={loggedIn} domain={domain} refresh={() => inspect(domain)} />}
         {this.renderBody()}
       </div>
     );

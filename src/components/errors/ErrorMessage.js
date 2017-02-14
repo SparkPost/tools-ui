@@ -49,7 +49,7 @@ class ErrorMessage extends Component {
 }
 
 ErrorMessage.defaultProps = {
-  friendly: 'Something happened!',
+  friendly: 'An error occurred',
   details: null,
   icon: 'exclamation-circle'
 };

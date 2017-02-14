@@ -4,6 +4,7 @@ import { ActionButton } from 'components/button/Button';
 import ShowEmail from './components/ShowEmail';
 import GenerateEmail from './components/GenerateEmail';
 import { getValidatorEmail, deleteSavedValidatorEmail, checkSavedValidatorEmail } from 'actions/dkim';
+import ApiErrorMessage from 'components/errors/ApiErrorMessage';
 import { connect } from 'react-redux';
 
 class HomePage extends Component {
@@ -31,20 +32,24 @@ class HomePage extends Component {
   }
 
   renderGenerateOrEmail() {
-    const { email, error } = this.props;
-
-    return email ? <ShowEmail email={email} /> : <GenerateEmail generate={() => this.props.getValidatorEmail()} error={error} />;
+    const { email, error, getValidatorEmail } = this.props;
+    return (
+      <div>
+        {error && <ApiErrorMessage friendly='Unable to generate email address, please try again.' error={error} />}
+        {email ? <ShowEmail email={email} /> : <GenerateEmail generate={() => getValidatorEmail()} />}
+      </div>
+    );
   }
 
   render() {
-    const { loading } = this.props;
+    const { loading, email } = this.props;
     return (
       <div className='flex center-xs'>
         <div className='col-xs-12 col-md-10 col-lg-8'>
           <h1>DKIM Validator</h1>
           <p className='marginBottom--lg'>{INTRO_TEXT}</p>
           {loading ? this.renderLoading() : this.renderGenerateOrEmail()}
-          {process.env.NODE_ENV === 'development' && this.renderDeleteCookie()}
+          {(email && process.env.NODE_ENV === 'development') && this.renderDeleteCookie()}
         </div>
       </div>
     );
@@ -58,4 +63,3 @@ export default connect(mapStateToProps, {
   deleteSavedValidatorEmail,
   checkSavedValidatorEmail
 })(HomePage);
-

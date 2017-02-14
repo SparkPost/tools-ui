@@ -5,7 +5,7 @@ import DKIMHome from 'pages/dkim/HomePage';
 import DKIMResults from 'pages/dkim/ResultListPage';
 import DKIMDetail from 'pages/dkim/ResultDetailPage';
 import NotFound from 'pages/notFound/NotFound';
-import SPFQuery from 'pages/spf/Query';
+import SPFQuery from 'pages/spf/QueryPage';
 import SPFResults from 'pages/spf/ResultsPage';
 import SPFBuilder from 'pages/builder/Builder';
 

@@ -1,18 +1,3 @@
-
-function chainedSaveHistory(domain) {
-  return (result) => {
-    const { errors, warnings } = result;
-    const hasErrors = (errors && errors.length);
-    const hasWarnings = (warnings && warnings.length);
-    let status = 'valid';
-
-    if (hasWarnings) { status = 'warning'; }
-    if (hasErrors) { status = 'error'; }
-
-    return saveHistory(domain, status);
-  };
-}
-
 export function saveHistory(domain, status) {
   return {
     type: 'SPARKPOST_API_REQUEST',
@@ -33,7 +18,12 @@ export function inspect(domain) {
       url: '/messaging-tools/spf/query',
       params: { domain },
       chain: {
-        success: chainedSaveHistory(domain)
+        success: ({ dispatch, getState, results: { status } }) => {
+          const { auth } = getState();
+          if (auth.loggedIn) {
+            dispatch(saveHistory(domain, status));
+          }
+        }
       }
     }
   };

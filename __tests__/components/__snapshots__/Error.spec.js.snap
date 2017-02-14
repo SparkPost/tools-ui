@@ -12,7 +12,7 @@ exports[`ErrorMessage component should render correctly with a supplied icon 1`]
       } />
     <p
       className="errorMessage__friendly">
-      Something happened!
+      An error occurred
     </p>
   </div>
 </div>
@@ -77,7 +77,7 @@ exports[`ErrorMessage component should render the default message with no props 
       } />
     <p
       className="errorMessage__friendly">
-      Something happened!
+      An error occurred
     </p>
   </div>
 </div>

@@ -44,6 +44,14 @@ if (env['process.env'].NODE_ENV !== '"production"') {
   throw new Error('Production builds must have NODE_ENV=production.');
 }
 
+// handle setting Google Tag Manager ID depending on environment
+var gtmId;
+if (env['process.env'].REACT_APP_ENV === '"staging"') {
+  gtmId = 'GTM-N6D3QT';
+} else {
+  gtmId = 'GTM-WN7C84';
+}
+
 // This is the production configuration.
 // It compiles slowly and is focused on producing a fast and minimal bundle.
 // The development configuration is different and lives in a separate file.
@@ -186,7 +194,8 @@ module.exports = {
     // In production, it will be an empty string unless you specify "homepage"
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin({
-      PUBLIC_URL: publicUrl
+      PUBLIC_URL: publicUrl,
+      GTM_ID: gtmId
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({

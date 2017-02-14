@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Table from 'components/table/Table';
 import ResultDetailHeader from './components/ResultDetailHeader';
 import { BackLink } from 'components/button/Button';
-import ErrorMessage from 'components/errors/ErrorMessage';
+import ApiErrorMessage from 'components/errors/ApiErrorMessage';
 import { DETAIL_ERROR_MESSAGE } from './constants';
 
 import { getValidatorDetailedResult } from 'actions/dkim';
@@ -44,7 +44,7 @@ class ResultDetailPage extends Component {
       <div className='flex center-xs'>
         <div className='col-xs-12 col-md-10'>
           <div className='text--left'><BackLink to={back} title='DKIM Results' /></div>
-          {error && <ErrorMessage friendly={DETAIL_ERROR_MESSAGE} details={error.message} />}
+          {error && <ApiErrorMessage friendly={DETAIL_ERROR_MESSAGE} error={error} />}
           {loading ? this.renderLoading() : this.renderDetails()}
         </div>
       </div>
