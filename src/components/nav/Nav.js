@@ -56,7 +56,7 @@ export class Nav extends Component {
     return (
       <div className='nav__right'>
         <button className='nav__link button--link' onClick={() => this.props.logout()}>Logout</button>
-        <a href={`${config.appUrl}/dashboard`} className='button button--blue nav__button'>SparkPost Dashboard</a>
+        <a href={`${config.appUrl}/dashboard`} className='button button--blue nav__button' target='_blank'>SparkPost Dashboard</a>
       </div>
     );
   }

@@ -11,7 +11,6 @@ exports[`ResultsHeader Snapshots baseline snapshot 1`] = `
           <a
             className="actionLink"
             href="https://TEST.sparkpost.com/sign-up?return=http://localhost/"
-            onClick={null}
             title="Save Results">
             Save Results
           </a>

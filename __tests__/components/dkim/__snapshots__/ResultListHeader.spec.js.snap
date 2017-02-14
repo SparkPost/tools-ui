@@ -10,7 +10,6 @@ exports[`ResultListHeader component should render 1`] = `
         <a
           className="actionLink"
           href="https://TEST.sparkpost.com/sign-up?return=http://localhost/"
-          onClick={null}
           title="Save Results">
           Save Results
         </a>
@@ -144,7 +143,6 @@ exports[`ResultListHeader component should render when not logged in 1`] = `
         <a
           className="actionLink"
           href="https://TEST.sparkpost.com/sign-up?return=http://localhost/"
-          onClick={null}
           title="Save Results">
           Save Results
         </a>
@@ -218,7 +216,6 @@ exports[`ResultListHeader component should render with an error present 1`] = `
         <a
           className="actionLink"
           href="https://TEST.sparkpost.com/sign-up?return=http://localhost/"
-          onClick={null}
           title="Save Results">
           Save Results
         </a>

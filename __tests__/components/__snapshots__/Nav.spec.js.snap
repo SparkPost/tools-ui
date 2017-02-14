@@ -99,7 +99,8 @@ exports[`Nav component should render correctly when logged in 1`] = `
       </button>
       <a
         className="button button--blue nav__button"
-        href="https://TEST.sparkpost.com/dashboard">
+        href="https://TEST.sparkpost.com/dashboard"
+        target="_blank">
         SparkPost Dashboard
       </a>
     </div>

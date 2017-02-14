@@ -1,18 +1,21 @@
 import React from 'react';
+import classnames from 'classnames';
 import { CopyPopover } from 'components/popover/Popover';
 import { ActionLink, SaveResultsLink } from 'components/button/Button';
 
 import './ResultDetailHeader.scss';
+
 
 const ResultDetailRow = ({ rows }) => (
   <span>
     {rows.map((row, key) => (
       <div className='dkimResultDetailHeader' key={key}>
         {row.map((value, key) => {
-          if (key === 0) {
-            return <span className='dkimResultDetailHeader__label' key={key}>{value}</span>;
-          }
-          return <span className='dkimResultDetailHeader__value' key={key}>{value}</span>;
+          const classes = classnames({
+            'dkimResultDetailHeader__label': key === 0,
+            'dkimResultDetailHeader__value': key !== 0
+          });
+          return <span key={key} className={classes}>{value}</span>;
         })}
       </div>
     ))}

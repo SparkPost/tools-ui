@@ -49,7 +49,7 @@ const ActionLink = (props) => {
   const { to = null, external = null, onClick = null, title = '', children } = props;
 
   if (external) {
-    return <a href={external} onClick={onClick} className='actionLink' title={title}>{children}</a>;
+    return <a href={external} className='actionLink' title={title}>{children}</a>;
   }
 
   return <Link to={to} onClick={onClick} className='actionLink' title={title}>{children}</Link>;
