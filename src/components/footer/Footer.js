@@ -4,16 +4,15 @@ import classnames from 'classnames';
 
 import { Logo } from 'components/logo/Logo';
 import { CTA, LINKS } from 'components/footer/constants';
-import { EXTERNAL_LINK_QUERY_PARAMS } from 'helpers/constants';
+import { getQueryParams } from 'helpers/getCurrentUrl';
 
 import './Footer.scss';
 
 export class Footer extends Component {
 
   render() {
-    console.log(EXTERNAL_LINK_QUERY_PARAMS); // eslint-disable-line no-console
     const { loggedIn } = this.props;
-    const signUpUrl = `http://app.sparkpost.com/sign-up?sfdcid=${EXTERNAL_LINK_QUERY_PARAMS.sfdcid}`;
+    const signUpUrl = `http://app.sparkpost.com/sign-up?${getQueryParams(location)}`;
 
     return (
       <div className={classnames('footer', { 'footer--loggedIn': loggedIn })}>

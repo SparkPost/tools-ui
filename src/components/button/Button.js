@@ -1,12 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
-import _ from 'lodash';
 import Icon from 'components/Icon';
 import { HoverPopover } from 'components/popover/Popover';
 import config from 'config/index';
-import getCurrentUrl from 'helpers/getCurrentUrl';
+import { getEncodedUrl, getQueryParams } from 'helpers/getCurrentUrl';
 import classNames from 'classnames';
-import { EXTERNAL_LINK_QUERY_PARAMS } from 'helpers/constants';
 const noop = () => {};
 
 import './Button.scss';
@@ -21,10 +19,9 @@ const mapPropsToClasses = ({ type, size, accent, fullWidth, icon, states, extraC
   }, states, extraClasses)
 );
 
-const getLoginSignUpQueryParams = (location) => {
-  const params = _.map(EXTERNAL_LINK_QUERY_PARAMS, (val, key) => `${key}=${val}`).join('&');
-  return `return=${getCurrentUrl(location)}&${params}`;
-};
+const getLoginSignUpQueryParams = (location) => (
+  `return=${getEncodedUrl(location)}&${getQueryParams(location)}`
+);
 
 const ActionButton = (props) => {
   const { action = noop, children } = props;

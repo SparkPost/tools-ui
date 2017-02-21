@@ -7,13 +7,13 @@ exports[`Nav component should render correctly by default 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/some/path?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2Fsome%2Fpath%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/some/path?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2Fsome%2Fpath%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Sign Up">
         Sign Up
       </a>
@@ -180,13 +180,13 @@ exports[`Nav component should render correctly when not logged in 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/some/path?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2Fsome%2Fpath%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/some/path?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2Fsome%2Fpath%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Sign Up">
         Sign Up
       </a>
@@ -267,13 +267,13 @@ exports[`Nav component should render correctly with a builder path 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/spf/builder?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2Fspf%2Fbuilder%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/spf/builder?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2Fspf%2Fbuilder%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Sign Up">
         Sign Up
       </a>
@@ -354,13 +354,13 @@ exports[`Nav component should render correctly with a dkim path 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/dkim/path?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2Fdkim%2Fpath%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/dkim/path?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2Fdkim%2Fpath%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Sign Up">
         Sign Up
       </a>
@@ -441,13 +441,13 @@ exports[`Nav component should render correctly with an inspector path 1`] = `
       className="nav__right">
       <a
         className="sp-sign-in nav__link"
-        href="https://TEST.sparkpost.com/auth?return=http://localhost/spf/inspector?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2Fspf%2Finspector%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Login">
         Login
       </a>
       <a
         className="sp-sign-up button button--blue nav__button"
-        href="https://TEST.sparkpost.com/sign-up?return=http://localhost/spf/inspector?maybe=something&src=SP-Tools&sfdcid=701600000019BWh"
+        href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2Fspf%2Finspector%3Fmaybe%3Dsomething&src=SP-Tools&sfdcid=701600000019BWh&maybe=something"
         title="Sign Up">
         Sign Up
       </a>
