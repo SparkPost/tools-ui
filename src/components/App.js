@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 import Nav from 'components/nav/Nav';
 import Footer from 'components/footer/Footer';
+import { Meta, DefaultMeta } from 'components/Meta';
 import { checkLogin } from 'actions/auth';
 
 export class App extends Component {
@@ -17,6 +18,8 @@ export class App extends Component {
     const { children, location, loggedIn } = this.props;
     return (
       <div className={classnames('pageWrapper', { 'pageWrapper--loggedIn': loggedIn })}>
+        <DefaultMeta />
+        <Meta location={location} />
         <div className='container container--tool'>
           {children}
         </div>
@@ -25,7 +28,6 @@ export class App extends Component {
       </div>
     );
   }
-
 }
 
 const mapStateToProps = ({ auth }) => ({ loggedIn: auth.loggedIn });
