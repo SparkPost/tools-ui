@@ -4,12 +4,16 @@ import classnames from 'classnames';
 
 import { Logo } from 'components/logo/Logo';
 import { CTA, LINKS } from 'components/footer/constants';
+import { EXTERNAL_LINK_QUERY_PARAMS } from 'helpers/constants';
 
 import './Footer.scss';
 
 export class Footer extends Component {
+
   render() {
+    console.log(EXTERNAL_LINK_QUERY_PARAMS); // eslint-disable-line no-console
     const { loggedIn } = this.props;
+    const signUpUrl = `http://app.sparkpost.com/sign-up?sfdcid=${EXTERNAL_LINK_QUERY_PARAMS.sfdcid}`;
 
     return (
       <div className={classnames('footer', { 'footer--loggedIn': loggedIn })}>
@@ -20,7 +24,7 @@ export class Footer extends Component {
             <div className='col-xs-12 col-md-8'>
               <h1>{CTA.header}</h1>
               <p className='marginBottom--lg'>{CTA.text}</p>
-              <a href='http://app.sparkpost.com/sign-up?sfdcid=701600000019BWh' title='SparkPost' className='button button--l button--blue'>{CTA.button}</a>
+              <a href={signUpUrl} title='SparkPost' className='button button--l button--blue'>{CTA.button}</a>
             </div>
           </div>}
 
