@@ -1,4 +1,4 @@
-import { baseUrl } from 'helpers/getCurrentUrl';
+import { baseUrl } from 'helpers/url';
 
 export const INTRO_TEXT = 'Create a Sender Policy Framework record for your domain.';
 
