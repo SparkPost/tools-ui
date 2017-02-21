@@ -1,4 +1,5 @@
 import qs from 'qs';
+import _ from 'lodash';
 import config from 'config/index';
 const baseUrl = window.location.href.replace(/^(https?):\/\/([^/?]+)((\/|\?).*)?/, '$1://$2');
 
@@ -7,6 +8,6 @@ export const getEncodedUrl = ({ pathname = '', search = '' }) => encodeURICompon
 export const getQueryParams = ({ search = ''}) => {
   search = search.replace('?', '');
   const allParams = {};
-  Object.assign(allParams, config.signupQueryDefaults, qs.parse(search));
+  _.merge(allParams, config.signupQueryDefaults, qs.parse(search));
   return qs.stringify(allParams);
 };
