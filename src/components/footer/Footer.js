@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 import { Logo } from 'components/logo/Logo';
 import { CTA, LINKS } from 'components/footer/constants';
-import { getQueryParams } from 'helpers/getCurrentUrl';
+import { getQueryParams } from 'helpers/url';
 
 import './Footer.scss';
 

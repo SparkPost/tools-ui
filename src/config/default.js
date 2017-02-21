@@ -12,5 +12,9 @@ export default {
       Authorization: 'Basic bXN5c1VJTGltaXRlZDphZjE0OTdkYS02NjI5LTQ3NTEtODljZS01ZDBmODE4N2MyMDQ=',
       'Content-Type': 'application/x-www-form-urlencoded'
     }
+  },
+  signupQueryDefaults: {
+    src: 'SP-Tools',
+    sfdcid: '701600000019BWh'
   }
 };

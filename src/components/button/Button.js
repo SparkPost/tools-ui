@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import Icon from 'components/Icon';
 import { HoverPopover } from 'components/popover/Popover';
 import config from 'config/index';
-import { getEncodedUrl, getQueryParams } from 'helpers/getCurrentUrl';
+import { getEncodedUrl, getQueryParams } from 'helpers/url';
 import classNames from 'classnames';
 const noop = () => {};
 
