@@ -74,9 +74,15 @@ recursive(paths.appBuild, (err, fileNames) => {
   // Merge with the public folder
   copyPublicFolder();
 
-  // remove robots.txt for prod site
+  const robots = path.join(paths.appBuild, 'robots.txt');
+  const robotsProd = path.join(paths.appBuild, 'robots-prod.txt');
+
+  // set up robots.txt for the environment
   if (process.env.REACT_APP_ENV === 'production') {
-    fs.removeSync(path.join(paths.appBuild, 'robots.txt'));
+    fs.removeSync(robots);
+    fs.renameSync(robotsProd, robots);
+  } else {
+    fs.removeSync(robotsProd);
   }
 });
 
