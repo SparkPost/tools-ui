@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import ResultListRow from './components/ResultListRow';
 import ResultListHeader from './components/ResultListHeader';
 import ApiErrorMessage from 'components/errors/ApiErrorMessage';
