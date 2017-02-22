@@ -31,7 +31,7 @@ export class Nav extends Component {
   }
 
   handleScroll(e) {
-    const top = window.scrollY || e.srcElement.body.scrollTop;
+    const top = window.scrollY || e.target.body.scrollTop;
     this.setState({
       sticky: top !== 0
     });
