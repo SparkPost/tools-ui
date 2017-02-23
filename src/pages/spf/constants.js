@@ -36,10 +36,6 @@ export const inspectorMeta = {
       content: 'SPF email authentication is important, but hard to grok. Check SPF rules for sending from your domain with this easy tool from the email experts at SparkPost.'
     },
     {
-      name: 'twitter:card',
-      content: 'summary_large_image'
-    },
-    {
       name: 'twitter:image',
       content: `${baseUrl}/images/inspector_twitter.png`
     }

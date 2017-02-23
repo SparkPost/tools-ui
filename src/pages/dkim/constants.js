@@ -39,10 +39,6 @@ export const dkimMeta = {
       content: 'DKIM is a key email authentication standard. Verify your messages have working DKIM signatures with this easy tool from the email experts at SparkPost.'
     },
     {
-      name: 'twitter:card',
-      content: 'summary_large_image'
-    },
-    {
       name: 'twitter:image',
       content: `${baseUrl}/images/dkim_twitter.png`
     }
