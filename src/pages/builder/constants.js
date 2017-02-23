@@ -55,10 +55,6 @@ export const builderMeta = {
       content: 'SPF email authentication is important, but hard to grok. This tool from the experts at SparkPost makes it easy to build SPF rules for sending from your domain.'
     },
     {
-      name: 'twitter:card',
-      content: 'summary_large_image'
-    },
-    {
       name: 'twitter:image',
       content: `${baseUrl}/images/builder_twitter.png`
     }
