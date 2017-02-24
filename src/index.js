@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
 import { useScroll } from 'react-router-scroll';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
@@ -19,11 +18,11 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunk, spApiMiddleware))
 );
 
-const history = syncHistoryWithStore(browserHistory, store);
-history.listen((location) => store.dispatch(trackPageView(location.pathname)));
+trackPageView(browserHistory.getCurrentLocation().pathname); // Tracks initial page load
+browserHistory.listen((location) => store.dispatch(trackPageView(location.pathname)));
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router history={history} routes={routes} render={applyRouterMiddleware(useScroll())} />
+    <Router history={browserHistory} routes={routes} render={applyRouterMiddleware(useScroll())} />
   </Provider>
 ), document.getElementById('root'));

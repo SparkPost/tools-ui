@@ -20,6 +20,7 @@ export function trackLogout() {
   return { type: 'MIXPANEL_LOGOUT' };
 }
 
+// Tracks inspect success
 export function trackSpfInspect(domain) {
   mixpanel.track('Tools SPF Inspect', { domain });
   return { type: 'MIXPANEL_SPF_INSPECT' };
@@ -32,4 +33,10 @@ export function trackSpfInspect(domain) {
 export function trackButtonClick(title, component) {
   mixpanel.track('Tools Button Click', { title, component });
   return { type: 'MIXPANEL_BUTTON_CLICK' };
+}
+
+// Tracks clicks on history list rows
+export function trackSpfHistoryClick(domain) {
+  mixpanel.track('Tools SPF History Click', { domain });
+  return { type: 'MIXPANEL_SPF_HISTORY_CLICK' };
 }

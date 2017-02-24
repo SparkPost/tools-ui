@@ -15,11 +15,6 @@ export class App extends Component {
     this.props.checkLogin();
   }
 
-  componentDidMount() {
-    // This is only here for first load. The .listen hook in index.js doesnt fire on first load.
-    this.props.trackPageView(this.props.location.pathname);
-  }
-
   render() {
     const { children, location, loggedIn } = this.props;
     return (
