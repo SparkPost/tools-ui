@@ -35,7 +35,7 @@ const ResultDetailHeader = ({ rows, loggedIn, status, error }) => (
       <div className='float--right'>
         {!loggedIn && <SaveResultsLink/>}
         <CopyPopover>
-          <ActionLink title='Share'>Share</ActionLink>
+          <ActionLink title='Share' track={true}>Share</ActionLink>
         </CopyPopover>
       </div>
       <HeaderRow rows={rows} />

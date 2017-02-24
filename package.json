@@ -42,6 +42,7 @@
     "promise": "7.1.1",
     "react-dev-utils": "^0.4.2",
     "react-helmet": "^4.0.0",
+    "react-router-redux": "^4.0.8",
     "react-router-scroll": "^0.4.1",
     "react-test-renderer": "^15.4.2",
     "recursive-readdir": "2.1.0",

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 
+import { trackButtonClick } from 'actions/mixpanel';
 import { Logo } from 'components/logo/Logo';
 import { CTA, LINKS } from 'components/footer/constants';
 import { getQueryParams } from 'helpers/url';
@@ -13,6 +14,7 @@ export class Footer extends Component {
   render() {
     const { loggedIn } = this.props;
     const signUpUrl = `http://app.sparkpost.com/sign-up?${getQueryParams(location)}`;
+    const handleClick = () => trackButtonClick('Sign Up', 'Footer');
 
     return (
       <div className={classnames('footer', { 'footer--loggedIn': loggedIn })}>
@@ -23,7 +25,7 @@ export class Footer extends Component {
             <div className='col-xs-12 col-md-8'>
               <h1>{CTA.header}</h1>
               <p className='marginBottom--lg'>{CTA.text}</p>
-              <a href={signUpUrl} title='SparkPost' className='button button--l button--blue'>{CTA.button}</a>
+              <a href={signUpUrl} onClick={handleClick} title='SparkPost' className='button button--l button--blue'>{CTA.button}</a>
             </div>
           </div>}
 
@@ -42,4 +44,4 @@ export class Footer extends Component {
 }
 
 const mapStateToProps = ({ auth }) => ({ loggedIn: auth.loggedIn });
-export default connect(mapStateToProps)(Footer);
+export default connect(mapStateToProps, { trackButtonClick })(Footer);

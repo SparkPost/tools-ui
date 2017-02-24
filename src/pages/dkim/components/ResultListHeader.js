@@ -11,9 +11,9 @@ export default ({ email, getResults, loggedIn }) => (
       <div className='float--right'>
         {!loggedIn && <SaveResultsLink/>}
         <CopyPopover>
-          <ActionLink title='Share'>Share</ActionLink>
+          <ActionLink title='Share' track={true}>Share</ActionLink>
         </CopyPopover>
-        <ActionLink onClick={getResults} title='Refresh Messages'>Refresh</ActionLink>
+        <ActionLink onClick={getResults} title='Refresh Messages' track={true}>Refresh</ActionLink>
       </div>
 
       <p className='dkimResultListHeader__label marginBottom--xs'>Generated Test Address</p>

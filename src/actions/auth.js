@@ -1,6 +1,6 @@
 import cookie from 'js-cookie';
 import config from 'config/index';
-
+import { trackLogin, trackLogout } from './mixpanel';
 const { authCookie } = config;
 
 export function checkLogin() {
@@ -28,6 +28,8 @@ export function checkLogin() {
           method: 'get'
         }
       });
+
+      dispatch(trackLogin());
     } else {
       dispatch({
         type: 'AUTH_LOG_OUT'
@@ -50,8 +52,11 @@ export function refresh(token, refreshToken) {
 }
 
 export function logout() {
-  cookie.remove(authCookie.name, authCookie.options);
-  return {
-    type: 'AUTH_LOG_OUT'
+  return (dispatch) => {
+    cookie.remove(authCookie.name, authCookie.options);
+    dispatch(trackLogout());
+    dispatch({
+      type: 'AUTH_LOG_OUT'
+    });
   };
 }

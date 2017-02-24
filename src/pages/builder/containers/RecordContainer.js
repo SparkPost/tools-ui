@@ -76,7 +76,7 @@ class RecordContainer extends Component {
         <div className='panel panel--accent builder-record__panel' ref={(panel) => this.panel = panel} style={{ width: `${panelWidth}px`}}>
           <div className='panel__body'>
             <div className='float--right'>
-              <CopyPopover stringToCopy={record}><ActionLink>Copy</ActionLink></CopyPopover>
+              <CopyPopover stringToCopy={record}><ActionLink title='Copy' track={true}>Copy</ActionLink></CopyPopover>
             </div>
             <code className='marginBottom--sm'><strong>{record}</strong></code>
             {(form.values.domain && !form.syncErrors.domain) && <p className='builder-record__instruction'>Add this TXT record to your DNS, then <Link to={`/spf/inspector/${form.values.domain}`}>check out the inspector</Link> to make sure you've set it up correctly.</p>}

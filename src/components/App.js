@@ -5,6 +5,7 @@ import Nav from 'components/nav/Nav';
 import Footer from 'components/footer/Footer';
 import { Meta, DefaultMeta } from 'components/Meta';
 import { checkLogin } from 'actions/auth';
+import { trackPageView } from 'actions/mixpanel';
 
 export class App extends Component {
 
@@ -12,6 +13,11 @@ export class App extends Component {
   // the cookie is read/token in place in time
   componentWillMount() {
     this.props.checkLogin();
+  }
+
+  componentDidMount() {
+    // This is only here for first load. The .listen hook in index.js doesnt fire on first load.
+    this.props.trackPageView(this.props.location.pathname);
   }
 
   render() {
@@ -31,4 +37,4 @@ export class App extends Component {
 }
 
 const mapStateToProps = ({ auth }) => ({ loggedIn: auth.loggedIn });
-export default connect(mapStateToProps, { checkLogin })(App);
+export default connect(mapStateToProps, { checkLogin, trackPageView })(App);
