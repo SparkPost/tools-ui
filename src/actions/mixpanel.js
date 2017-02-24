@@ -20,8 +20,14 @@ export function trackLogout() {
   return { type: 'MIXPANEL_LOGOUT' };
 }
 
+export function trackSpfInspect(domain) {
+  mixpanel.track('Tools SPF Inspect', { domain });
+  return { type: 'MIXPANEL_SPF_INSPECT' };
+}
+
+// UI Mixpanel Events
+
 // Tracks button clicks
-// ie. share, refresh, copy, auth links
 // Some component must have prop track={true}
 export function trackButtonClick(title, component) {
   mixpanel.track('Tools Button Click', { title, component });

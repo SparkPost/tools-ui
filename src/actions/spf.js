@@ -1,3 +1,5 @@
+import { trackSpfInspect } from 'actions/mixpanel';
+
 export function saveHistory(domain, status) {
   return {
     type: 'SPARKPOST_API_REQUEST',
@@ -23,6 +25,7 @@ export function inspect(domain) {
           if (auth.loggedIn) {
             dispatch(saveHistory(domain, status));
           }
+          dispatch(trackSpfInspect(domain));
         }
       }
     }
