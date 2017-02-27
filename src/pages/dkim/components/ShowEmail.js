@@ -16,7 +16,7 @@ export default (props) => {
               <input className='input__text input--full' type="text" readOnly={true} value={email} />
               <div className='input__buttonWrapper'>
                 <CopyPopover placement='top' block={true} stringToCopy={email}>
-                  <button className='button button--muted button--full'>Copy</button>
+                  <Button type='muted' fullWidth={true} track={true}>Copy</Button>
                 </CopyPopover>
               </div>
             </div>

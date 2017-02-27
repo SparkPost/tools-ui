@@ -59,7 +59,7 @@ export const Hosts = ({ fields, prefix = '' }) => (
 );
 
 export const Radio = ({ input, label }) => {
-  const buttonClasses = classnames('button col-xs marginRight--none padding--none', {
+  const buttonClasses = classnames('button col-xs marginRight--none padding--none text--center', {
     'button--orange is-pressed': input.value === label,
     'button--muted': input.value !== label
   });
