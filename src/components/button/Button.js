@@ -25,27 +25,16 @@ const getLoginSignUpQueryParams = (location) => (
   `return=${getEncodedUrl(location)}&${getQueryParams(location)}`
 );
 
-const ActionButton = (props) => {
-  const { action = noop, children } = props;
+const DetachedButton = (props) => {
+  const { to = null, action = noop, children, track = false } = props;
   const classes = mapPropsToClasses(props);
-
-  return (
-    <button onClick={action} className={classes}>
-      {children}
-    </button>
-  );
+  const handleClick = () => {
+    action && action();
+    track && trackButtonClick(children, 'Button');
+  };
+  return <Link to={to} onClick={handleClick} className={classes}>{children}</Link>;
 };
-
-const LinkButton = (props) => {
-  const { to = null, children } = props;
-  const classes = mapPropsToClasses(props);
-
-  return (
-    <Link to={to} className={classes}>
-      {children}
-    </Link>
-  );
-};
+const Button = connect(null, { trackButtonClick })(DetachedButton);
 
 /**
  * Produces an orange link
@@ -98,4 +87,4 @@ const DetachedSpSignUpLink = ({ location = {}, classes, children, trackButtonCli
 };
 const SpSignUpLink = connect(null, { trackButtonClick })(DetachedSpSignUpLink);
 
-export { ActionButton, LinkButton, ActionLink, BackLink, SpLoginLink, SpSignUpLink, SaveResultsLink };
+export { Button, ActionLink, BackLink, SpLoginLink, SpSignUpLink, SaveResultsLink };

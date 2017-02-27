@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { INTRO_TEXT } from './constants';
-import { ActionButton } from 'components/button/Button';
+import { Button } from 'components/button/Button';
 import ShowEmail from './components/ShowEmail';
 import GenerateEmail from './components/GenerateEmail';
 import { getValidatorEmail, deleteSavedValidatorEmail, checkSavedValidatorEmail } from 'actions/dkim';
@@ -16,7 +16,7 @@ class HomePage extends Component {
     return (
       <div className='for-testing-only-DUH'>
         <br/><br/>
-        <ActionButton type='red' size='s' action={() => this.props.deleteSavedValidatorEmail()}>Delete my email cookie and start over</ActionButton>
+        <Button type='red' size='s' action={() => this.props.deleteSavedValidatorEmail()}>Delete my email cookie and start over</Button>
       </div>
     );
   }

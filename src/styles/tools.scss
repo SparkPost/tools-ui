@@ -40,3 +40,7 @@ code {
   word-break: normal;;
   color: grayscale(3);
 }
+
+.button:not(disabled):hover {
+  cursor: pointer;
+}
