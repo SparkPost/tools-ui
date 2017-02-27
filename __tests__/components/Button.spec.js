@@ -1,12 +1,17 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { ActionButton, LinkButton, ActionLink, BackLink, SpLoginLink, SpSignUpLink } from 'components/button/Button';
+import {
+  BackLink,
+  DetachedButton as Button,
+  DetachedActionLink as ActionLink,
+  DetachedSpLoginLink as SpLoginLink,
+  DetachedSpSignUpLink as SpSignUpLink } from 'components/button/Button';
 
 describe('snapshot tests', () => {
-  test('ActionButton will render correctly with all options', () => {
+  test('Button will render correctly with all options', () => {
     const someFunction = () => {};
-    expect(renderer.create(<ActionButton
+    expect(renderer.create(<Button
       action={someFunction}
       type='muted'
       size='l'
@@ -14,30 +19,14 @@ describe('snapshot tests', () => {
       icon
       accent='magenta'
       states={['is-disabled', 'is-awesome']}
+      to='a url'
       extraClasses={['has-error', 'best-button-ever']}
-    >This is an action button</ActionButton>)).toMatchSnapshot();
+    >This is an action button</Button>)).toMatchSnapshot();
   });
 
-  test('ActionButton will render correctly with no options', () => {
+  test('Button will render correctly with no options', () => {
     const someFunction = () => {};
-    expect(renderer.create(<ActionButton>ACTION</ActionButton>)).toMatchSnapshot();
-  });
-
-  test('LinkButton will render correctly with all options', () => {
-    expect(renderer.create(<LinkButton
-      to='some url'
-      type='muted'
-      size='l'
-      fullWidth
-      icon
-      accent='magenta'
-      states={['is-disabled', 'is-awesome']}
-      extraClasses={['has-error', 'best-button-ever']}
-    >This is a link button</LinkButton>)).toMatchSnapshot();
-  });
-
-  test('LinkButton will render correctly with no options', () => {
-    expect(renderer.create(<LinkButton>LINK</LinkButton>)).toMatchSnapshot();
+    expect(renderer.create(<Button>ACTION</Button>)).toMatchSnapshot();
   });
 
   test('ActionLink will render correctly with all options', () => {

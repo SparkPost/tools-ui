@@ -1,19 +1,3 @@
-exports[`snapshot tests ActionButton will render correctly with all options 1`] = `
-<button
-  className="button button--muted button--l button--magentaAccent button--full button--icon is-disabled is-awesome has-error best-button-ever"
-  onClick={[Function]}>
-  This is an action button
-</button>
-`;
-
-exports[`snapshot tests ActionButton will render correctly with no options 1`] = `
-<button
-  className="button"
-  onClick={[Function]}>
-  ACTION
-</button>
-`;
-
 exports[`snapshot tests ActionLink will render correctly with all options 1`] = `
 <a
   className="actionLink"
@@ -56,21 +40,21 @@ exports[`snapshot tests BackLink will render correctly with no options 1`] = `
 </a>
 `;
 
-exports[`snapshot tests LinkButton will render correctly with all options 1`] = `
+exports[`snapshot tests Button will render correctly with all options 1`] = `
 <a
   className="button button--muted button--l button--magentaAccent button--full button--icon is-disabled is-awesome has-error best-button-ever"
   onClick={[Function]}
   style={Object {}}>
-  This is a link button
+  This is an action button
 </a>
 `;
 
-exports[`snapshot tests LinkButton will render correctly with no options 1`] = `
+exports[`snapshot tests Button will render correctly with no options 1`] = `
 <a
   className="button"
   onClick={[Function]}
   style={Object {}}>
-  LINK
+  ACTION
 </a>
 `;
 
@@ -78,6 +62,7 @@ exports[`snapshot tests SpLoginLink will render correctly with all options 1`] =
 <a
   className="sp-sign-in a-list of-classes"
   href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2Fsome%2Fpath%3Fsome%3Dsearch&src=SP-Tools&sfdcid=701600000019BWh&some=search"
+  onClick={[Function]}
   title="Login">
   Log In
 </a>
@@ -87,6 +72,7 @@ exports[`snapshot tests SpLoginLink will render correctly with no options 1`] = 
 <a
   className="sp-sign-in"
   href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost&src=SP-Tools&sfdcid=701600000019BWh"
+  onClick={[Function]}
   title="Login" />
 `;
 
@@ -94,6 +80,7 @@ exports[`snapshot tests SpSignUpLink will render correctly with all options 1`] 
 <a
   className="sp-sign-up a-list of-classes"
   href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2Fsome%2Fpath%3Fsome%3Dsearch&src=SP-Tools&sfdcid=701600000019BWh&some=search"
+  onClick={[Function]}
   title="Sign Up">
   Sign Up
 </a>
@@ -103,5 +90,6 @@ exports[`snapshot tests SpSignUpLink will render correctly with no options 1`] =
 <a
   className="sp-sign-up"
   href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost&src=SP-Tools&sfdcid=701600000019BWh"
+  onClick={[Function]}
   title="Sign Up" />
 `;

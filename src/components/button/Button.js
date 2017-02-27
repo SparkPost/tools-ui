@@ -87,4 +87,5 @@ const DetachedSpSignUpLink = ({ location = {}, classes, children, trackButtonCli
 };
 const SpSignUpLink = connect(null, { trackButtonClick })(DetachedSpSignUpLink);
 
-export { Button, ActionLink, BackLink, SpLoginLink, SpSignUpLink, SaveResultsLink };
+export { Button, ActionLink, BackLink, SpLoginLink, SpSignUpLink, SaveResultsLink,
+  DetachedButton, DetachedActionLink, DetachedSpLoginLink, DetachedSpSignUpLink };
