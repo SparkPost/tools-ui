@@ -196,7 +196,7 @@ module.exports = {
     new InterpolateHtmlPlugin({
       PUBLIC_URL: publicUrl,
       GTM_ID: gtmId,
-      MIXPANEL_TOKEN: '6a98d56e5ed713df937c627408fdef9b'
+      MIXPANEL_TOKEN: 'c3f0170097042b438d45ceb16f8c85b2'
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
