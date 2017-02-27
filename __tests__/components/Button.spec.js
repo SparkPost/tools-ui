@@ -19,7 +19,6 @@ describe('snapshot tests', () => {
       icon
       accent='magenta'
       states={['is-disabled', 'is-awesome']}
-      to='a url'
       extraClasses={['has-error', 'best-button-ever']}
     >This is an action button</Button>)).toMatchSnapshot();
   });
@@ -27,6 +26,11 @@ describe('snapshot tests', () => {
   test('Button will render correctly with no options', () => {
     const someFunction = () => {};
     expect(renderer.create(<Button>ACTION</Button>)).toMatchSnapshot();
+  });
+
+  test('Button will render a Link with a url', () => {
+    const someFunction = () => {};
+    expect(renderer.create(<Button to='a url'>ACTION</Button>)).toMatchSnapshot();
   });
 
   test('ActionLink will render correctly with all options', () => {

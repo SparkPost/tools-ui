@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+const { mixpanel } = window;
 
 // Tracks page view
 export function trackPageView(pathname) {

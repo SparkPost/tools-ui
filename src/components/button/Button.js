@@ -32,6 +32,11 @@ const DetachedButton = (props) => {
     action && action();
     track && trackButtonClick(children, 'Button');
   };
+
+  if (!to) {
+    return <button onClick={handleClick} className={classes}>{children}</button>;
+  }
+
   return <Link to={to} onClick={handleClick} className={classes}>{children}</Link>;
 };
 const Button = connect(null, { trackButtonClick })(DetachedButton);
@@ -43,7 +48,7 @@ const Button = connect(null, { trackButtonClick })(DetachedButton);
 const DetachedActionLink = (props) => {
   const { to = null, external = null, onClick = null, title = '', track = false, children, trackButtonClick } = props;
   const handleClick = () => {
-    !external && onClick && onClick();
+    onClick && onClick();
     track && trackButtonClick(title, 'ActionLink');
   };
 

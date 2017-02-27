@@ -40,22 +40,29 @@ exports[`snapshot tests BackLink will render correctly with no options 1`] = `
 </a>
 `;
 
-exports[`snapshot tests Button will render correctly with all options 1`] = `
-<a
-  className="button button--muted button--l button--magentaAccent button--full button--icon is-disabled is-awesome has-error best-button-ever"
-  onClick={[Function]}
-  style={Object {}}>
-  This is an action button
-</a>
-`;
-
-exports[`snapshot tests Button will render correctly with no options 1`] = `
+exports[`snapshot tests Button will render a Link with a url 1`] = `
 <a
   className="button"
   onClick={[Function]}
   style={Object {}}>
   ACTION
 </a>
+`;
+
+exports[`snapshot tests Button will render correctly with all options 1`] = `
+<button
+  className="button button--muted button--l button--magentaAccent button--full button--icon is-disabled is-awesome has-error best-button-ever"
+  onClick={[Function]}>
+  This is an action button
+</button>
+`;
+
+exports[`snapshot tests Button will render correctly with no options 1`] = `
+<button
+  className="button"
+  onClick={[Function]}>
+  ACTION
+</button>
 `;
 
 exports[`snapshot tests SpLoginLink will render correctly with all options 1`] = `
