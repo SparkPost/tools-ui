@@ -8,7 +8,8 @@ export function trackPageView(pathname) {
 
 // Tracks successful login
 // Does not track the button click or refreshed login
-export function trackLogin() {
+export function trackLogin(customerId) {
+  mixpanel.identify(customerId);
   mixpanel.track('Tools Login', {});
   return { type: 'MIXPANEL_LOGIN' };
 }

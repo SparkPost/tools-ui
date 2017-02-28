@@ -14,6 +14,10 @@ export default makeReducer({
         loggedIn: true
       };
     },
-    'AUTH_LOG_OUT': () => ({ loggedIn: false })
+    'AUTH_LOG_OUT': () => ({ loggedIn: false }),
+    'AUTH_LOG_IN_PING_SUCCESS': (state, action) => ({
+      ...state,
+      customerId: action.payload.customerId
+    })
   }
 });

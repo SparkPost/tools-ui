@@ -25,11 +25,15 @@ export function checkLogin() {
         meta: {
           type: 'AUTH_LOG_IN_PING',
           url: '/messaging-tools/ping',
-          method: 'get'
+          method: 'get',
+          chain: {
+            success: () => {
+              dispatch(trackLogin(getState().auth.customerId));
+            }
+          }
         }
       });
 
-      dispatch(trackLogin());
     } else {
       dispatch({
         type: 'AUTH_LOG_OUT'
