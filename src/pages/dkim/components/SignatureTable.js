@@ -8,7 +8,7 @@ const StatusCell = ({ value, error }) => {
   return (
     <td className='table__cell sigTable__statusCell'>
       <span className={`text--semibold ${type}`}>{value}</span>
-      {error && <div className='sigTable__error text--small'>{error}</div>}
+      {error && <div className='sigTable__error text--small'>{error.message}</div>}
     </td>
   );
 };
