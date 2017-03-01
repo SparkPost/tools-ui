@@ -1,5 +1,8 @@
 import React from 'react';
 import Icon from 'components/Icon';
+import { SupportLink } from 'components/SupportLink';
+import { ActionLink } from 'components/button/Button';
+import { supportUrl } from 'components/SupportLink';
 
 import './ResultsErrors.scss';
 
@@ -22,13 +25,12 @@ export default (props) => {
     );
   };
 
-  // TODO find out how to get different errors to finish this section
   // TODO see if we can anchor link to child with error
   const renderRow = (error, idx, type) => (
     <div key={`e-${idx}`} className='panel__body'>
       <p>
         <Icon name={type === 'error' ? 'exclamation-circle' : 'exclamation-triangle'} extras={`paddingRight--xs has-${type}`}/>
-        {error.message}
+        {error.message}. <SupportLink code={error.code} />
       </p>
     </div>
   );
@@ -36,7 +38,9 @@ export default (props) => {
   return (
     <div className='panel spf-resultsErrors'>
       <div className='panel__heading'>
-        {/* <div className='float--right'><ActionLink>How do I fix errors?</ActionLink></div> */}
+        <div className='float--right'>
+          <ActionLink external={supportUrl} target='_blank'>How do I fix errors?</ActionLink>
+        </div>
         { renderSummary() }
       </div>
       { errors.map((error, idx) => renderRow(error, idx, 'error')) }
