@@ -28,4 +28,13 @@ describe('SPFNode Snapshots', () => {
     expect(renderer.create(panel)).toMatchSnapshot();
   });
 
+  test('should display error message and id', () => {
+    const errors = [{
+      message: 'Uh oh',
+      id: 'id-123'
+    }];
+    const panel = <SPFNode errors={ errors } type={ type } value={ value }></SPFNode>;
+    expect(renderer.create(panel)).toMatchSnapshot();
+  });
+
 });
