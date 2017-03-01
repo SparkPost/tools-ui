@@ -11,6 +11,7 @@ exports[`ResultsHeader Snapshots baseline snapshot 1`] = `
           <a
             className="actionLink"
             href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
+            target="_self"
             title="Save Results">
             Save Results
           </a>

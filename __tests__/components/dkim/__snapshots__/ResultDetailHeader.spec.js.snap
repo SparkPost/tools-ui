@@ -84,6 +84,16 @@ exports[`ResultDetailHeader component should render when logged in 1`] = `
   </div>
   <div
     className="panel__body">
+    <div
+      className="float--right">
+      <a
+        className="actionLink"
+        href="https://support.sparkpost.com/tools-help"
+        target="_blank"
+        title="">
+        How do I fix errors?
+      </a>
+    </div>
     <span
       className="dkimResultDetailHeader__label">
       status
@@ -110,6 +120,7 @@ exports[`ResultDetailHeader component should render when not logged in 1`] = `
         <a
           className="actionLink"
           href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
+          target="_self"
           title="Save Results">
           Save Results
         </a>
@@ -197,6 +208,16 @@ exports[`ResultDetailHeader component should render when not logged in 1`] = `
   </div>
   <div
     className="panel__body">
+    <div
+      className="float--right">
+      <a
+        className="actionLink"
+        href="https://support.sparkpost.com/tools-help"
+        target="_blank"
+        title="">
+        How do I fix errors?
+      </a>
+    </div>
     <span
       className="dkimResultDetailHeader__label">
       status
@@ -223,6 +244,7 @@ exports[`ResultDetailHeader component should render with rows 1`] = `
         <a
           className="actionLink"
           href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
+          target="_self"
           title="Save Results">
           Save Results
         </a>
@@ -310,6 +332,16 @@ exports[`ResultDetailHeader component should render with rows 1`] = `
   </div>
   <div
     className="panel__body">
+    <div
+      className="float--right">
+      <a
+        className="actionLink"
+        href="https://support.sparkpost.com/tools-help"
+        target="_blank"
+        title="">
+        How do I fix errors?
+      </a>
+    </div>
     <span
       className="dkimResultDetailHeader__label">
       status
