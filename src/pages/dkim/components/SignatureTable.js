@@ -1,14 +1,18 @@
 import React from 'react';
 import { Cell } from 'components/table/Table';
+import { SupportLink } from 'components/SupportLink';
 
 import './SignatureTable.scss';
 
 const StatusCell = ({ value, error }) => {
   const type = value === 'Passed' ? 'is-valid' : 'has-error';
+
   return (
     <td className='table__cell sigTable__statusCell'>
       <span className={`text--semibold ${type}`}>{value}</span>
-      {error && <div className='sigTable__error text--small'>{error.message}</div>}
+      {error && <div className='sigTable__error text--small'>
+        {error.message}. <SupportLink code={error.code} />
+      </div>}
     </td>
   );
 };
