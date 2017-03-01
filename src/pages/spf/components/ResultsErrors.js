@@ -59,7 +59,7 @@ const NodeLink = connect(null, { expandAll })((props) => {
   const handleClick = (e) => {
     e.preventDefault();
     expandAll();
-    const el = document.querySelector(`#${id}`);
+    const el = document.getElementById(id);
     el && window.scroll(0, el.getBoundingClientRect().top - 70);
   };
 
