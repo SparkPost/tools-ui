@@ -5,10 +5,15 @@ import './SignatureTable.scss';
 
 const StatusCell = ({ value, error }) => {
   const type = value === 'Passed' ? 'is-valid' : 'has-error';
+  let errorMessage = '';
+  if (error) {
+    errorMessage = error.message ? error.message : error;
+  }
+
   return (
     <td className='table__cell sigTable__statusCell'>
       <span className={`text--semibold ${type}`}>{value}</span>
-      {error && <div className='sigTable__error text--small'>{error}</div>}
+      {error && <div className='sigTable__error text--small'>{errorMessage}</div>}
     </td>
   );
 };
