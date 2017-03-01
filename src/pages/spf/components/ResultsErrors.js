@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Icon from 'components/Icon';
 import { SupportLink } from 'components/SupportLink';
 import { ActionLink } from 'components/button/Button';
 import { supportUrl } from 'components/SupportLink';
+import { expandAll } from 'actions/spf';
 
 import './ResultsErrors.scss';
 
@@ -25,13 +27,16 @@ export default (props) => {
     );
   };
 
-  // TODO see if we can anchor link to child with error
   const renderRow = (error, idx, type) => (
     <div key={`e-${idx}`} className='panel__body'>
-      <p>
+      <p className='spf-resultsErrors__message'>
         <Icon name={type === 'error' ? 'exclamation-circle' : 'exclamation-triangle'} extras={`paddingRight--xs has-${type}`}/>
-        {error.message}. <SupportLink code={error.code} />
+        {error.message}.
       </p>
+      <div>
+        <span className='spf-resultsErrors__link'><NodeLink id={error.id}/></span>
+        <span className='spf-resultsErrors__link'><SupportLink code={error.code} /></span>
+      </div>
     </div>
   );
 
@@ -48,3 +53,17 @@ export default (props) => {
     </div>
   );
 };
+
+const NodeLink = connect(null, { expandAll })((props) => {
+  const { expandAll, id } = props;
+  const handleClick = (e) => {
+    e.preventDefault();
+    expandAll();
+    const el = document.querySelector(`#${id}`);
+    el && window.scroll(0, el.getBoundingClientRect().top - 70);
+  };
+
+  return (
+    <a className='spf-resultsErrors__find' href={`#${id}`} onClick={handleClick}>Find in SPF record <Icon name='search'/></a>
+  );
+});

@@ -30,12 +30,16 @@ function SPFNode({
     error: 'exclamation-circle'
   };
 
-  let errorMessage;
+  let errorMessage
+    , errorId;
   if (warnings.length) {
     errorMessage = warnings[0].message;
+    errorId = warnings[0].id;
   }
+
   if (errors.length) {
     errorMessage = errors[0].message;
+    errorId = errors[0].id;
   }
 
   const onClick = () => {
@@ -44,8 +48,6 @@ function SPFNode({
     }
     return expanded ? collapse(treeId) : expand(treeId);
   };
-
-  // TODO see if we can anchor link to panel with error
 
   const panelClasses = classNames('panel', {
     'spf-tree__child': !root,
@@ -66,14 +68,14 @@ function SPFNode({
 
   return (
     <div className={classNames('spf-tree__childWrapper', {'spf-tree': root})}>
-      <div className={panelClasses} onClick={onClick}>
+      <div id={errorId} className={panelClasses} onClick={onClick}>
         <div className='panel__body'>
 
           <span>
             {!isValid && <Icon name={ iconMap[status] } extras={ `has-${status}` } />}
             <code className={labelClasses}> { label }</code>
           </span>
-          {errorMessage && <div> { errorMessage }</div>}
+          {errorMessage && <p className='spf-tree__errorMessage'> { errorMessage }</p>}
 
           {record && <code className='spf-tree__code'>{ record }</code>}
           {hasChildren && <Icon name='chevron-up' extras={toggleClasses} />}

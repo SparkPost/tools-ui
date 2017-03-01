@@ -3,6 +3,40 @@
 
 .spf-resultsErrors {
   &__summary {
-    padding-right: rem(9);
+    padding-right: rem(24);
+  }
+
+  &__message {
+    margin: 0;
+    line-height: rem(24);
+    color: grayscale(2);
+  }
+
+  &__link {
+    display: inline-block;
+  }
+
+  &__link a {
+    display: block;
+    margin-left: rem(24);
+    margin-right: rem(24);
+    line-height: rem(24);
+    font-size: rem(13);
+    font-weight: 500;
+    color: grayscale(5);
+
+    & > .fa {
+      display: inline-block;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: color(blue);
+    }
+  }
+
+  &__find > .fa {
+    position: relative;
+    top: -1px;
   }
 }

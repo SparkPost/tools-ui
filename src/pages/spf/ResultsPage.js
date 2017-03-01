@@ -6,7 +6,6 @@ import ResultsErrors from './components/ResultsErrors';
 import { BackLink, ActionLink } from 'components/button/Button';
 import ApiErrorMessage from 'components/errors/ApiErrorMessage';
 import { inspect, expandAll, collapseAll, expand, collapse } from 'actions/spf';
-
 import SPFNode from './components/SPFNode';
 
 class ResultsPage extends Component {
