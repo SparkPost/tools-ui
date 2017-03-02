@@ -43,7 +43,7 @@ export default (props) => {
     <div className='panel spf-resultsErrors'>
       <div className='panel__heading'>
         <div className='float--right'>
-          <ActionLink external={supportUrl} target='_blank'>How do I fix errors?</ActionLink>
+          <ActionLink external={supportUrl} title='SPF and DKIM Errors' target='_blank'>How do I fix errors?</ActionLink>
         </div>
         { renderSummary() }
       </div>

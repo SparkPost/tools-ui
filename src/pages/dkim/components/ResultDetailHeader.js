@@ -25,7 +25,7 @@ const HeaderStatus = ({ status }) => {
   return (
     <div className='panel__body'>
       <div className='float--right'>
-        <ActionLink external={supportUrl} target='_blank'>How do I fix errors?</ActionLink>
+        <ActionLink external={supportUrl} title='SPF and DKIM Errors' target='_blank'>How do I fix errors?</ActionLink>
       </div>
       <span className='dkimResultDetailHeader__label'>status</span>
       <span className={`dkimResultDetailHeader__value ${type}`}><Icon name={icon}/> {status}</span>

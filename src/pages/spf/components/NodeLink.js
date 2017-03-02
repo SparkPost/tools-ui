@@ -20,7 +20,7 @@ const NodeLink = (props) => {
   };
 
   return (
-    <a className='spf-resultsErrors__find' href={`#${id}`} onClick={handleClick}>Find in SPF record <Icon name='search'/></a>
+    <a className='spf-resultsErrors__find' href={`#${id}`} title='Find Error' onClick={handleClick}>Find in SPF record <Icon name='search'/></a>
   );
 };
 

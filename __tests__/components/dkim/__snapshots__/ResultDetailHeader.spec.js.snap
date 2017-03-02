@@ -88,9 +88,9 @@ exports[`ResultDetailHeader component should render when logged in 1`] = `
       className="float--right">
       <a
         className="actionLink"
-        href="https://support.sparkpost.com/tools-help"
+        href="https://www.sparkpost.com/email-tools/errors"
         target="_blank"
-        title="">
+        title="SPF and DKIM Errors">
         How do I fix errors?
       </a>
     </div>
@@ -212,9 +212,9 @@ exports[`ResultDetailHeader component should render when not logged in 1`] = `
       className="float--right">
       <a
         className="actionLink"
-        href="https://support.sparkpost.com/tools-help"
+        href="https://www.sparkpost.com/email-tools/errors"
         target="_blank"
-        title="">
+        title="SPF and DKIM Errors">
         How do I fix errors?
       </a>
     </div>
@@ -336,9 +336,9 @@ exports[`ResultDetailHeader component should render with rows 1`] = `
       className="float--right">
       <a
         className="actionLink"
-        href="https://support.sparkpost.com/tools-help"
+        href="https://www.sparkpost.com/email-tools/errors"
         target="_blank"
-        title="">
+        title="SPF and DKIM Errors">
         How do I fix errors?
       </a>
     </div>
