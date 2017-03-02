@@ -1,10 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Icon from 'components/Icon';
 import { SupportLink } from 'components/SupportLink';
 import { ActionLink } from 'components/button/Button';
 import { supportUrl } from 'components/SupportLink';
-import { expandAll } from 'actions/spf';
+import NodeLink from './NodeLink';
 
 import './ResultsErrors.scss';
 
@@ -53,17 +52,3 @@ export default (props) => {
     </div>
   );
 };
-
-const NodeLink = connect(null, { expandAll })((props) => {
-  const { expandAll, id } = props;
-  const handleClick = (e) => {
-    e.preventDefault();
-    expandAll();
-    const el = document.getElementById(id);
-    el && window.scroll(0, el.getBoundingClientRect().top - 70);
-  };
-
-  return (
-    <a className='spf-resultsErrors__find' href={`#${id}`} onClick={handleClick}>Find in SPF record <Icon name='search'/></a>
-  );
-});
