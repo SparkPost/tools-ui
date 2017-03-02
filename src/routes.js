@@ -14,23 +14,25 @@ export default (
     <Route path='/' onEnter={() => window.location = 'https://www.sparkpost.com/email-tools'} />
 
     <Route path='/dkim' component={App}>
-      <Redirect from='results' to='/' />
-
       <IndexRoute component={DKIMHome} />
+
+      <Redirect from='results' to='/' />
       <Route path='results/:email' component={DKIMResults} />
       <Route path='results/:email/:detailId' component={DKIMDetail} />
     </Route>
 
     <Route path='/spf' component={App}>
-      <Route path='builder' component={SPFBuilder} />
-
-      <Redirect from='/' to='/spf/inspector' />
+      <IndexRoute to='inspector' />
       <Route path='inspector' component={SPFQuery} />
       <Route path='inspector/:domain' component={SPFResults} />
-
       <Redirect from='inspector/results/:domain' to='/spf/inspector/:domain' />
+
+      <Route path='builder' component={SPFBuilder} />
+
     </Route>
 
-    <Route path='*' component={NotFound} />
+    <Route path='*' component={App} >
+      <IndexRoute component={NotFound}/>
+    </Route>
   </Route>
 );
