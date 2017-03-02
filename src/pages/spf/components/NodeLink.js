@@ -11,10 +11,11 @@ const NodeLink = (props) => {
 
     expandAll(id);
 
-    // Timeout makes sure react is dont rendering before attempting to scroll
+    // Timeout makes sure react is done rendering before attempting to scroll
     setTimeout(() => {
       const el = document.getElementById(id);
-      el && window.scroll(0, el.getBoundingClientRect().top + window.scrollY - 100); // -100 compensates for the nav bar
+      // -100 compensates for the nav bar height
+      el && window.scroll(0, el.getBoundingClientRect().top + window.scrollY - 100);
     }, 0);
   };
 
