@@ -1,5 +1,5 @@
 import React from 'react';
-import { IndexRoute, Route, Redirect } from 'react-router';
+import { IndexRoute, IndexRedirect, Route, Redirect } from 'react-router';
 import App from 'components/App';
 import DKIMHome from 'pages/dkim/HomePage';
 import DKIMResults from 'pages/dkim/ResultListPage';
@@ -22,13 +22,13 @@ export default (
     </Route>
 
     <Route path='/spf' component={App}>
-      <IndexRoute to='inspector' />
+      <IndexRedirect to='inspector' />
+
       <Route path='inspector' component={SPFQuery} />
       <Route path='inspector/:domain' component={SPFResults} />
       <Redirect from='inspector/results/:domain' to='/spf/inspector/:domain' />
 
       <Route path='builder' component={SPFBuilder} />
-
     </Route>
 
     <Route path='*' component={App} >
