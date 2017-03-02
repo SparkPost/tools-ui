@@ -29,7 +29,7 @@ export default (props) => {
   const renderRow = (error, idx, type) => (
     <div key={`e-${idx}`} className='panel__body'>
       <p className='spf-resultsErrors__message'>
-        <Icon name={type === 'error' ? 'exclamation-circle' : 'exclamation-triangle'} extras={`paddingRight--xs has-${type}`}/>
+        <Icon name={type === 'error' ? 'exclamation-circle' : 'exclamation-triangle'} extras={`has-${type}`}/>
         {error.message}.
       </p>
       <div>

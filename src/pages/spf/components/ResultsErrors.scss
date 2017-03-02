@@ -10,6 +10,13 @@
     margin: 0;
     line-height: rem(24);
     color: grayscale(2);
+    font-size: rem(13);
+    font-weight: 500;
+
+    & > .fa {
+      display: inline-block;
+      width: rem(24);
+    }
   }
 
   &__link {
@@ -21,7 +28,7 @@
     margin-left: rem(24);
     margin-right: rem(24);
     line-height: rem(24);
-    font-size: rem(13);
+    font-size: rem(12);
     font-weight: 500;
     color: grayscale(5);
 

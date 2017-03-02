@@ -9,7 +9,7 @@ const NodeLink = (props) => {
   const handleClick = (e) => {
     e.preventDefault();
 
-    expandAll(id);
+    expandAll();
 
     // Timeout makes sure react is done rendering before attempting to scroll
     setTimeout(() => {

@@ -127,9 +127,8 @@
 
   &__errorMessage {
     margin: 0;
-    line-height: rem(18);
-    font-size: rem(12);
+    color: grayscale(2);
+    font-size: rem(13);
     font-weight: 500;
-    color: grayscale(5);
   }
 }
