@@ -39,8 +39,7 @@ exports[`Nav component should render correctly by default 1`] = `
       <div
         className="logo__divider marginLeft--xs marginRight--xs" />
       <a
-        onClick={[Function]}
-        style={Object {}}
+        href="https://www.sparkpost.com/email-tools"
         title="SparkPost Tools">
         <svg
           className="logo__property"
@@ -125,8 +124,7 @@ exports[`Nav component should render correctly when logged in 1`] = `
       <div
         className="logo__divider marginLeft--xs marginRight--xs" />
       <a
-        onClick={[Function]}
-        style={Object {}}
+        href="https://www.sparkpost.com/email-tools"
         title="SparkPost Tools">
         <svg
           className="logo__property"
@@ -212,8 +210,7 @@ exports[`Nav component should render correctly when not logged in 1`] = `
       <div
         className="logo__divider marginLeft--xs marginRight--xs" />
       <a
-        onClick={[Function]}
-        style={Object {}}
+        href="https://www.sparkpost.com/email-tools"
         title="SparkPost Tools">
         <svg
           className="logo__property"
@@ -299,8 +296,7 @@ exports[`Nav component should render correctly with a builder path 1`] = `
       <div
         className="logo__divider marginLeft--xs marginRight--xs" />
       <a
-        onClick={[Function]}
-        style={Object {}}
+        href="https://www.sparkpost.com/email-tools"
         title="SparkPost Tools">
         <svg
           className="logo__property"
@@ -386,8 +382,7 @@ exports[`Nav component should render correctly with a dkim path 1`] = `
       <div
         className="logo__divider marginLeft--xs marginRight--xs" />
       <a
-        onClick={[Function]}
-        style={Object {}}
+        href="https://www.sparkpost.com/email-tools"
         title="SparkPost Tools">
         <svg
           className="logo__property"
@@ -473,8 +468,7 @@ exports[`Nav component should render correctly with an inspector path 1`] = `
       <div
         className="logo__divider marginLeft--xs marginRight--xs" />
       <a
-        onClick={[Function]}
-        style={Object {}}
+        href="https://www.sparkpost.com/email-tools"
         title="SparkPost Tools">
         <svg
           className="logo__property"

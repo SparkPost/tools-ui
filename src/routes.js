@@ -11,7 +11,7 @@ import SPFBuilder from 'pages/builder/Builder';
 
 export default (
   <Route>
-    <Redirect from='/' to='/dkim' />
+    <Redirect from='/' to='/external-tools' />
     <Route path='/' component={App}>
       <Redirect from='/dkim/results' to='/dkim' />
       <Route path='dkim' component={DKIMHome} />
@@ -24,6 +24,8 @@ export default (
       <Redirect from='/spf' to='/spf/inspector' />
       <Route path='spf/inspector/:domain' component={SPFResults} />
       <Redirect from='/spf/inspector/results/:domain' to='/spf/inspector/:domain' />
+
+      <Route path='external-tools' onEnter={() => window.location = 'https://www.sparkpost.com/email-tools'} />
       <Route path='*' component={NotFound} />
     </Route>
   </Route>
