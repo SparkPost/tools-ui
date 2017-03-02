@@ -10,5 +10,13 @@ export const SupportLink = ({ code, title = 'SPF and DKIM Errors' }) => {
     return null;
   }
 
-  return <a href={`${supportUrl}/#${code}`} title={title} target='_blank'>Learn more <Icon name='external-link-square'/></a>;
+  const url = `${supportUrl}/#${code}`;
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    const win = window.open(url, 'SparkpostToolsErrors');
+    win.focus();
+  };
+
+  return <a href={url} onClick={handleClick} title={title}>Learn more <Icon name='external-link-square'/></a>;
 };
