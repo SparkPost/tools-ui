@@ -16,7 +16,7 @@ export default (
     <Route path='/dkim' component={App}>
       <IndexRoute component={DKIMHome} />
 
-      <Redirect from='results' to='/' />
+      <Redirect from='results' to='/dkim' />
       <Route path='results/:email' component={DKIMResults} />
       <Route path='results/:email/:detailId' component={DKIMDetail} />
     </Route>
