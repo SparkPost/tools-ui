@@ -10,6 +10,7 @@ exports[`ResultListHeader component should render 1`] = `
         <a
           className="actionLink"
           href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
+          target="_self"
           title="Save Results">
           Save Results
         </a>
@@ -133,6 +134,7 @@ exports[`ResultListHeader component should render when not logged in 1`] = `
         <a
           className="actionLink"
           href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
+          target="_self"
           title="Save Results">
           Save Results
         </a>
@@ -201,6 +203,7 @@ exports[`ResultListHeader component should render with an error present 1`] = `
         <a
           className="actionLink"
           href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
+          target="_self"
           title="Save Results">
           Save Results
         </a>

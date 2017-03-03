@@ -3,6 +3,7 @@ exports[`SPFNode Snapshots baseline snapshot 1`] = `
   className="spf-tree__childWrapper">
   <div
     className="panel spf-tree__child spf-tree__child--mx"
+    id={undefined}
     onClick={[Function]}>
     <div
       className="panel__body">
@@ -29,6 +30,7 @@ exports[`SPFNode Snapshots should display domain if passed 1`] = `
   className="spf-tree__childWrapper">
   <div
     className="panel spf-tree__child spf-tree__child--mx"
+    id={undefined}
     onClick={[Function]}>
     <div
       className="panel__body">
@@ -50,11 +52,40 @@ exports[`SPFNode Snapshots should display domain if passed 1`] = `
 </div>
 `;
 
+exports[`SPFNode Snapshots should display error message and id 1`] = `
+<div
+  className="spf-tree__childWrapper">
+  <div
+    className="panel spf-tree__child spf-tree__child--mx"
+    id="id-123"
+    onClick={[Function]}>
+    <div
+      className="panel__body">
+      <span>
+        <code
+          className="spf-tree__code spf-tree__code--mx">
+           
+          mx:_spf.erlock.homes
+        </code>
+      </span>
+      <p
+        className="spf-tree__errorMessage">
+         
+        Uh oh
+      </p>
+    </div>
+    <div
+      className="spf-tree__accent" />
+  </div>
+</div>
+`;
+
 exports[`SPFNode Snapshots should not show record if missing 1`] = `
 <div
   className="spf-tree__childWrapper">
   <div
     className="panel spf-tree__child spf-tree__child--mx"
+    id={undefined}
     onClick={[Function]}>
     <div
       className="panel__body">

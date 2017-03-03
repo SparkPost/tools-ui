@@ -50,10 +50,10 @@ const LinkButton = (props) => {
  * Can be used to link or execute an action
  */
 const ActionLink = (props) => {
-  const { to = null, external = null, onClick = null, title = '', children } = props;
+  const { to = null, external = null, onClick = null, title = '', target = '_self', children } = props;
 
   if (external) {
-    return <a href={external} className='actionLink' title={title}>{children}</a>;
+    return <a href={external} className='actionLink' title={title} target={target}>{children}</a>;
   }
 
   return <Link to={to} onClick={onClick} className='actionLink' title={title}>{children}</Link>;
