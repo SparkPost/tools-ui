@@ -1,5 +1,5 @@
 import React from 'react';
-import { IndexRoute, IndexRedirect, Route, Redirect } from 'react-router';
+import { IndexRoute, IndexRedirect, Route, Redirect, browserHistory } from 'react-router';
 import App from 'components/App';
 import DKIMHome from 'pages/dkim/HomePage';
 import DKIMResults from 'pages/dkim/ResultListPage';
@@ -9,9 +9,14 @@ import SPFQuery from 'pages/spf/QueryPage';
 import SPFResults from 'pages/spf/ResultsPage';
 import SPFBuilder from 'pages/builder/Builder';
 
+const redirectRoot = () => {
+  const { search } = browserHistory.getCurrentLocation();
+  window.location = `https://www.sparkpost.com/email-tools${search}`;
+};
+
 export default (
   <Route>
-    <Route path='/' onEnter={() => window.location = 'https://www.sparkpost.com/email-tools'} />
+    <Route path='/' onEnter={redirectRoot} />
 
     <Route path='/dkim' component={App}>
       <IndexRoute component={DKIMHome} />
