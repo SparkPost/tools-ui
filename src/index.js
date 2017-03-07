@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import spApiMiddleware from 'middleware/sparkpostApiRequest';
 import rootReducer from './reducers';
 import routes from './routes';
+import { trackPageView } from './actions/mixpanel';
 import './styles/tools.scss';
 
 // necessary for redux devtools in development mode only
@@ -16,6 +17,9 @@ const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk, spApiMiddleware))
 );
+
+trackPageView(browserHistory.getCurrentLocation().pathname); // Tracks initial page load
+browserHistory.listen((location) => store.dispatch(trackPageView(location.pathname)));
 
 ReactDOM.render((
   <Provider store={store}>

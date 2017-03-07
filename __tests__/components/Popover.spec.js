@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import { CopyPopover } from 'components/popover/Popover';
-import { ActionLink } from 'components/button/Button';
+import { DetachedActionLink as ActionLink } from 'components/button/Button';
 
 describe('CopyPopover component', () => {
 

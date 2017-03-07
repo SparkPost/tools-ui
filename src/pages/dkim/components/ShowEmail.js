@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkButton } from 'components/button/Button';
+import { Button } from 'components/button/Button';
 import { CopyPopover } from 'components/popover/Popover';
 
 export default (props) => {
@@ -16,13 +16,13 @@ export default (props) => {
               <input className='input__text input--full' type="text" readOnly={true} value={email} />
               <div className='input__buttonWrapper'>
                 <CopyPopover placement='top' block={true} stringToCopy={email}>
-                  <button className='button button--muted button--full'>Copy</button>
+                  <Button type='muted' fullWidth={true} track={true}>Copy</Button>
                 </CopyPopover>
               </div>
             </div>
           </div>
           <div className='col-xs-12 col-md-4 col-lg-3 responsiveBump'>
-            <LinkButton type='orange' fullWidth={true} to={`/dkim/results/${email}`}>View Results</LinkButton>
+            <Button type='orange' fullWidth={true} to={`/dkim/results/${email}`} track={true}>View Results</Button>
           </div>
         </div>
       </div>

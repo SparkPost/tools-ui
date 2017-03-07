@@ -27,8 +27,8 @@ export default (props) => {
         <div className='panel__body'>
           <div className='float--right'>
             {!loggedIn && <SaveResultsLink/>}
-            <CopyPopover><ActionLink title='Share'>Share</ActionLink></CopyPopover>
-            <ActionLink onClick={refresh} title='Refresh'>Refresh</ActionLink>
+            <CopyPopover><ActionLink title='Share' track={true}>Share</ActionLink></CopyPopover>
+            <ActionLink onClick={refresh} title='Refresh' track={true}>Refresh</ActionLink>
             </div>
           <h1 className='marginBottom--none marginTop--xs'>{domain}</h1>
           <p className={timeClasses}>Tested on {timestamp}</p>

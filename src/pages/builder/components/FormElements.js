@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
-import { ActionLink, ActionButton } from 'components/button/Button';
+import { ActionLink, Button } from 'components/button/Button';
 import classnames from 'classnames';
 
 import './FormElements.scss';
@@ -59,11 +59,11 @@ export const Hosts = ({ fields, prefix = '' }) => (
 );
 
 export const Radio = ({ input, label }) => {
-  const buttonClasses = classnames('button col-xs marginRight--none padding--none', {
+  const buttonClasses = classnames('button col-xs marginRight--none padding--none text--center', {
     'button--orange is-pressed': input.value === label,
     'button--muted': input.value !== label
   });
-  return <ActionButton action={() => input.onChange(label)} extraClasses={buttonClasses}>{label}</ActionButton>;
+  return <Button action={() => input.onChange(label)} extraClasses={buttonClasses}>{label}</Button>;
 };
 
 export const IpRange = ({ host, prefix, onRemove }) => (

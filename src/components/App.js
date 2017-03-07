@@ -5,6 +5,7 @@ import Nav from 'components/nav/Nav';
 import Footer from 'components/footer/Footer';
 import { Meta, DefaultMeta } from 'components/Meta';
 import { checkLogin } from 'actions/auth';
+import { trackPageView } from 'actions/mixpanel';
 
 export class App extends Component {
 
@@ -31,4 +32,4 @@ export class App extends Component {
 }
 
 const mapStateToProps = ({ auth }) => ({ loggedIn: auth.loggedIn });
-export default connect(mapStateToProps, { checkLogin })(App);
+export default connect(mapStateToProps, { checkLogin, trackPageView })(App);
