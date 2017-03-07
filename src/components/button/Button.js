@@ -46,14 +46,14 @@ const Button = connect(null, { trackButtonClick })(DetachedButton);
  * Can be used to link or execute an action
  */
 const DetachedActionLink = (props) => {
-  const { to = null, external = null, onClick = null, title = '', track = false, children, trackButtonClick } = props;
+  const { to = null, external = null, onClick = null, title = '', track = false, target = '_self', children, trackButtonClick } = props;
   const handleClick = () => {
     onClick && onClick();
     track && trackButtonClick(title, 'ActionLink');
   };
 
   if (external) {
-    return <a href={external} onClick={handleClick} className='actionLink' title={title}>{children}</a>;
+    return <a href={external} onClick={handleClick} className='actionLink' title={title} target={target}>{children}</a>;
   }
 
   return <Link to={to} onClick={handleClick} className='actionLink' title={title}>{children}</Link>;

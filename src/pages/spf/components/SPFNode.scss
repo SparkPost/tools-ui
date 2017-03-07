@@ -52,7 +52,7 @@
       }
     }
   }
-  
+
   &__child {
     // These are the little lines
     &:before, &:after {
@@ -123,5 +123,12 @@
     &.is-open {
       transform: translate(0, -50%);
     }
+  }
+
+  &__errorMessage {
+    margin: 0;
+    color: grayscale(2);
+    font-size: rem(13);
+    font-weight: 500;
   }
 }

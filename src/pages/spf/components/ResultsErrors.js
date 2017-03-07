@@ -1,5 +1,9 @@
 import React from 'react';
 import Icon from 'components/Icon';
+import { SupportLink } from 'components/SupportLink';
+import { ActionLink } from 'components/button/Button';
+import { supportUrl } from 'components/SupportLink';
+import NodeLink from './NodeLink';
 
 import './ResultsErrors.scss';
 
@@ -22,21 +26,25 @@ export default (props) => {
     );
   };
 
-  // TODO find out how to get different errors to finish this section
-  // TODO see if we can anchor link to child with error
   const renderRow = (error, idx, type) => (
     <div key={`e-${idx}`} className='panel__body'>
-      <p>
-        <Icon name={type === 'error' ? 'exclamation-circle' : 'exclamation-triangle'} extras={`paddingRight--xs has-${type}`}/>
-        {error.message}
+      <p className='spf-resultsErrors__message'>
+        <Icon name={type === 'error' ? 'exclamation-circle' : 'exclamation-triangle'} extras={`has-${type}`}/>
+        {error.message}.
       </p>
+      <div>
+        <span className='spf-resultsErrors__link'><NodeLink id={error.id}/></span>
+        <span className='spf-resultsErrors__link'><SupportLink code={error.code} /></span>
+      </div>
     </div>
   );
 
   return (
     <div className='panel spf-resultsErrors'>
       <div className='panel__heading'>
-        {/* <div className='float--right'><ActionLink>How do I fix errors?</ActionLink></div> */}
+        <div className='float--right'>
+          <ActionLink external={supportUrl} title='SPF and DKIM Errors' target='_blank'>How do I fix errors?</ActionLink>
+        </div>
         { renderSummary() }
       </div>
       { errors.map((error, idx) => renderRow(error, idx, 'error')) }

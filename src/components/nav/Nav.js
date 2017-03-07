@@ -83,7 +83,7 @@ export class Nav extends Component {
           <div className='logo__wrapper'>
             <a href='http://sparkpost.com' title='SparkPost'><Logo/></a>
             <div className='logo__divider marginLeft--xs marginRight--xs' />
-            <Link to='/' title='SparkPost Tools'><Property/></Link>
+            <a href='https://www.sparkpost.com/email-tools' title='SparkPost Tools'><Property/></a>
           </div>
 
           <a className='nav__hamburger' onClick={() => this.toggleMenu()}><span></span></a>

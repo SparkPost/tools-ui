@@ -2,6 +2,7 @@ import React from 'react';
 import { CopyPopover } from 'components/popover/Popover';
 import { ActionLink, SaveResultsLink } from 'components/button/Button';
 import Icon from 'components/Icon';
+import { supportUrl } from 'components/SupportLink';
 
 import './ResultDetailHeader.scss';
 
@@ -23,6 +24,9 @@ const HeaderStatus = ({ status }) => {
   const type = status === 'Passed' ? 'is-valid' : 'has-error';
   return (
     <div className='panel__body'>
+      <div className='float--right'>
+        <ActionLink external={supportUrl} title='SPF and DKIM Errors' target='_blank'>How do I fix errors?</ActionLink>
+      </div>
       <span className='dkimResultDetailHeader__label'>status</span>
       <span className={`dkimResultDetailHeader__value ${type}`}><Icon name={icon}/> {status}</span>
     </div>

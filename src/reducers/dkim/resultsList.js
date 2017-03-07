@@ -1,4 +1,4 @@
-import moment from 'moment';
+import { formatDate } from 'helpers/date';
 import makeReducer from 'reducers/makeReducer';
 
 const initialState = {
@@ -15,7 +15,7 @@ export default makeReducer({
       const tableRows = action.payload.map(({ id, subject, result, header_from, received }) => (
         {
           id, header_from, subject, result,
-          received: moment(received).local().format('[Delivered on] MMM D YYYY[, at] h:mm A')
+          received: `Delivered on ${formatDate(received)}`
         }
       ));
 

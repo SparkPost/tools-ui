@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router';
+import { IndexRoute, IndexRedirect, Route, Redirect } from 'react-router';
 import App from 'components/App';
 import DKIMHome from 'pages/dkim/HomePage';
 import DKIMResults from 'pages/dkim/ResultListPage';
@@ -11,20 +11,28 @@ import SPFBuilder from 'pages/builder/Builder';
 
 export default (
   <Route>
-    <Redirect from='/' to='/dkim' />
-    <Route path='/' component={App}>
-      <Redirect from='/dkim/results' to='/dkim' />
-      <Route path='dkim' component={DKIMHome} />
-      <Route path='dkim/results/:email' component={DKIMResults} />
-      <Route path='dkim/results/:email/:detailId' component={DKIMDetail} />
+    <Route path='/' onEnter={() => window.location = 'https://www.sparkpost.com/email-tools'} />
 
-      <Route path='spf/builder' component={SPFBuilder} />
+    <Route path='/dkim' component={App}>
+      <IndexRoute component={DKIMHome} />
 
-      <Route path='spf/inspector' component={SPFQuery} />
-      <Redirect from='/spf' to='/spf/inspector' />
-      <Route path='spf/inspector/:domain' component={SPFResults} />
-      <Redirect from='/spf/inspector/results/:domain' to='/spf/inspector/:domain' />
-      <Route path='*' component={NotFound} />
+      <Redirect from='results' to='/dkim' />
+      <Route path='results/:email' component={DKIMResults} />
+      <Route path='results/:email/:detailId' component={DKIMDetail} />
+    </Route>
+
+    <Route path='/spf' component={App}>
+      <IndexRedirect to='inspector' />
+
+      <Route path='inspector' component={SPFQuery} />
+      <Route path='inspector/:domain' component={SPFResults} />
+      <Redirect from='inspector/results/:domain' to='/spf/inspector/:domain' />
+
+      <Route path='builder' component={SPFBuilder} />
+    </Route>
+
+    <Route path='*' component={App} >
+      <IndexRoute component={NotFound}/>
     </Route>
   </Route>
 );
