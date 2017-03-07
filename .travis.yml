@@ -1,44 +1,46 @@
 sudo: false
 language: node_js
 node_js:
-  - "6"
+- '6'
 env:
   global:
-    - CXX=g++-4.8
+  - CXX=g++-4.8
   matrix:
-    - REACT_APP_ENV=staging
-    - REACT_APP_ENV=production
+  - REACT_APP_ENV=staging
+  - REACT_APP_ENV=production
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      # allows arch specific modules to be built
-      - g++-4.8
+    - g++-4.8
 install: npm install
 script: npm test && npm run build
 deploy:
-  - provider: s3
-    access_key_id: $ENG_AWS_ACCESS_KEY_ID
-    secret_access_key: $ENG_AWS_SECRET_ACCESS_KEY
-    bucket: sp-messaging-tools-ui-staging
-    acl: public_read
-    region: us-west-2
-    skip_cleanup: true
-    local_dir: build
-    on:
-      branch: master
-      condition: $REACT_APP_ENV = staging && -z $TRAVIS_TAG
-      node: "6"
-  - provider: s3
-    access_key_id: $ENG_AWS_ACCESS_KEY_ID
-    secret_access_key: $ENG_AWS_SECRET_ACCESS_KEY
-    bucket: sp-messaging-tools-ui-prod
-    acl: public_read
-    region: us-west-2
-    skip_cleanup: true
-    local_dir: build
-    on:
-      tags: true
-      condition: $REACT_APP_ENV = production && $TRAVIS_TAG == v*
-      node: "6"
+- provider: s3
+  access_key_id: "$ENG_AWS_ACCESS_KEY_ID"
+  secret_access_key: "$ENG_AWS_SECRET_ACCESS_KEY"
+  bucket: sp-messaging-tools-ui-staging
+  acl: public_read
+  region: us-west-2
+  skip_cleanup: true
+  local_dir: build
+  on:
+    branch: master
+    condition: "$REACT_APP_ENV = staging && -z $TRAVIS_TAG"
+    node: '6'
+- provider: s3
+  access_key_id: "$ENG_AWS_ACCESS_KEY_ID"
+  secret_access_key: "$ENG_AWS_SECRET_ACCESS_KEY"
+  bucket: sp-messaging-tools-ui-prod
+  acl: public_read
+  region: us-west-2
+  skip_cleanup: true
+  local_dir: build
+  on:
+    tags: true
+    condition: "$REACT_APP_ENV = production && $TRAVIS_TAG == v*"
+    node: '6'
+notifications:
+  slack:
+    secure: LK9GVFIGVbay3tzQc5VfmZ4hildPLQ5edavO10gurWzAm1hnxedN/fX3vGl+LVrUPSV1XOsbtR2HS9A4YgjOIabYCbmQCfROaFfsnzq6HDVdlP7ujd3oKwXgeix597WP0rct/HK5z7PzdCY5vTNPG5Bbx2FxhN3D/WbtVAkJk8uT8LyD+lJx+sQKFQtn54bcUQa4jlhjCccwGAQqpMckcxMyi549zbt+EZX//uVeKFEj3Xpd1zEExclnd9t9Uo9R8ePffOhWNAmy54WDU9BgYZMW1M0nyuWtfGnhQDQFh9PX5NYxcSHUs0HBCtJY8wwRaOmYjrBHjegcl+aejgVyIQb+oEpRpcBXfDCe8F7AHFI1SUI8uFtqsz0t2QPC+3xOWmzdt5wgKXXgCiObGVqh2ZBjbZ0OWAHDPYeiV2qrP2rCE4MLMJRMv5EY3JK6wRSzCajlxoJZiABQoq2ot2eu/7RjFmbPWuk/PxVn3lpOBljWk8Xg6Da7Kn/Xjb/TOLWG3TJrv7udwc8WOH/Wz2BycYqTJFyvpQcvOQ/CjM7Pq8YvUXIH+s4l3jlplElXSKLqLX8x7THVMmfwNv4+pUDLH8SsXg9TASZMyIg5DIXvZW4zHBE4wgGJdj82qv3P9S3mrt4fSlSa2p8S+CNAIje2mzW6qsyYBCYdvPE+3y14vuk=
