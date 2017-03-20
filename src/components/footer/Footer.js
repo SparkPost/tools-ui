@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { trackButtonClick } from 'actions/mixpanel';
 import { Logo } from 'components/logo/Logo';
 import { CTA, LINKS } from 'components/footer/constants';
-import { getQueryParams } from 'helpers/url';
+import { getFooterSignUpUrl } from 'helpers/url';
 
 import './Footer.scss';
 
@@ -13,7 +13,7 @@ export class Footer extends Component {
 
   render() {
     const { loggedIn } = this.props;
-    const signUpUrl = `http://app.sparkpost.com/sign-up?${getQueryParams(location)}`;
+    const signUpUrl = getFooterSignUpUrl(location);
     const handleClick = () => trackButtonClick('Sign Up', 'Footer');
 
     return (
