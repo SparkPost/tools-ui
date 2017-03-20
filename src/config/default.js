@@ -16,5 +16,13 @@ export default {
   signupQueryDefaults: {
     src: 'SP-Tools',
     sfdcid: '701600000019BWh'
+  },
+  queryParams: {
+    'dkim': {
+      sfdcid: '701600000018y6o'
+    },
+    'inspector': {
+      sfdcid: '701600000019B1U'
+    }
   }
 };

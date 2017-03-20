@@ -6,9 +6,17 @@ export const baseUrl = window.location.href.replace(/^(https?):\/\/([^/?]+)((\/|
 
 export const getEncodedUrl = ({ pathname = '', search = '' }) => encodeURIComponent(`${baseUrl}${pathname}${search}`);
 
-export const getQueryParams = ({ search = ''}) => {
+// Contructs Query Params
+export const getQueryParams = ({ search = ''}, extraQueryParams = {}) => {
   search = search.replace('?', '');
   const allParams = {};
-  _.merge(allParams, config.signupQueryDefaults, qs.parse(search));
+  _.defaults(allParams, config.signupQueryDefaults, qs.parse(search));
+  _.assign(allParams, extraQueryParams);
+
   return qs.stringify(allParams);
 };
+
+// Contructs Query Params with Return path
+export const getLoginSignUpQueryParams = (location, extraQueryParams) => (
+  `return=${getEncodedUrl(location)}&${getQueryParams(location, extraQueryParams)}`
+);

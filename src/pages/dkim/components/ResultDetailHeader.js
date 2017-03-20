@@ -3,6 +3,7 @@ import { CopyPopover } from 'components/popover/Popover';
 import { ActionLink, SaveResultsLink } from 'components/button/Button';
 import Icon from 'components/Icon';
 import { supportUrl } from 'components/SupportLink';
+import config from 'config/index';
 
 import './ResultDetailHeader.scss';
 
@@ -37,7 +38,7 @@ const ResultDetailHeader = ({ rows, loggedIn, status, error }) => (
   <div className='panel panel--accent'>
     <div className='panel__body'>
       <div className='float--right'>
-        {!loggedIn && <SaveResultsLink/>}
+        {!loggedIn && <SaveResultsLink extraQueryParams={config.queryParams.dkim}/>}
         <CopyPopover>
           <ActionLink title='Share' track={true}>Share</ActionLink>
         </CopyPopover>

@@ -5,7 +5,7 @@ import { trackButtonClick } from 'actions/mixpanel';
 import Icon from 'components/Icon';
 import { HoverPopover } from 'components/popover/Popover';
 import config from 'config/index';
-import { getEncodedUrl, getQueryParams } from 'helpers/url';
+import { getLoginSignUpQueryParams } from 'helpers/url';
 import classNames from 'classnames';
 const noop = () => {};
 
@@ -19,10 +19,6 @@ const mapPropsToClasses = ({ type, size, accent, fullWidth, icon, states, extraC
     'button--full': fullWidth,
     'button--icon': icon
   }, states, extraClasses)
-);
-
-const getLoginSignUpQueryParams = (location) => (
-  `return=${getEncodedUrl(location)}&${getQueryParams(location)}`
 );
 
 const DetachedButton = (props) => {
@@ -68,11 +64,14 @@ const BackLink = ({ to = null, title = '' }) => <Link to={to} className='backLin
 /**
  * Produces a Save Results action link
  */
-const SaveResultsLink = () => (
-  <HoverPopover placement='top' size='m' text='Create a free SparkPost account or login into your account to save results'>
-    <ActionLink external={`${config.appUrl}/sign-up?${getLoginSignUpQueryParams(location)}`} className='actionLink' title='Save Results' track={true}>Save Results</ActionLink>
-  </HoverPopover>
-);
+const SaveResultsLink = ({ extraQueryParams }) => {
+  const external = `${config.appUrl}/sign-up?${getLoginSignUpQueryParams(location, extraQueryParams)}`;
+  return (
+    <HoverPopover placement='top' size='m' text='Create a free SparkPost account or login into your account to save results'>
+      <ActionLink external={external} className='actionLink' title='Save Results' track={true}>Save Results</ActionLink>
+    </HoverPopover>
+  );
+};
 
 const DetachedSpLoginLink = ({ location = {}, classes, children, trackButtonClick }) => {
   const linkClasses = classNames('sp-sign-in', classes);
