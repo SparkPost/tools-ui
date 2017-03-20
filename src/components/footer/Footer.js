@@ -13,7 +13,7 @@ export class Footer extends Component {
 
   render() {
     const { loggedIn } = this.props;
-    const signUpUrl = getFooterSignUpUrl(location);
+    const signUpUrl = getFooterSignUpUrl();
     const handleClick = () => trackButtonClick('Sign Up', 'Footer');
 
     return (

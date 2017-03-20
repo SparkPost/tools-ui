@@ -63,26 +63,26 @@ const BackLink = ({ to = null, title = '' }) => <Link to={to} className='backLin
 /**
  * Produces a Save Results action link
  */
-const SaveResultsLink = ({ location = {}, extraQueryParams }) => (
+const SaveResultsLink = ({ extraQueryParams }) => (
   <HoverPopover placement='top' size='m' text='Create a free SparkPost account or login into your account to save results'>
-    <ActionLink external={getSignUpUrl(location, extraQueryParams)} className='actionLink' title='Save Results' track={true}>Save Results</ActionLink>
+    <ActionLink external={getSignUpUrl(extraQueryParams)} className='actionLink' title='Save Results' track={true}>Save Results</ActionLink>
   </HoverPopover>
 );
 
-const DetachedSpLoginLink = ({ location = {}, classes, children, trackButtonClick }) => {
+const DetachedSpLoginLink = ({ classes, children, trackButtonClick }) => {
   const linkClasses = classNames('sp-sign-in', classes);
   const handleClick = () => trackButtonClick('Login', 'SpLoginLink');
   return (
-    <a href={getLoginUrl(location)} onClick={handleClick} title='Login' className={linkClasses}>{children}</a>
+    <a href={getLoginUrl()} onClick={handleClick} title='Login' className={linkClasses}>{children}</a>
   );
 };
 const SpLoginLink = connect(null, { trackButtonClick })(DetachedSpLoginLink);
 
-const DetachedSpSignUpLink = ({ location = {}, classes, children, trackButtonClick }) => {
+const DetachedSpSignUpLink = ({ classes, children, trackButtonClick }) => {
   const linkClasses = classNames('sp-sign-up', classes);
   const handleClick = () => trackButtonClick('Sign Up', 'SpSignUpLink');
   return (
-    <a href={getSignUpUrl(location)} onClick={handleClick} title='Sign Up' className={linkClasses}>{children}</a>
+    <a href={getSignUpUrl()} onClick={handleClick} title='Sign Up' className={linkClasses}>{children}</a>
   );
 };
 const SpSignUpLink = connect(null, { trackButtonClick })(DetachedSpSignUpLink);

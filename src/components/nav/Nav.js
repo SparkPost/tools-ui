@@ -44,11 +44,10 @@ export class Nav extends Component {
   }
 
   renderLoggedOutLinks() {
-    const { location } = this.props;
     return (
       <div className='nav__right'>
-        <SpLoginLink location={location} classes='nav__link'>Login</SpLoginLink>
-        <SpSignUpLink location={location} classes='button button--blue nav__button'>Sign Up</SpSignUpLink>
+        <SpLoginLink classes='nav__link'>Login</SpLoginLink>
+        <SpSignUpLink classes='button button--blue nav__button'>Sign Up</SpSignUpLink>
       </div>
     );
   }

@@ -59,7 +59,6 @@ describe('snapshot tests', () => {
 
   test('SpLoginLink will render correctly with all options', () => {
     expect(renderer.create(<SpLoginLink
-      location={{ pathname: '/some/path', search: '?some=search'}}
       classes='a-list of-classes'
     >Log In</SpLoginLink>)).toMatchSnapshot();
   });
@@ -70,7 +69,6 @@ describe('snapshot tests', () => {
 
   test('SpSignUpLink will render correctly with all options', () => {
     expect(renderer.create(<SpSignUpLink
-      location={{ pathname: '/some/path', search: '?some=search'}}
       classes='a-list of-classes'
     >Sign Up</SpSignUpLink>)).toMatchSnapshot();
   });
