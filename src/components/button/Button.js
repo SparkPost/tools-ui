@@ -4,8 +4,7 @@ import { Link } from 'react-router';
 import { trackButtonClick } from 'actions/mixpanel';
 import Icon from 'components/Icon';
 import { HoverPopover } from 'components/popover/Popover';
-import config from 'config/index';
-import { getLoginSignUpQueryParams } from 'helpers/url';
+import { getLoginUrl, getSignUpUrl } from 'helpers/url';
 import classNames from 'classnames';
 const noop = () => {};
 
@@ -64,20 +63,17 @@ const BackLink = ({ to = null, title = '' }) => <Link to={to} className='backLin
 /**
  * Produces a Save Results action link
  */
-const SaveResultsLink = ({ extraQueryParams }) => {
-  const external = `${config.signUpUrl}?${getLoginSignUpQueryParams(location, extraQueryParams)}`;
-  return (
-    <HoverPopover placement='top' size='m' text='Create a free SparkPost account or login into your account to save results'>
-      <ActionLink external={external} className='actionLink' title='Save Results' track={true}>Save Results</ActionLink>
-    </HoverPopover>
-  );
-};
+const SaveResultsLink = ({ location = {}, extraQueryParams }) => (
+  <HoverPopover placement='top' size='m' text='Create a free SparkPost account or login into your account to save results'>
+    <ActionLink external={getSignUpUrl(location, extraQueryParams)} className='actionLink' title='Save Results' track={true}>Save Results</ActionLink>
+  </HoverPopover>
+);
 
 const DetachedSpLoginLink = ({ location = {}, classes, children, trackButtonClick }) => {
   const linkClasses = classNames('sp-sign-in', classes);
   const handleClick = () => trackButtonClick('Login', 'SpLoginLink');
   return (
-    <a href={`${config.logInUrl}?${getLoginSignUpQueryParams(location)}`} onClick={handleClick} title='Login' className={linkClasses}>{children}</a>
+    <a href={getLoginUrl(location)} onClick={handleClick} title='Login' className={linkClasses}>{children}</a>
   );
 };
 const SpLoginLink = connect(null, { trackButtonClick })(DetachedSpLoginLink);
@@ -86,7 +82,7 @@ const DetachedSpSignUpLink = ({ location = {}, classes, children, trackButtonCli
   const linkClasses = classNames('sp-sign-up', classes);
   const handleClick = () => trackButtonClick('Sign Up', 'SpSignUpLink');
   return (
-    <a href={`${config.signUpUrl}?${getLoginSignUpQueryParams(location)}`} onClick={handleClick} title='Sign Up' className={linkClasses}>{children}</a>
+    <a href={getSignUpUrl(location)} onClick={handleClick} title='Sign Up' className={linkClasses}>{children}</a>
   );
 };
 const SpSignUpLink = connect(null, { trackButtonClick })(DetachedSpSignUpLink);

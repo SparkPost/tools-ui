@@ -16,7 +16,10 @@ export const getQueryParams = ({ search = ''}, extraQueryParams = {}) => {
   return qs.stringify(allParams);
 };
 
-// Contructs Query Params with Return path
-export const getLoginSignUpQueryParams = (location, extraQueryParams) => (
-  `return=${getEncodedUrl(location)}&${getQueryParams(location, extraQueryParams)}`
+export const getSignUpUrl = (location, extraQueryParams) => (
+  `${config.signUpUrl}?return=${getEncodedUrl(location)}&${getQueryParams(location, extraQueryParams)}`
+);
+
+export const getLoginUrl = (location) => (
+  `${config.logInUrl}?return=${getEncodedUrl(location)}&${getQueryParams(location)}`
 );
