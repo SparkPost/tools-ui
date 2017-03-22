@@ -1,6 +1,7 @@
 import React from 'react';
 import { CopyPopover } from 'components/popover/Popover';
 import { ActionLink, SaveResultsLink } from 'components/button/Button';
+import config from 'config/index';
 
 import './ResultListHeader.scss';
 
@@ -9,7 +10,7 @@ export default ({ email, getResults, loggedIn }) => (
     <div className='panel__body'>
 
       <div className='float--right'>
-        {!loggedIn && <SaveResultsLink/>}
+        {!loggedIn && <SaveResultsLink extraQueryParams={config.queryParams.dkim}/>}
         <CopyPopover>
           <ActionLink title='Share' track={true}>Share</ActionLink>
         </CopyPopover>

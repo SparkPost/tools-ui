@@ -24,8 +24,8 @@ export class App extends Component {
         <div className='container container--tool'>
           {children}
         </div>
-        <Footer></Footer>
-        <Nav location={location}></Nav>
+        <Footer />
+        <Nav location={location} />
       </div>
     );
   }

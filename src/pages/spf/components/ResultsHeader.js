@@ -2,6 +2,7 @@ import React from 'react';
 import { CopyPopover } from 'components/popover/Popover';
 import { ActionLink, SaveResultsLink } from 'components/button/Button';
 import classNames from 'classnames';
+import config from 'config/index';
 
 export default (props) => {
   const { domain, timestamp, authorized_netblocks, dns_lookups, refresh, loggedIn } = props;
@@ -26,7 +27,7 @@ export default (props) => {
         {/*  Top section */}
         <div className='panel__body'>
           <div className='float--right'>
-            {!loggedIn && <SaveResultsLink/>}
+            {!loggedIn && <SaveResultsLink extraQueryParams={config.queryParams.inspector}/>}
             <CopyPopover><ActionLink title='Share' track={true}>Share</ActionLink></CopyPopover>
             <ActionLink onClick={refresh} title='Refresh' track={true}>Refresh</ActionLink>
             </div>

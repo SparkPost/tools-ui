@@ -68,7 +68,7 @@ exports[`snapshot tests Button will render correctly with no options 1`] = `
 exports[`snapshot tests SpLoginLink will render correctly with all options 1`] = `
 <a
   className="sp-sign-in a-list of-classes"
-  href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2Fsome%2Fpath%3Fsome%3Dsearch&src=SP-Tools&sfdcid=701600000019BWh&some=search"
+  href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
   onClick={[Function]}
   title="Login">
   Log In
@@ -78,7 +78,7 @@ exports[`snapshot tests SpLoginLink will render correctly with all options 1`] =
 exports[`snapshot tests SpLoginLink will render correctly with no options 1`] = `
 <a
   className="sp-sign-in"
-  href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost&src=SP-Tools&sfdcid=701600000019BWh"
+  href="https://TEST.sparkpost.com/auth?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
   onClick={[Function]}
   title="Login" />
 `;
@@ -86,7 +86,7 @@ exports[`snapshot tests SpLoginLink will render correctly with no options 1`] = 
 exports[`snapshot tests SpSignUpLink will render correctly with all options 1`] = `
 <a
   className="sp-sign-up a-list of-classes"
-  href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2Fsome%2Fpath%3Fsome%3Dsearch&src=SP-Tools&sfdcid=701600000019BWh&some=search"
+  href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
   onClick={[Function]}
   title="Sign Up">
   Sign Up
@@ -96,7 +96,7 @@ exports[`snapshot tests SpSignUpLink will render correctly with all options 1`] 
 exports[`snapshot tests SpSignUpLink will render correctly with no options 1`] = `
 <a
   className="sp-sign-up"
-  href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost&src=SP-Tools&sfdcid=701600000019BWh"
+  href="https://TEST.sparkpost.com/sign-up?return=http%3A%2F%2Flocalhost%2F&src=SP-Tools&sfdcid=701600000019BWh"
   onClick={[Function]}
   title="Sign Up" />
 `;
