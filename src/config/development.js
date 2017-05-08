@@ -3,7 +3,7 @@ export default {
   // appUrl: 'https://app-uat.tst.sparkpost.com'
   appUrl: 'http://app.sparkpost.dev',
   logInUrl: 'http://app.sparkpost.dev/auth',
-  signUpUrl: 'http://app.sparkpost.dev/sign-up',
+  signUpUrl: 'http://app.sparkpost.dev/join',
   authCookie: {
     options: {
       domain: '.sparkpost.dev'
