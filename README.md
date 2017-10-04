@@ -22,6 +22,8 @@ This will start the app in the development mode. Open [http://localhost:3000](ht
 
 *Note:* Visiting `/` will redirect you to sparkpost.com. So, try visiting a path like [`/dkim`](http://localhost:3000/dkim).
 
+Making changes to source will reload the application automatically. 
+
 ### Running Tests
 ```
 npm test
