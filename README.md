@@ -3,8 +3,8 @@ This repo contains the [Messaging Tools UI](https://tools.sparkpost.com). API is
 
 ## Environments
 
-- UAT: 
-- Staging:
+- UAT: N/A
+- Staging: https://tools-staging.sparkpost.com
 - Production: https://tools.sparkpost.com
 
 ## Development
