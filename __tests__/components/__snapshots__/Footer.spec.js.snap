@@ -12,14 +12,14 @@ exports[`test Footer component should render correctly 1`] = `
         </h1>
         <p
           className="marginBottom--lg">
-          The world’s most powerful email delivery solution is now yours in a developer-friendly, quick to set up cloud service. Open a SparkPost account today and send up to 100,000 emails per month for free.
+          The world’s most powerful email delivery solution is now yours in a developer-friendly, quick to set up cloud service. Open a SparkPost account today and and get started for free.
         </p>
         <a
           className="button button--l button--blue"
           href="https://TEST.sparkpost.com/join?src=SP-Tools&sfdcid=701600000019BWh"
           onClick={[Function]}
           title="SparkPost">
-          Send 100k Emails/Month for Free
+          Try Free
         </a>
       </div>
     </div>
