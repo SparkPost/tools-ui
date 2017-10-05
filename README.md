@@ -1,12 +1,6 @@
 # Tools UI
 This repo contains the [Messaging Tools UI](https://tools.sparkpost.com). API is located [here](https://github.com/SparkPost/messaging-tools/).
 
-## Environments
-
-- UAT: N/A
-- Staging: https://tools-staging.sparkpost.com
-- Production: https://tools.sparkpost.com
-
 ## Development
 
 ### Installing Dependencies
