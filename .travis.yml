@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - "6"
+  - "lts/*"
 env:
   global:
     - CXX=g++-4.8
@@ -29,7 +29,6 @@ deploy:
     on:
       branch: master
       condition: $REACT_APP_ENV = staging && -z $TRAVIS_TAG
-      node: "6"
   - provider: s3
     access_key_id: $ENG_AWS_ACCESS_KEY_ID
     secret_access_key: $ENG_AWS_SECRET_ACCESS_KEY
@@ -41,4 +40,3 @@ deploy:
     on:
       tags: true
       condition: $REACT_APP_ENV = production && $TRAVIS_TAG == v*
-      node: "6"
