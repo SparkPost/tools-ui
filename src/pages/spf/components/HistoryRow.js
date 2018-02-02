@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import Icon from 'components/Icon';
 import classNames from 'classnames';
-import { trackSpfHistoryClick } from 'actions/mixpanel';
 
 import './HistoryRow.scss';
 
 const HistoryRow = (props) => {
-  const { domain, timestamp, status, trackSpfHistoryClick } = props;
+  const { domain, timestamp, status } = props;
 
   const renderStatus = (status) => {
     let iconCls = '';
@@ -31,7 +30,7 @@ const HistoryRow = (props) => {
   });
 
   return (
-    <Link to={`/spf/inspector/${domain}`} title={`${domain}`} onClick={() => trackSpfHistoryClick(domain)} className='spf-historyRow'>
+    <Link to={`/spf/inspector/${domain}`} title={`${domain}`} className='spf-historyRow'>
       <div className='panel marginBottom--none'>
         <div className='panel__body'>
           <div className={iconClasses}>{renderStatus(status)}</div>
@@ -46,4 +45,4 @@ const HistoryRow = (props) => {
   );
 };
 
-export default connect(null, { trackSpfHistoryClick })(HistoryRow);
+export default connect(null, { })(HistoryRow);

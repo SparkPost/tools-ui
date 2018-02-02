@@ -195,8 +195,7 @@ module.exports = {
     // in `package.json`, in which case it will be the pathname of that URL.
     new InterpolateHtmlPlugin({
       PUBLIC_URL: publicUrl,
-      GTM_ID: gtmId,
-      MIXPANEL_TOKEN: 'c3f0170097042b438d45ceb16f8c85b2'
+      GTM_ID: gtmId
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
