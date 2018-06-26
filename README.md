@@ -16,6 +16,7 @@ In the project directory, you can run:
 ```
 npm start
 ```
+Note: If you get `node-sass` related error try `npm rebuild node-sass`.
 
 This will start the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
