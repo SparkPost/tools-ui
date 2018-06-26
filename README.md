@@ -35,16 +35,13 @@ Launches the test runner in the interactive watch mode. Follow on-screen message
 
 
 ## Deployment
-### Making Production Build
+### Staging
 
-```
-npm run build
-```
+To deploy to staging, just merge the branch to `master`. [Travis](https://travis-ci.org/SparkPost/tools-ui/) will take care of the rest.
 
-Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance.
+### Production
 
-The build is minified and the filenames include the hashes. App is ready to be deployed!
+For releasing to production, other than merging to `master`, you need to tag it. Run following commands while you're in `master`.
 
-See the section about [deployment](#deployment) for more information.
-
-_detail about pushing the build to production to be filled_
+- `npm version <major|minor|patch>`. Use appropriate option among `major|minor|patch`. A new tag will be created.
+- `git push && git push --tags`
