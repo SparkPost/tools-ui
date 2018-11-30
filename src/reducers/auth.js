@@ -6,7 +6,7 @@ export default makeReducer({
   },
   types: {
     'AUTH_LOG_IN': (state, action) => {
-      const { token, username = state.username, refreshToken } = action.payload;
+      const { access_token: token, username = state.username, refreshToken } = action.payload;
       return {
         token,
         username,
