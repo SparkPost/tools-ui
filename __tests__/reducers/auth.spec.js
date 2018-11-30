@@ -14,7 +14,7 @@ describe('reducers: auth', () => {
     action = {
       type: 'AUTH_LOG_IN',
       payload: {
-        'access_token': 'my_token',
+        access_token: 'my_token',
         refreshToken: 'my_refresh_token'
       }
     };
