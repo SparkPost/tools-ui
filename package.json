@@ -1,6 +1,6 @@
 {
   "name": "tools.sparkpost.com-ui",
-  "version": "1.16.1",
+  "version": "1.16.2",
   "private": true,
   "devDependencies": {
     "@sparkpost/styles": "^1.6.0",
