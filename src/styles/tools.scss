@@ -45,8 +45,8 @@ code {
   cursor: pointer;
 }
 
-body {
-  font-family: "Calibre", "Gotham Narrow SSm A", "Gotham Narrow SSm B", -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, sans-serif;
+* {
+  font-family: "Calibre", -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, sans-serif !important;
 }
 
 body, p {
