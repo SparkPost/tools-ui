@@ -6,6 +6,7 @@
 .button {
   padding: 0 rem(12);
   white-space: nowrap;
+  font-weight: 600;
 }
 
 .actionLink {
@@ -13,7 +14,7 @@
   padding: 0 rem(6);
 
   color: color(orange);
-  font-weight: 400;
+  font-weight: 500;
   font-size: rem(14);
 
   &:hover, &:active, &:focus {

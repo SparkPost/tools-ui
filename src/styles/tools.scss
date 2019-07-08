@@ -3,7 +3,7 @@
  */
 $fa-font-path: "~@sparkpost/styles/src/assets/fonts";
 @import "~@sparkpost/styles/src/assets/scss/vendor/normalize";
-@import url("//cloud.typography.com/6240112/7332192/css/fonts.css");
+@import url("https://app.sparkpost.com/static/fonts/calibre/calibre.css");
 @import "~@sparkpost/styles/src/assets/scss/vendor/fa/font-awesome";
 
 /*
@@ -43,4 +43,12 @@ code {
 
 .button:not(disabled):hover {
   cursor: pointer;
+}
+
+body {
+  font-family: "Calibre", "Gotham Narrow SSm A", "Gotham Narrow SSm B", -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, Helvetica, sans-serif;
+}
+
+body, p {
+  font-weight: 400;
 }
