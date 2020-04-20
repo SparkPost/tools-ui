@@ -6,7 +6,7 @@ const validate = (values) => {
     a: {}
   };
 
-  const domain = /^(?!:\/\/)([a-zA-Z0-9]+\.)?[a-zA-Z0-9][a-zA-Z0-9-]+\.[a-zA-Z]{2,6}?$/i;
+  const domain = /^(?!:\/\/)([a-z0-9-]+\.)*[a-z0-9][a-z0-9-]+\.[a-z]{2,63}$/i;
 
   // Test first domain input
   if (!domain.test(values.domain)) {

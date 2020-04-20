@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - "lts/*"
+  - '10.17'
 env:
   global:
     - CXX=g++-4.8
