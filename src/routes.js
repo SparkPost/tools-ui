@@ -12,7 +12,7 @@ import SPFBuilder from 'pages/builder/Builder';
 const redirectRoot = () => {
   const { search } = browserHistory.getCurrentLocation();
   if (process.env.NODE_ENV === 'development') {
-    window.location = 'https://localhost:3000/dkim';
+    window.location = 'http://localhost:3000/dkim';
   } else {
     window.location = `https://www.sparkpost.com/email-tools${search}`;
   }
