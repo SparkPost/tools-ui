@@ -18,10 +18,7 @@ npm start
 ```
 Note: If you get `node-sass` related error try `npm rebuild node-sass`.
 
-This will start the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-
-*Note:* Visiting `/` will redirect you to sparkpost.com. So, try visiting a path like [`/dkim`](http://localhost:3000/dkim).
+This will start the app in the development mode. Open [http://localhost:3000/dkim](http://localhost:3000/dkim) to view it in the browser.
 
 Making changes to source will reload the application automatically. 
 
@@ -32,7 +29,17 @@ npm test
 
 Launches the test runner in the interactive watch mode. Follow on-screen messages for usages.
 
+```
+npm run serve
+```
+Requires: 
+https://www.npmjs.com/package/pushstate-server
 
+`npm install -g pushstate-server`
+
+`npm run serve`
+
+Note: I did not install pushstate-server as a dev dependency because it would have upgraded a number of versions in the package lock and I didn't want to add unnecessary risk.
 
 ## Deployment
 ### Staging
