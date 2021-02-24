@@ -12,16 +12,6 @@ exports[`QueryPage Snapshots baseline snapshot 1`] = `
     </p>
     <div>
       <div
-        style={
-          Object {
-            "background": "#fa6423",
-            "color": "#fff",
-            "padding": "15px",
-          }
-        }>
-        Sorry, this tool is down for a scheduled maintenance right now. Please check back in a little bit.
-      </div>
-      <div
         className="panel panel--accent text--left">
         <div
           className="panel__body">
