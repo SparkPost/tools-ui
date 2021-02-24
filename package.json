@@ -1,6 +1,6 @@
 {
   "name": "tools.sparkpost.com-ui",
-  "version": "1.16.4",
+  "version": "1.16.5",
   "private": true,
   "engines": {
     "node": ">=10.17"
