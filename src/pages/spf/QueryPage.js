@@ -33,11 +33,16 @@ export class QueryPage extends Component {
 
   renderPanel() {
     return (
-      <div className='panel panel--accent text--left'>
-        <div className='panel__body'>
-          <h4 className='marginBottom--xxs'>Inspect a Domain</h4>
-          <p className='paddingBottom--md'>Enter a domain to inspect, e.g., sparkpost.com.</p>
-          { this.renderForm() }
+      <div>
+        <div style={{ background: '#fa6423', color: '#fff', padding: '15px' }}>
+          Sorry, this tool is down for a scheduled maintenance right now. Please check back in a little bit.
+        </div>
+        <div className='panel panel--accent text--left'>
+          <div className='panel__body'>
+            <h4 className='marginBottom--xxs'>Inspect a Domain</h4>
+            <p className='paddingBottom--md'>Enter a domain to inspect, e.g., sparkpost.com.</p>
+            { this.renderForm() }
+          </div>
         </div>
       </div>
     );
