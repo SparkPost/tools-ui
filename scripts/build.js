@@ -163,12 +163,12 @@ function build(previousSizeMap) {
     console.log('The project was built assuming it is hosted at the server root.');
     // no homepage
     console.log('To override this, specify the ' + chalk.green('homepage') + ' in your '  + chalk.cyan('package.json') + '.');
-    console.log('For example, add this to build it for GitHub Pages:')
+    console.log('For example, add this to build it for GitHub Pages:');
     console.log();
     console.log('  ' + chalk.green('"homepage"') + chalk.cyan(': ') + chalk.green('"http://myname.github.io/myapp"') + chalk.cyan(','));
     console.log();
     console.log('The ' + chalk.cyan('build') + ' folder is ready to be deployed.');
-    console.log('You may also serve it locally with a static server:')
+    console.log('You may also serve it locally with a static server:');
     console.log();
     if (useYarn) {
       console.log('  ' + chalk.cyan('yarn') +  ' global add pushstate-server');
