@@ -11,7 +11,7 @@ export default {
       path: '/'
     },
     requestHeaders: {
-      Authorization: 'Basic bXN5c1VJTGltaXRlZDphZjE0OTdkYS02NjI5LTQ3NTEtODljZS01ZDBmODE4N2MyMDQ=',
+      authHeader: 'Basic bXN5c1VJTGltaXRlZDphZjE0OTdkYS02NjI5LTQ3NTEtODljZS01ZDBmODE4N2MyMDQ=',
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   },
