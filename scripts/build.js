@@ -158,7 +158,6 @@ function build(previousSizeMap) {
     console.log();
 
     var openCommand = process.platform === 'win32' ? 'start' : 'open';
-    var appPackage  = require(paths.appPackageJson);
     // no homepage or "homepage": "http://mywebsite.com"
     console.log('The project was built assuming it is hosted at the server root.');
     // no homepage
