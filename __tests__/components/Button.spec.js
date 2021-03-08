@@ -24,12 +24,10 @@ describe('snapshot tests', () => {
   });
 
   test('Button will render correctly with no options', () => {
-    const someFunction = () => {};
     expect(renderer.create(<Button>ACTION</Button>)).toMatchSnapshot();
   });
 
   test('Button will render a Link with a url', () => {
-    const someFunction = () => {};
     expect(renderer.create(<Button to='a url'>ACTION</Button>)).toMatchSnapshot();
   });
 
