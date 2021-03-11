@@ -43,7 +43,7 @@
     "path-exists": "2.1.0",
     "postcss-loader": "1.0.0",
     "promise": "7.1.1",
-    "react-dev-utils": "^0.4.2",
+    "react-dev-utils": "^11.0.4",
     "react-helmet": "^4.0.0",
     "react-router-scroll": "^0.4.1",
     "react-test-renderer": "^15.4.2",
