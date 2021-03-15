@@ -1,21 +1,22 @@
-var autoprefixer = require('autoprefixer');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ManifestPlugin = require('webpack-manifest-plugin');
-var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-var url = require('url');
-var paths = require('./paths');
-var getClientEnvironment = require('./env');
+const autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
+const url = require('url');
+const paths = require('./paths');
+const getClientEnvironment = require('./env');
+const path = require('path');
 
 
 
 function ensureSlash(path, needsSlash) {
-  var hasSlash = path.endsWith('/');
+  const hasSlash = path.endsWith('/');
   if (hasSlash && !needsSlash) {
     return path.substr(path, path.length - 1);
   } else if (!hasSlash && needsSlash) {
-    return path + '/';
+    return `${path}/`;
   } else {
     return path;
   }
@@ -26,17 +27,17 @@ function ensureSlash(path, needsSlash) {
 // single-page apps that may serve index.html for nested URLs like /todos/42.
 // We can't use a relative path in HTML because we don't want to load something
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
-var homepagePath = require(paths.appPackageJson).homepage;
-var homepagePathname = homepagePath ? url.parse(homepagePath).pathname : '/';
+const homepagePath = require(paths.appPackageJson).homepage;
+const homepagePathname = homepagePath ? url.parse(homepagePath).pathname : '/';
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
-var publicPath = ensureSlash(homepagePathname, true);
+const publicPath = ensureSlash(homepagePathname, true);
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_PATH%/xyz looks better than %PUBLIC_PATH%xyz.
-var publicUrl = ensureSlash(homepagePathname, false);
+const publicUrl = ensureSlash(homepagePathname, false);
 // Get environment variables to inject into our app.
-var env = getClientEnvironment(publicUrl);
+const env = getClientEnvironment(publicUrl);
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
@@ -45,7 +46,7 @@ if (env['process.env'].NODE_ENV !== '"production"') {
 }
 
 // handle setting Google Tag Manager ID depending on environment
-var gtmId;
+let gtmId;
 if (env['process.env'].REACT_APP_ENV === '"staging"') {
   gtmId = 'GTM-N6D3QT';
 } else {
@@ -78,35 +79,32 @@ module.exports = {
     publicPath: publicPath
   },
   resolve: {
-    // This allows you to set a fallback for where Webpack should look for modules.
-    // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
-    // We use `fallback` instead of `root` because we want `node_modules` to "win"
-    // if there any conflicts. This matches Node resolution mechanism.
-    // https://github.com/facebookincubator/create-react-app/issues/253
-    fallback: paths.nodePaths,
     // These are the reasonable defaults supported by the Node ecosystem.
     // We also include JSX as a common component filename extension to support
     // some tools, although we do not recommend using it, see:
     // https://github.com/facebookincubator/create-react-app/issues/290
-    extensions: ['.js', '.json', '.jsx', ''],
+    extensions: ['.js', '.json', '.jsx'],
     alias: {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web'
-    }
+    },
+    modules: [
+      path.resolve('./src'),
+      'node_modules'
+    ]
   },
 
   module: {
     // First, run the linter.
     // It's important to do this before Babel processes the JS.
-    preLoaders: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
-        loader: 'eslint',
+        loader: 'eslint-loader',
+        enforce: 'pre',
         include: paths.appSrc
-      }
-    ],
-    loaders: [
+      },
       // Default loader: load all assets that are not handled
       // by other loaders with the url loader.
       // Note: This list needs to be updated with every change of extensions
@@ -128,7 +126,7 @@ module.exports = {
           /\.json$/,
           /\.svg$/
         ],
-        loader: 'url',
+        loader: 'url-loader',
         query: {
           limit: 10000,
           name: 'static/media/[name].[hash:8].[ext]'
@@ -138,7 +136,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
-        loader: 'babel',
+        loader: 'babel-loader'
 
       },
       // The notation here is somewhat confusing.
@@ -156,7 +154,12 @@ module.exports = {
       {
         test: /\.scss$/,
         include: paths.appSrc,
-        loader: ExtractTextPlugin.extract('style-loader', ['css-loader?minimize', 'postcss-loader', 'sass-loader'])
+        loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: ['css-loader', {
+          loader: 'postcss-loader',
+          options: {
+            plugins: () => [autoprefixer()]
+          }
+        }, 'sass-loader']})
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.
@@ -167,26 +170,12 @@ module.exports = {
       // "file" loader for svg
       {
         test: /\.svg$/,
-        loader: 'file',
+        loader: 'file-loader',
         query: {
           name: 'static/media/[name].[hash:8].[ext]'
         }
       }
     ]
-  },
-
-  // We use PostCSS for autoprefixing only.
-  postcss: function() {
-    return [
-      autoprefixer({
-        browsers: [
-          '>1%',
-          'last 4 versions',
-          'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
-        ]
-      }),
-    ];
   },
   plugins: [
     // Makes the public URL available as %PUBLIC_URL% in index.html, e.g.:
@@ -244,6 +233,11 @@ module.exports = {
     // having to parse `index.html`.
     new ManifestPlugin({
       fileName: 'asset-manifest.json'
+    }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname
+      }
     })
   ],
   // Some libraries import Node modules but don't use them in the browser.
