@@ -5,8 +5,8 @@
  */
 
 import _ from 'lodash';
-import { refresh, logout } from '../actions/auth';
-import { sparkpostRequest, useRefreshToken } from '../helpers/http';
+import { refresh, logout } from 'actions/auth';
+import { sparkpostRequest, useRefreshToken } from 'helpers/http';
 
 const maxRefreshRetries = 3;
 
