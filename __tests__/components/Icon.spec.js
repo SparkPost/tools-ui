@@ -14,7 +14,6 @@ describe('Icon component', () => {
   });
 
   test('should render correctly with no options', () => {
-    const someFunction = () => {};
     expect(renderer.create(<Icon />)).toMatchSnapshot();
   });
 

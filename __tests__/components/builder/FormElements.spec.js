@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import { TextInput, UseDefault, Hosts } from 'pages/builder/components/FormElements';
+import { TextInput } from 'pages/builder/components/FormElements';
 
 describe('TextInput component', () => {
   const meta = {
