@@ -1,0 +1,35 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+@import "~@sparkpost/styles/src/assets/scss/components/table";
+
+// Global Override
+.table {
+  &__head {
+    font-weight: 500;
+    font-size: rem(12);
+    color: grayscale(5);
+  }
+
+  &__heading, &__cell {
+    padding: rem(15) 0 rem(15) rem(18);
+    white-space: nowrap;
+
+    @media screen and (min-width: break(md)) {
+      padding: rem(15) rem(18);
+    }
+  }
+}
+
+// Table specific override
+.dkimResultDetailTable .table {
+  &__row {
+    // Hides the las TD on each row
+    & > *:last-child {
+      display: none;
+      @media screen and (min-width: break(md)) {
+        display: table-cell;
+      }
+    }
+  }
+}

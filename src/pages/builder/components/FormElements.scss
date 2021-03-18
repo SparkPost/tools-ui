@@ -1,0 +1,44 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.input__prefix {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  line-height: rem(36);
+  font-weight: 400;
+  font-size: rem(15);
+  color: grayscale(3);
+  transition: 0.15s;
+}
+
+.builder-input {
+  background: transparent;
+
+  &--ghost.input__text {
+    border: none;
+    padding: 0;
+
+    .has-error &, &:hover, &:active, &:focus {
+      border: none;
+    }
+
+    &:hover, &:focus {
+      & ~ .input__prefix {
+        color: color(orange);
+      }
+    }
+  }
+
+  .builder-inputGroup--mx & { padding-left: rem(27); }
+  .builder-inputGroup--a & { padding-left: rem(13); }
+  .builder-inputGroup--include & { padding-left: rem(57); }
+  .builder-inputGroup--ip4 & { padding-left: rem(28); }
+  .builder-inputGroup--ip6 & { padding-left: rem(27); }
+}
+
+.builder-smalltext {
+  font-size: rem(14);
+  line-height: rem(18);
+}

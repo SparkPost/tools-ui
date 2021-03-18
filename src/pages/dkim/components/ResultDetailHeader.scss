@@ -1,0 +1,25 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.dkimResultDetailHeader {
+  &__value, &__label {
+    display: inline-block;
+    line-height: rem(21);
+    font-weight: 500;
+  }
+
+  &__value {
+    color: grayscale(2);
+    font-size: rem(14);
+  }
+
+  &__label {
+    width: rem(42);
+    margin-right: rem(18);
+
+    text-align: right;
+    font-size: rem(12);
+    color: grayscale(5);
+    text-transform: lowercase;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "complexity": "off",
+    "max-lines": [
+      "warn",
+      {
+        "max": 250,
+        "skipComments": true
+      }
+    ]
+  }
+}

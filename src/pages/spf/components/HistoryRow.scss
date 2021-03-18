@@ -1,0 +1,64 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.spf-historyRow {
+  position: relative;
+
+  .panel { transition: box-shadow 0.15s; }
+
+  &:hover {
+    text-decoration: none;
+
+    .panel {
+      position: relative;
+      z-index: 1;
+      box-shadow: shadow(2), 0 0 36px rgba(#000, 0.05);
+    }
+
+    .spf-historyRow__action {
+      color: color(blue);
+    }
+  }
+
+  &__status {
+    position: absolute;
+    top: 50%;
+    left: rem(18);
+    transform: translate(0, -50%);
+
+    color: color(green);
+
+    &.has-error { color: color(alert); }
+    &.has-warning { color: color(mustard); }
+  }
+
+  &__details {
+    padding-left: rem(30);
+    line-height: rem(21);
+    font-size: rem(14);
+    color: grayscale(2);
+    font-weight: 500;
+  }
+
+  &__domain, &__timestamp {
+    margin: 0;
+  }
+
+  &__timestamp {
+    color: grayscale(5);
+    font-size: rem(12);
+  }
+
+  &__action {
+    position: absolute;
+    top: 50%;
+    right: rem(18);
+    transform: translate(0, -50%);
+
+    color: grayscale(5);
+    font-size: rem(12);
+    transition: color 0.15s;
+
+    .fa  { margin-left: rem(6); }
+  }
+}

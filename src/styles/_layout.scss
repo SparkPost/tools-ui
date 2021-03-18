@@ -1,0 +1,41 @@
+html {
+  background: grayscale(9);
+  @media screen and (min-width: break(xl)) {
+    font-size: 20px;
+  }
+}
+
+$footer-height: 25rem;
+$footer-loggedIn-height: 6rem;
+$nav-height: rem(60);
+
+.pageWrapper {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 0;
+  padding-top: $nav-height;
+
+  @media screen and (min-width: break(md)) {
+    padding-bottom: $footer-height;
+
+    &--loggedIn {
+      padding-bottom: $footer-loggedIn-height;
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: break(xl);
+
+  &--tool {
+    padding: rem(30) 0;
+
+    min-height: 0;
+    @media screen and (min-width: break(md)) {
+      padding: rem(60) 0;
+      min-height: 70vh;
+    }
+  }
+}

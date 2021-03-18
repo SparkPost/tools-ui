@@ -1,0 +1,49 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+@import "~@sparkpost/styles/src/assets/scss/components/button";
+
+.button {
+  padding: 0 rem(12);
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.actionLink {
+  display: inline-block;
+  padding: 0 rem(6);
+
+  color: color(orange);
+  font-weight: 500;
+  font-size: rem(14);
+
+  &:hover, &:active, &:focus {
+    cursor: pointer;
+    text-decoration: none;
+    color: color(orange--dark);
+    background: grayscale(9);
+  }
+
+  @media screen and (min-width: break(md)) {
+    padding: 0 rem(12);
+    font-size: rem(15);
+  }
+}
+
+.backLink {
+  display: inline-block;
+  margin-bottom: rem(9);
+  font-size: rem(15);
+
+  .fa {
+    transition: 0.15s;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    .fa {
+      transform: translate(-1px, 0);
+    }
+  }
+}
