@@ -61,6 +61,7 @@
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "^17.0.1",
+    "react-helmet": "^4.0.0",
     "react-redux": "^5.0.2",
     "react-refresh": "^0.8.3",
     "react-router": "^3.0.0",
