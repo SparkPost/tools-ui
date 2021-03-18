@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import classNames from 'classnames';
 import Icon from 'components/Icon';
@@ -78,10 +79,10 @@ CopyPopover.defaultProps = {
 };
 
 CopyPopover.propTypes = {
-  children: React.PropTypes.element.isRequired,
-  stringToCopy: React.PropTypes.string,
-  placement: React.PropTypes.string,
-  block: React.PropTypes.bool
+  children: PropTypes.element.isRequired,
+  stringToCopy: PropTypes.string,
+  placement: PropTypes.string,
+  block: PropTypes.bool
 };
 
 const HoverPopover = (props) => {

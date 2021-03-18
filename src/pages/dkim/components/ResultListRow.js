@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router';
 import Icon from 'components/Icon';
 
@@ -36,11 +37,11 @@ const ResultListRow = (props) => {
 };
 
 ResultListRow.propTypes = {
-  id: React.PropTypes.number.isRequired,
-  subject: React.PropTypes.string.isRequired,
-  result: React.PropTypes.bool.isRequired,
-  header_from: React.PropTypes.string.isRequired,
-  received: React.PropTypes.string.isRequired
+  id: PropTypes.number.isRequired,
+  subject: PropTypes.string.isRequired,
+  result: PropTypes.bool.isRequired,
+  header_from: PropTypes.string.isRequired,
+  received: PropTypes.string.isRequired
 };
 
 export default ResultListRow;

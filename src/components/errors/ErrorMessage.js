@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'components/Icon';
 
 import './ErrorMessage.scss';
@@ -55,9 +56,9 @@ ErrorMessage.defaultProps = {
 };
 
 ErrorMessage.propTypes = {
-  friendly: React.PropTypes.string,
-  details: React.PropTypes.string,
-  icon: React.PropTypes.string
+  friendly: PropTypes.string,
+  details: PropTypes.string,
+  icon: PropTypes.string
 };
 
 export default ErrorMessage;
