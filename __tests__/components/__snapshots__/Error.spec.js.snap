@@ -1,12 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`ErrorMessage component should render correctly with a supplied icon 1`] = `
 <div
-  className="errorMessage">
+  className="errorMessage"
+>
   <div
-    className="errorMessage__text">
+    className="errorMessage__text"
+  >
     <i
-      className="fa fa-fa-bolt " />
+      className="fa fa-fa-bolt "
+    />
     <p
-      className="errorMessage__friendly">
+      className="errorMessage__friendly"
+    >
       An error occurred
     </p>
   </div>
@@ -15,13 +21,17 @@ exports[`ErrorMessage component should render correctly with a supplied icon 1`]
 
 exports[`ErrorMessage component should render correctly with an error message 1`] = `
 <div
-  className="errorMessage">
+  className="errorMessage"
+>
   <div
-    className="errorMessage__text">
+    className="errorMessage__text"
+  >
     <i
-      className="fa fa-exclamation-circle " />
+      className="fa fa-exclamation-circle "
+    />
     <p
-      className="errorMessage__friendly">
+      className="errorMessage__friendly"
+    >
       some string message
     </p>
   </div>
@@ -30,18 +40,23 @@ exports[`ErrorMessage component should render correctly with an error message 1`
 
 exports[`ErrorMessage component should render correctly with an error message and details 1`] = `
 <div
-  className="errorMessage">
+  className="errorMessage"
+>
   <div
-    className="errorMessage__text">
+    className="errorMessage__text"
+  >
     <i
-      className="fa fa-exclamation-circle " />
+      className="fa fa-exclamation-circle "
+    />
     <a
       className="errorMessage__link"
-      onClick={[Function]}>
+      onClick={[Function]}
+    >
       View Details
     </a>
     <p
-      className="errorMessage__friendly">
+      className="errorMessage__friendly"
+    >
       some string message
     </p>
   </div>
@@ -50,13 +65,17 @@ exports[`ErrorMessage component should render correctly with an error message an
 
 exports[`ErrorMessage component should render the default message with no props 1`] = `
 <div
-  className="errorMessage">
+  className="errorMessage"
+>
   <div
-    className="errorMessage__text">
+    className="errorMessage__text"
+  >
     <i
-      className="fa fa-exclamation-circle " />
+      className="fa fa-exclamation-circle "
+    />
     <p
-      className="errorMessage__friendly">
+      className="errorMessage__friendly"
+    >
       An error occurred
     </p>
   </div>

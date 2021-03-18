@@ -1,13 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`TextInput component should render correctly with all props 1`] = `
 <div
-  className="input__group builder-inputGroup--prefix">
+  className="input__group builder-inputGroup--prefix"
+>
   <input
     autoFocus={true}
     className="input__text builder-input a class"
     placeholder="a placeholder"
-    type="text" />
+    type="text"
+  />
   <span
-    className="input__prefix">
+    className="input__prefix"
+  >
     prefix
     :
   </span>
