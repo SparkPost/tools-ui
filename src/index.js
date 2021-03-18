@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
