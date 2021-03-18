@@ -36,7 +36,7 @@
     "gzip-size": "3.0.0",
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.2",
-    "jest": "^26.6.0",
+    "jest": "26.6.0",
     "json-loader": "0.5.4",
     "node-sass": "4.14.1",
     "object-assign": "4.1.0",
@@ -76,7 +76,7 @@
   "scripts": {
     "start": "npm run fix && node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "npm run fix && node scripts/test.js --env=jsdom",
+    "test": "npm run fix && node scripts/test.js --env=jsdom --testPathPattern=__tests__",
     "lint": "eslint \"src/**/*.js\"",
     "fix": "npm run lint -- --fix"
   },
