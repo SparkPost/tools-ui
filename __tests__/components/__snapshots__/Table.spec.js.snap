@@ -1,0 +1,125 @@
+exports[`test Table component should render correctly 1`] = `
+<table
+  className="table table--transparent">
+  <thead
+    className="table__head">
+    <tr
+      className="table__row">
+      <th
+        className="table__heading">
+        One
+      </th>
+      <th
+        className="table__heading">
+        Second Column
+      </th>
+      <th
+        className="table__heading">
+        Three
+      </th>
+    </tr>
+  </thead>
+  <tbody
+    className="table__body">
+    <tr
+      className="table__row">
+      <td
+        className="table__cell">
+        a
+      </td>
+      <td
+        className="table__cell">
+        b
+      </td>
+      <td
+        className="table__cell">
+        c
+      </td>
+    </tr>
+    <tr
+      className="table__row">
+      <td
+        className="table__cell">
+        1
+      </td>
+      <td
+        className="table__cell">
+        2
+      </td>
+      <td
+        className="table__cell">
+        3
+      </td>
+    </tr>
+    <tr
+      className="table__row">
+      <td
+        className="table__cell">
+        la
+      </td>
+      <td
+        className="table__cell">
+        dee
+      </td>
+      <td
+        className="table__cell">
+        da
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`test Vertical table component should render correctly 1`] = `
+<table
+  className="table table--transparent">
+  <tbody
+    className="table__body">
+    <tr
+      className="table__row">
+      <th
+        className="table__heading">
+        a
+      </th>
+      <td
+        className="table__cell">
+        b
+      </td>
+      <td
+        className="table__cell">
+        c
+      </td>
+    </tr>
+    <tr
+      className="table__row">
+      <th
+        className="table__heading">
+        1
+      </th>
+      <td
+        className="table__cell">
+        2
+      </td>
+      <td
+        className="table__cell">
+        3
+      </td>
+    </tr>
+    <tr
+      className="table__row">
+      <th
+        className="table__heading">
+        la
+      </th>
+      <td
+        className="table__cell">
+        dee
+      </td>
+      <td
+        className="table__cell">
+        da
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

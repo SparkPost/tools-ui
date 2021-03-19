@@ -1,0 +1,56 @@
+exports[`QueryPage Snapshots baseline snapshot 1`] = `
+<div
+  className="flex center-xs">
+  <div
+    className="col-xs-12 col-md-10 col-lg-7">
+    <h1>
+      SPF Inspector
+    </h1>
+    <p
+      className="marginBottom--lg">
+      Visualize your SPF records. Identify which servers are authorized to send on behalf of a domain.
+    </p>
+    <div>
+      <div
+        className="panel panel--accent text--left">
+        <div
+          className="panel__body">
+          <h4
+            className="marginBottom--xxs">
+            Inspect a Domain
+          </h4>
+          <p
+            className="paddingBottom--md">
+            Enter a domain to inspect, e.g., sparkpost.com.
+          </p>
+          <form
+            onSubmit={[Function]}>
+            <div
+              className="flex">
+              <div
+                className="col-xs-12 col-md-8">
+                <div
+                  className="input__group">
+                  <input
+                    className="input__text input--full"
+                    onChange={[Function]}
+                    placeholder="mydomain.com"
+                    type="text" />
+                </div>
+              </div>
+              <div
+                className="col-xs-12 col-md-4 responsiveBump">
+                <button
+                  className="button button--orange button--full"
+                  type="submit">
+                  View Results
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

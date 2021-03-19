@@ -1,0 +1,92 @@
+exports[`CopyPopover component should render when supplied a string to copy 1`] = `
+<span
+  className="popover__group"
+  onClick={[Function]}>
+  <a
+    className="actionLink"
+    onClick={[Function]}
+    style={Object {}}
+    title="">
+    Click me!
+  </a>
+  <div
+    className="popover copyPopover popover--l popover--rightAligned popover--bottom">
+    <h6
+      className="text--left copyPopover__label">
+      <i
+        className="fa fa-check-circle " />
+       Copied to Clipboard!
+    </h6>
+    <p
+      className="copyPopover__copiedString">
+      Copy me!
+    </p>
+    <input
+      className="copyPopover__hidden"
+      readOnly={true}
+      value="Copy me!" />
+  </div>
+</span>
+`;
+
+exports[`CopyPopover component should render when supplied a string to copy and styling props 1`] = `
+<span
+  className="popover__group h-block"
+  onClick={[Function]}>
+  <a
+    className="actionLink"
+    onClick={[Function]}
+    style={Object {}}
+    title="">
+    Click me!
+  </a>
+  <div
+    className="popover copyPopover popover--l popover--rightAligned popover--top">
+    <h6
+      className="text--left copyPopover__label">
+      <i
+        className="fa fa-check-circle " />
+       Copied to Clipboard!
+    </h6>
+    <p
+      className="copyPopover__copiedString">
+      Copy me!
+    </p>
+    <input
+      className="copyPopover__hidden"
+      readOnly={true}
+      value="Copy me!" />
+  </div>
+</span>
+`;
+
+exports[`CopyPopover component should render with only children prop 1`] = `
+<span
+  className="popover__group"
+  onClick={[Function]}>
+  <a
+    className="actionLink"
+    onClick={[Function]}
+    style={Object {}}
+    title="">
+    Click me!
+  </a>
+  <div
+    className="popover copyPopover popover--l popover--rightAligned popover--bottom">
+    <h6
+      className="text--left copyPopover__label">
+      <i
+        className="fa fa-check-circle " />
+       Copied to Clipboard!
+    </h6>
+    <p
+      className="copyPopover__copiedString">
+      http://localhost/
+    </p>
+    <input
+      className="copyPopover__hidden"
+      readOnly={true}
+      value="http://localhost/" />
+  </div>
+</span>
+`;
