@@ -16,7 +16,7 @@ describe('The SPF inspector', () => {
     cy.findByRole('heading', { name: 'SPF Inspector' }).should('be.visible');
   });
 
-  it.only('inspects a domain.', () => {
+  it('inspects a domain.', () => {
     cy.findByLabelText('Inspect Domain')
           .clear()
           .type('sparkpost.com{enter}');
