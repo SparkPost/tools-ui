@@ -9,6 +9,7 @@ describe('The SPF inspector', () => {
 
   it('has the correct page title.', () => {
     cy.title().should('include', 'SPF Inspector');
+    cy.url().should('include', '/spf/inspector')
   });
 
   it('has the correct page header.', () => {
