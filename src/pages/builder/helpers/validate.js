@@ -21,7 +21,7 @@ const validate = (values) => {
   // Test MX host field array
   const mxHostErrors = [];
 
-  values.mx.hosts.forEach((host, index) => {
+  values?.mx?.hosts.forEach((host, index) => {
     const mxErrors = {};
     if (host.name && !domain.test(host.name)) {
       mxErrors.name = 'Invalid hostname';
@@ -36,7 +36,7 @@ const validate = (values) => {
   // Test A host field array
   const aHostErrors = [];
 
-  values.a.hosts.forEach((host, index) => {
+  values?.a?.hosts.forEach((host, index) => {
     const aErrors = {};
     if (host.name && !domain.test(host.name)) {
       aErrors.name = 'Invalid hostname';
