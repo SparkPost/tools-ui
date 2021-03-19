@@ -18,7 +18,6 @@ describe('The SPF inspector', () => {
 
   it('inspects a domain.', () => {
     cy.findByLabelText('Inspect Domain')
-          .clear()
           .type('sparkpost.com{enter}');
 
     cy.findByRole('heading', { name: 'sparkpost.com' }).should('be.visible');
