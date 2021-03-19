@@ -1,12 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`SupportLink component should not render with a code ending in -0 1`] = `null`;
 
 exports[`SupportLink component should render with a code 1`] = `
 <a
   href="https://www.sparkpost.com/email-tools/errors/#some-error-10"
   onClick={[Function]}
-  title="SPF and DKIM Errors">
+  title="SPF and DKIM Errors"
+>
   Learn more 
   <i
-    className="fa fa-external-link-square " />
+    className="fa fa-external-link-square "
+  />
 </a>
 `;

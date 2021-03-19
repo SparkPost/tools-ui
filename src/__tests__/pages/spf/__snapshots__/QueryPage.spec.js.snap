@@ -1,48 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`QueryPage Snapshots baseline snapshot 1`] = `
 <div
-  className="flex center-xs">
+  className="flex center-xs"
+>
   <div
-    className="col-xs-12 col-md-10 col-lg-7">
+    className="col-xs-12 col-md-10 col-lg-7"
+  >
     <h1>
       SPF Inspector
     </h1>
     <p
-      className="marginBottom--lg">
+      className="marginBottom--lg"
+    >
       Visualize your SPF records. Identify which servers are authorized to send on behalf of a domain.
     </p>
     <div>
       <div
-        className="panel panel--accent text--left">
+        className="panel panel--accent text--left"
+      >
         <div
-          className="panel__body">
+          className="panel__body"
+        >
           <h4
-            className="marginBottom--xxs">
+            className="marginBottom--xxs"
+          >
             Inspect a Domain
           </h4>
           <p
-            className="paddingBottom--md">
+            className="paddingBottom--md"
+          >
             Enter a domain to inspect, e.g., sparkpost.com.
           </p>
           <form
-            onSubmit={[Function]}>
+            onSubmit={[Function]}
+          >
             <div
-              className="flex">
+              className="flex"
+            >
               <div
-                className="col-xs-12 col-md-8">
+                className="col-xs-12 col-md-8"
+              >
                 <div
-                  className="input__group">
+                  className="input__group"
+                >
                   <input
                     className="input__text input--full"
                     onChange={[Function]}
                     placeholder="mydomain.com"
-                    type="text" />
+                    type="text"
+                  />
                 </div>
               </div>
               <div
-                className="col-xs-12 col-md-4 responsiveBump">
+                className="col-xs-12 col-md-4 responsiveBump"
+              >
                 <button
                   className="button button--orange button--full"
-                  type="submit">
+                  type="submit"
+                >
                   View Results
                 </button>
               </div>

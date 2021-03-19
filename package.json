@@ -86,6 +86,7 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "devDependencies": {
+    "react-test-renderer": "^17.0.1",
     "serve": "^11.3.2"
   },
   "scripts": {
@@ -134,7 +135,7 @@
     ],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
-    "testRunner": "./node_modules/jest-circus/runner.js",
+    "testRunner": "<rootDir>/node_modules/jest-circus/runner.js",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
@@ -144,7 +145,9 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
       "^.+\\.module\\.(css|sass|scss)$"
     ],
-    "modulePaths": [],
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
