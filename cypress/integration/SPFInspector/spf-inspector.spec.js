@@ -15,4 +15,23 @@ describe('The SPF inspector', () => {
   it('has the correct page header.', () => {
     cy.findByRole('heading', { name: 'SPF Inspector' }).should('be.visible');
   });
+
+  it.only('inspects a domain.', () => {
+    cy.findByLabelText('Inspect Domain')
+          .clear()
+          .type('sparkpost.com{enter}');
+
+    cy.findByRole('heading', { name: 'sparkpost.com' }).should('be.visible');
+    cy.findByRole('heading', { name: 'SPF Record' }).should('be.visible');
+
+    cy.verifyLink({
+      content: 'Back',
+      href: '/spf/inspector',
+    });
+
+    cy.verifyLink({
+      content: 'How do I fix errors?',
+      href: 'https://www.sparkpost.com/email-tools/errors',
+    });
+  });
 });
