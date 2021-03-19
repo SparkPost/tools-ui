@@ -10,6 +10,7 @@
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@sparkpost/styles": "^1.6.0",
     "@svgr/webpack": "5.5.0",
+    "@testing-library/cypress": "^7.0.4",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
@@ -86,6 +87,10 @@
     "workbox-webpack-plugin": "5.1.4"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
+    "cypress": "^6.8.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-prettier": "^3.3.1",
     "react-test-renderer": "^17.0.1",
     "serve": "^11.3.2"
   },
@@ -95,7 +100,8 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "lint": "eslint 'src/**/*.js'",
-    "fix": "npm run lint -- --fix"
+    "fix": "npm run lint -- --fix",
+    "cy": "cross-env NODE_ENV=test cypress open --config-file cypress.dev.json"
   },
   "eslintConfig": {
     "extends": [

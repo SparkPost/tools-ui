@@ -8,5 +8,12 @@
         "skipComments": true
       }
     ]
-  }
+  },
+  "extends": [
+    "react-app",
+    "plugin:cypress/recommended",
+    "plugin:jest/recommended",
+    "plugin:testing-library/recommended"
+  ],
+  "plugins": ["testing-library", "jest", "prettier"]
 }

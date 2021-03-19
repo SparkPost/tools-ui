@@ -28,3 +28,8 @@ For releasing to production, other than merging to `master`, you need to tag it.
 
 - `npm version <major|minor|patch>`. Use appropriate option among `major|minor|patch`. A new tag will be created.
 - `git push && git push --tags`
+
+#### Notes
+
+Cypress is installed but only for local so far. CI command could look something like:
+`"cy-ci": "cross-env NODE_ENV=test npm run serve & wait-on cypress run --config-file cypress.ci.json"`
