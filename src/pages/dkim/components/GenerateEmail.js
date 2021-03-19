@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'components/button/Button';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => (
   <span>
     <div className='panel panel--accent'>

@@ -1,5 +1,4 @@
 import { formatDate } from 'helpers/date';
-import _ from 'lodash';
 import makeReducer from 'reducers/makeReducer';
 
 export default makeReducer({

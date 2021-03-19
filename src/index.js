@@ -12,6 +12,7 @@ import routes from './routes';
 import './styles/tools.scss';
 
 // necessary for redux devtools in development mode only
+// eslint-disable-next-line no-mixed-operators
 const composeEnhancers = process.env.NODE_ENV !== 'production' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducer,

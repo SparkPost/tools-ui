@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   apiBase: 'https://api.sparkpost.com/api/v1',
   appUrl: 'https://app.sparkpost.com',

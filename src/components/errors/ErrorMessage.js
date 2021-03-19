@@ -24,6 +24,7 @@ class ErrorMessage extends Component {
   renderToggleButton() {
     const { open } = this.state;
     return (
+      // eslint-disable-next-line jsx-a11y/anchor-is-valid
       <a className='errorMessage__link' onClick={() => this.toggleDetails()}>{open ? 'Hide Details' : 'View Details'}</a>
     );
   }

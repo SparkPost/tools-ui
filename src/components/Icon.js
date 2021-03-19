@@ -10,4 +10,5 @@ const mapPropsToClasses = ({ name, size, extras = [] }) => (
   }, extras)
 );
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => <i className={mapPropsToClasses(props)} />;

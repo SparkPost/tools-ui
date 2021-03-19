@@ -85,6 +85,7 @@ export class Nav extends Component {
             <a href='https://www.sparkpost.com/email-tools' title='SparkPost Tools'><Property/></a>
           </div>
 
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a className='nav__hamburger' onClick={() => this.toggleMenu()}><span></span></a>
 
           <div className='nav__links'>

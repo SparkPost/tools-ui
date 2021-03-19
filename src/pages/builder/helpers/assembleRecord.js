@@ -28,4 +28,5 @@ export const all = (all) => {
   }
 };
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (data) => `v=spf1 ${mx(data.mx.useDefault, data.mx.hosts)} ${a(data.a.useDefault, data.a.hosts)} ${ip(data.ip)} ${include(data.include)} ${all(data.all)}`;
