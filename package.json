@@ -92,7 +92,9 @@
     "serve": "serve -s build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lint": "eslint 'src/**/*.js'",
+    "fix": "npm run lint -- --fix"
   },
   "eslintConfig": {
     "extends": [
@@ -131,6 +133,7 @@
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
+    "testURL": "http://localhost",
     "testRunner": "/Users/nstanard/Development/SparkPost/new-tools-ui/node_modules/jest-circus/runner.js",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
