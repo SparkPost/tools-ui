@@ -17,7 +17,20 @@ In the project directory, you can run:
 npm start
 ```
 
+Note: If you get `node-sass` related error try `npm rebuild node-sass`. (changing node versions can cause this)
+
+This will start the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### Running Tests
+
+```
+npm test
+```
+
+Launches the test runner in the interactive watch mode. Follow on-screen messages for usages.
+
 ## Deployment
+
 ### Staging
 
 To deploy to staging, just merge the branch to `master`. [Travis](https://travis-ci.org/SparkPost/tools-ui/) will take care of the rest.
