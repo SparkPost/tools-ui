@@ -45,12 +45,8 @@ exports[`QueryPage Snapshots baseline snapshot 1`] = `
                   className="input__group"
                 >
                   <label
+                    className="inspect-domain-label"
                     for="inspect-domain"
-                    style={
-                      Object {
-                        "display": "none",
-                      }
-                    }
                   >
                     Inspect Domain
                   </label>
