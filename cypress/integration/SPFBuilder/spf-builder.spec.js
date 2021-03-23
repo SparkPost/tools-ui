@@ -15,7 +15,7 @@ describe('The SPF builder', () => {
     cy.findByRole('heading', { name: 'SPF Builder' }).should('be.visible');
   });
 
-  it('inspects a domain.', () => {
+  it('builds a domain.', () => {
     cy.get('[data-test-id="spf-builder-domain"] input')
           .type('sparkpost.com{enter}');
 
