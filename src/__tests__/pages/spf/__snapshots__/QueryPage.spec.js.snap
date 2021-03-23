@@ -44,8 +44,20 @@ exports[`QueryPage Snapshots baseline snapshot 1`] = `
                 <div
                   className="input__group"
                 >
+                  <label
+                    for="inspect-domain"
+                    style={
+                      Object {
+                        "display": "none",
+                      }
+                    }
+                  >
+                    Inspect Domain
+                  </label>
                   <input
                     className="input__text input--full"
+                    id="inspect-domain"
+                    name="inspect-domain"
                     onChange={[Function]}
                     placeholder="mydomain.com"
                     type="text"
