@@ -7,6 +7,8 @@ import ApiErrorMessage from 'components/errors/ApiErrorMessage';
 import { inspect, expandAll, collapseAll, expand, collapse } from 'actions/spf';
 import SPFNode from './components/SPFNode';
 
+import './ResultsPage.scss';
+
 class ResultsPage extends Component {
 
   componentDidMount() {
