@@ -79,8 +79,6 @@ class FormContainer extends Component {
 
 const mapStateToProps = ({ form }) => ({ form: form.spfBuilder });
 
-// validate -> "Cannot read property 'hosts' of undefined"
-// https://redux-form.com/8.2.2/examples/syncvalidation/ -> "IMPORTANT: In your validate function, values can be undefined, so pay attention when you are validating nested fields. If not, you could encounter some TypeError: undefined is not an object."
 export default reduxForm({
   form: 'spfBuilder',
   validate,
