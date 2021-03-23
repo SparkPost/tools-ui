@@ -10,6 +10,9 @@ import IpRangesContainer from '../containers/IpRangesContainer';
 class FormContainer extends Component {
   render() {
     const { form } = this.props;
+    if (!form || !form.values) {
+      return;
+    }
 
     // Check if domain is valid
     const domain = form.syncErrors && form.syncErrors.domain ? 'your domain' : <strong>{form.values.domain}</strong>;
@@ -75,8 +78,11 @@ class FormContainer extends Component {
 }
 
 const mapStateToProps = ({ form }) => ({ form: form.spfBuilder });
+
+// validate -> "Cannot read property 'hosts' of undefined"
+// https://redux-form.com/8.2.2/examples/syncvalidation/ -> "IMPORTANT: In your validate function, values can be undefined, so pay attention when you are validating nested fields. If not, you could encounter some TypeError: undefined is not an object."
 export default reduxForm({
   form: 'spfBuilder',
+  validate,
   initialValues,
-  validate
 })(connect(mapStateToProps)(FormContainer));
