@@ -11,8 +11,6 @@ import rootReducer from './reducers';
 import routes from './routes';
 import './styles/tools.scss';
 
-import reportWebVitals from './reportWebVitals';
-
 // necessary for redux devtools in development mode only
 // eslint-disable-next-line no-mixed-operators
 const composeEnhancers = process.env.NODE_ENV !== 'production' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -26,8 +24,3 @@ ReactDOM.render((
     <Router history={browserHistory} routes={routes} render={applyRouterMiddleware(useScroll())} />
   </Provider>
 ), document.getElementById('root'));
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
