@@ -6,9 +6,6 @@
     "node": ">=10.17"
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.3",
     "@sparkpost/styles": "^1.6.0",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
@@ -30,9 +27,12 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^7.0.4",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
     "cypress": "^6.8.0",
-    "react-test-renderer": "^17.0.2",
-    "eslint-plugin-cypress": "^2.11.2"
+    "eslint-plugin-cypress": "^2.11.2",
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
