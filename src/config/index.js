@@ -10,6 +10,6 @@ const getConfig = (env) => (
   _.merge({}, defaultConfig, envs[env])
 );
 
-const currentEnv = (process.env.NODE_ENV === 'test') ? 'test' : process.env.REACT_APP_ENV || 'development';
+const currentEnv = (process.env.NODE_ENV === 'test') ? 'test' : process.env.REACT_APP_ENV;
 
 export default getConfig(currentEnv);
