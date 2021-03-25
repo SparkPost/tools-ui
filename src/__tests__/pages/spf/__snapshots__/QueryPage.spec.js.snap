@@ -46,7 +46,7 @@ exports[`QueryPage Snapshots baseline snapshot 1`] = `
                 >
                   <label
                     className="inspect-domain-label"
-                    for="inspect-domain"
+                    htmlFor="inspect-domain"
                   >
                     Inspect Domain
                   </label>
