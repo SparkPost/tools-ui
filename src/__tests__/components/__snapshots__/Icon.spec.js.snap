@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon component should render correctly with all options 1`] = `
+<i
+  className="fa fa-awesome-icon fa-lg spin big super-special"
+/>
+`;
+
+exports[`Icon component should render correctly with no options 1`] = `
+<i
+  className="fa"
+/>
+`;

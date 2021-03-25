@@ -1,0 +1,72 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.dkimResultListRow {
+  position: relative;
+
+  .panel { transition: box-shadow 0.15s; }
+  .fa { transition: color 0.15s; }
+
+  &:hover {
+    text-decoration: none;
+
+    .panel {
+      position: relative;
+      z-index: 1;
+      box-shadow: shadow(2), 0 0 36px rgba(#000, 0.05);
+    }
+
+    .dkimResultListRow__action .fa {
+      color: color(blue);
+    }
+  }
+
+  &__result {
+    position: absolute;
+    top: 50%;
+    left: rem(18);
+    transform: translate(0, -50%);
+  }
+
+  &__details {
+    padding-left: rem(30);
+    line-height: rem(21);
+    font-size: rem(14);
+    color: grayscale(2);
+    font-weight: 500;
+  }
+
+  &__label {
+    display: inline-block;
+    width: rem(42);
+    margin-right: rem(18);
+
+    text-align: right;
+    font-size: rem(12);
+    color: grayscale(5);
+  }
+
+  &__action {
+    position: absolute;
+    top: 50%;
+    right: rem(18);
+    transform: translate(0, -50%);
+
+    font-size: rem(12);
+    color: grayscale(5);
+    font-weight: 500;
+
+    .fa {
+      display: inline-block;
+      margin-left: rem(12);
+      font-size: rem(15);
+    }
+  }
+
+  &__received {
+    display: none;
+    @media screen and (min-width: break(md)) {
+      display: inline;
+    }
+  }
+}

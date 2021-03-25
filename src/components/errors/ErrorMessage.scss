@@ -1,0 +1,63 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.errorMessage {
+  display: block;
+  margin-bottom: 1rem;
+
+  background: grayscale(white);
+  box-shadow: shadow(1);
+
+  font-weight: 400;
+  font-size: rem(13);
+  color: color(alert);
+  text-align: left;
+
+  .fa {
+    float: left;
+    line-height: rem(21);
+    font-size: rem(15);
+
+    @media screen and (min-width: break(md)) {
+      line-height: rem(27);
+    }
+  }
+
+  &__details, &__text {
+    padding: rem(9) rem(15);
+    line-height: rem(21);
+
+    @media screen and (min-width: break(md)) {
+      line-height: rem(27);
+    }
+  }
+
+  &__friendly {
+    margin: 0;
+    padding-left: rem(21);
+  }
+
+  &__link {
+    display: none;
+    float: right;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    @media screen and (min-width: break(md)) {
+      display: inline-block;;
+    }
+  }
+
+  &__details {
+    display: none;
+    border-top: 1px solid grayscale(9);
+    color: grayscale(5);
+
+    @media screen and (min-width: break(md)) {
+      display: block;
+    }
+  }
+}

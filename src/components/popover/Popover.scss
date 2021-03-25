@@ -1,0 +1,49 @@
+@import "~@sparkpost/styles/src/assets/scss/shared/config";
+@import "~@sparkpost/styles/src/assets/scss/shared/functions";
+
+.copyPopover {
+  &__label {
+    margin-bottom: 0;
+
+    color: grayscale(1);
+    font-size: rem(12);
+    font-weight: 500;
+
+    line-height: rem(18);
+
+    .fa {
+      display: inline-block;
+      font-size: rem(15);
+      color: color(green);
+      width: rem(15);
+    }
+  }
+
+  &__copiedString {
+    padding: 0 0 0 rem(21);
+    margin: 0;
+
+    font-size: rem(12);
+    color: grayscale(5);
+    line-height: rem(15);
+    text-align: left;
+    word-break: break-all;
+
+    &:hover, &:active, &:focus {
+      border: none;
+    }
+  }
+
+  &__hidden {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.popover.popover--l {
+    width: 300px;
+    @media screen and (min-width: break(md)) {
+      width: 400px;
+    }
+  }
+}
