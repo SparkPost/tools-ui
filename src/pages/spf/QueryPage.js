@@ -52,7 +52,7 @@ export class QueryPage extends Component {
 
           <div className='col-xs-12 col-md-8'>
             <div className={classNames('input__group', {'has-error': this.state.domainError })}>
-              <label className="inspect-domain-label" for="inspect-domain">Inspect Domain</label>
+              <label className="inspect-domain-label" htmlFor="inspect-domain">Inspect Domain</label>
               <input className='input__text input--full' name="inspect-domain" id="inspect-domain" type='text' onChange={(e) => this.setState({domain: e.target.value}) } placeholder='mydomain.com' />
               {this.state.domainError && <span className="input__error">Please enter a valid domain.</span>}
             </div>
