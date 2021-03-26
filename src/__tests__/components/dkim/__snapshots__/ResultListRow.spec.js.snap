@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultListRow component should render 1`] = `
+<a
+  className="dkimResultListRow"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <div
+    className="panel marginBottom--none"
+  >
+    <div
+      className="panel__body"
+    >
+      <div
+        className="dkimResultListRow__result is-valid"
+      >
+        <i
+          className="fa fa-check-circle"
+        />
+      </div>
+      <div
+        className="dkimResultListRow__details"
+      >
+        <div
+          className="dkimResultListRow__subject"
+        >
+          <span
+            className="dkimResultListRow__label"
+          >
+            subject
+          </span>
+          subject
+        </div>
+        <div
+          className="dkimResultListRow__from"
+        >
+          <span
+            className="dkimResultListRow__label"
+          >
+            from
+          </span>
+          some@email.com
+        </div>
+        <div
+          className="dkimResultListRow__action"
+        >
+          <span
+            className="dkimResultListRow__received"
+          >
+            Sun Jan 01 2017 00:00:00 GMT+0000 (UTC)
+          </span>
+          <i
+            className="fa fa-chevron-right"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+`;

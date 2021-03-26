@@ -5,9 +5,10 @@ import Icon from 'components/Icon';
 import { HoverPopover } from 'components/popover/Popover';
 import { getLoginUrl, getSignUpUrl } from 'helpers/url';
 import classNames from 'classnames';
-const noop = () => {};
 
 import './Button.scss';
+
+const noop = () => {};
 
 const mapPropsToClasses = ({ type, size, accent, fullWidth, icon, states, extraClasses }) => (
   classNames('button', {

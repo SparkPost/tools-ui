@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   apiBase: 'no-default-set',
   appUrl: 'no-default-set',
@@ -11,7 +12,7 @@ export default {
       path: '/'
     },
     requestHeaders: {
-      authHeader: 'Basic bXN5c1VJTGltaXRlZDphZjE0OTdkYS02NjI5LTQ3NTEtODljZS01ZDBmODE4N2MyMDQ=',
+      Authorization: 'Basic bXN5c1VJTGltaXRlZDphZjE0OTdkYS02NjI5LTQ3NTEtODljZS01ZDBmODE4N2MyMDQ=',
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   },

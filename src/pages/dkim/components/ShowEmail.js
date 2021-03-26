@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'components/button/Button';
 import { CopyPopover } from 'components/popover/Popover';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => {
   const { email } = props;
 

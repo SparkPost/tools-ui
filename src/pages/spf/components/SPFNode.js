@@ -5,6 +5,7 @@ import Icon from 'components/Icon';
 
 import './SPFNode.scss';
 
+// eslint-disable-next-line complexity
 function SPFNode({
   tree,
   treeId,

@@ -5,6 +5,7 @@ import config from 'config/index';
 
 import './ResultListHeader.scss';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default ({ email, getResults, loggedIn }) => (
   <div className='panel panel--accent'>
     <div className='panel__body'>

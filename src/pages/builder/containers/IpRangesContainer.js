@@ -8,6 +8,7 @@ import { IpRange } from '../components/FormElements';
 class IpRangesContainer extends Component {
   render() {
     const { fields, ips } = this.props;
+
     return (
       <div>
         {fields.map((host, index) => <IpRange key={index} host={host} prefix={ips[index].type} index={index} onRemove={() => fields.remove(index)}/>)}
@@ -21,5 +22,6 @@ class IpRangesContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ form }) => ({ ips: form.spfBuilder.values.ip });
+const mapStateToProps = ({ form }) => ({ ips: form?.spfBuilder?.values?.ip });
+
 export default connect(mapStateToProps)(IpRangesContainer);

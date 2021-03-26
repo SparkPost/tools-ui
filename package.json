@@ -1,137 +1,62 @@
 {
   "name": "tools.sparkpost.com-ui",
-  "version": "1.16.7",
+  "version": "1.17.0",
   "private": true,
   "engines": {
     "node": ">=10.17"
   },
-  "devDependencies": {
-    "@sparkpost/styles": "^1.6.0",
-    "autoprefixer": "6.5.1",
-    "babel-core": "6.17.0",
-    "babel-eslint": "7.1.1",
-    "babel-jest": "17.0.2",
-    "babel-loader": "6.2.7",
-    "babel-plugin-module-resolver": "^2.4.0",
-    "babel-preset-react-app": "^2.0.1",
-    "case-sensitive-paths-webpack-plugin": "1.1.4",
-    "chalk": "1.1.3",
-    "connect-history-api-fallback": "1.3.0",
-    "cross-spawn": "4.0.2",
-    "css-loader": "0.26.0",
-    "detect-port": "1.0.1",
-    "dotenv": "2.0.0",
-    "eslint": "3.8.1",
-    "eslint-config-react-app": "^0.5.0",
-    "eslint-config-sparkpost": "1.3.2",
-    "eslint-loader": "1.6.0",
-    "eslint-plugin-flowtype": "2.21.0",
-    "eslint-plugin-import": "2.0.1",
-    "eslint-plugin-jsx-a11y": "2.2.3",
-    "eslint-plugin-react": "6.4.1",
-    "extract-text-webpack-plugin": "1.0.1",
-    "file-loader": "0.9.0",
-    "filesize": "3.3.0",
-    "fs-extra": "0.30.0",
-    "gzip-size": "3.0.0",
-    "html-webpack-plugin": "2.24.0",
-    "http-proxy-middleware": "0.17.2",
-    "jest": "17.0.2",
-    "json-loader": "0.5.4",
-    "node-sass": "^4.3.0",
-    "object-assign": "4.1.0",
-    "path-exists": "2.1.0",
-    "postcss-loader": "1.0.0",
-    "promise": "7.1.1",
-    "react-dev-utils": "^0.4.2",
-    "react-helmet": "^4.0.0",
-    "react-router-scroll": "^0.4.1",
-    "react-test-renderer": "^15.4.2",
-    "recursive-readdir": "2.1.0",
-    "redux-form": "^6.5.0",
-    "sass-loader": "^4.1.1",
-    "strip-ansi": "3.0.1",
-    "style-loader": "0.13.1",
-    "url-loader": "0.5.7",
-    "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2",
-    "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "1.0.0"
-  },
   "dependencies": {
-    "axios": "^0.15.3",
-    "babel-plugin-lodash": "^3.2.11",
-    "classnames": "^2.2.5",
-    "js-cookie": "^2.1.3",
-    "lodash": "^4.17.4",
+    "@sparkpost/styles": "^1.6.0",
+    "axios": "^0.21.1",
+    "classnames": "^2.2.6",
     "moment": "^2.17.1",
-    "qs": "^6.3.1",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.2",
-    "react-router": "^3.0.0",
+    "node-sass": "^4.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^7.2.3",
+    "react-router": "^3.2.0",
+    "react-router-scroll": "^0.4.4",
+    "react-scripts": "4.0.3",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-form": "^8.3.7",
+    "redux-thunk": "^2.2.0",
+    "js-cookie": "^2.1.3",
+    "lodash": "^4.17.19",
+    "web-vitals": "^1.1.1"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^7.0.4",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "cypress": "^6.8.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "react-test-renderer": "^17.0.2"
   },
   "scripts": {
-    "start": "npm run fix && node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "npm run fix && node scripts/test.js --env=jsdom",
-    "lint": "eslint \"src/**/*.js\"",
-    "fix": "npm run lint -- --fix"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](build|docs|node_modules)[/\\\\]"
-    ],
-    "testEnvironment": "node",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
-    "modulePaths": [
-      "<rootDir>/src/"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ],
-    "plugins": [
-      "lodash"
-    ]
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "cy": "cypress open --config-file cypress.dev.json"
   },
   "eslintConfig": {
-    "env": {
-      "browser": true,
-      "phantomjs": true
-    },
-    "rules": {
-      "max-lines": [
-        "warn",
-        {
-          "max": 150,
-          "skipComments": true
-        }
-      ]
-    },
     "extends": [
       "react-app",
-      "sparkpost"
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }

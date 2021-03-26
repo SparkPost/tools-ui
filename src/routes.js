@@ -11,7 +11,11 @@ import SPFBuilder from 'pages/builder/Builder';
 
 const redirectRoot = () => {
   const { search } = browserHistory.getCurrentLocation();
-  window.location = `https://www.sparkpost.com/email-tools${search}`;
+  if (process.env.NODE_ENV === 'development') {
+    window.location = '/dkim';
+  } else {
+    window.location = `https://www.sparkpost.com/email-tools${search}`;
+  }
 };
 
 export default (

@@ -10,6 +10,9 @@ import IpRangesContainer from '../containers/IpRangesContainer';
 class FormContainer extends Component {
   render() {
     const { form } = this.props;
+    if (!form || !form.values) {
+      return;
+    }
 
     // Check if domain is valid
     const domain = form.syncErrors && form.syncErrors.domain ? 'your domain' : <strong>{form.values.domain}</strong>;
@@ -18,7 +21,7 @@ class FormContainer extends Component {
         <div className='col-xs-12 col-md-10 col-lg-7'>
 
           <div className='panel'>
-            <div className='panel__body'>
+            <div className='panel__body' data-test-id="spf-builder-domain">
               <h4 className='marginBottom--md'>Enter your domain</h4>
               <Field name="domain" component={TextInput} placeholder='eg. mydomain.com' />
             </div>
@@ -74,10 +77,10 @@ class FormContainer extends Component {
   }
 }
 
-
 const mapStateToProps = ({ form }) => ({ form: form.spfBuilder });
+
 export default reduxForm({
   form: 'spfBuilder',
+  validate,
   initialValues,
-  validate
 })(connect(mapStateToProps)(FormContainer));

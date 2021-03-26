@@ -4,6 +4,7 @@ import { ActionLink, SaveResultsLink } from 'components/button/Button';
 import classNames from 'classnames';
 import config from 'config/index';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => {
   const { domain, timestamp, authorized_netblocks, dns_lookups, refresh, loggedIn } = props;
   const timeClasses = classNames('text--muted', 'marginBottom--none', { 'h-hide': !timestamp });

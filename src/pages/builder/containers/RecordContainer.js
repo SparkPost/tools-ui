@@ -64,6 +64,10 @@ class RecordContainer extends Component {
 
   render() {
     const { form } = this.props;
+    if (!form || !form.values) {
+      return;
+    }
+
     const record = assembleRecord(form.values);
     const { ghostHeight, panelWidth } = this.state;
 
@@ -89,4 +93,5 @@ class RecordContainer extends Component {
 }
 
 const mapStateToProps = ({ form }) => ({ form: form.spfBuilder });
+
 export default connect(mapStateToProps)(RecordContainer);

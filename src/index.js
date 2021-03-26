@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, browserHistory, applyRouterMiddleware } from 'react-router';
@@ -11,6 +12,7 @@ import routes from './routes';
 import './styles/tools.scss';
 
 // necessary for redux devtools in development mode only
+// eslint-disable-next-line no-mixed-operators
 const composeEnhancers = process.env.NODE_ENV !== 'production' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
   rootReducer,

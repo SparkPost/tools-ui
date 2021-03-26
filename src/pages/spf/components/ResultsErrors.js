@@ -7,6 +7,7 @@ import NodeLink from './NodeLink';
 
 import './ResultsErrors.scss';
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (props) => {
   const { errors = [], warnings = [] } = props;
 

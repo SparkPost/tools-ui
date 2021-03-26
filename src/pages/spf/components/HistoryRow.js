@@ -21,6 +21,8 @@ const HistoryRow = (props) => {
       case 'error':
         iconCls = 'exclamation-triangle';
         break;
+      default:
+        break;
     }
     return <Icon name={iconCls} />;
   };

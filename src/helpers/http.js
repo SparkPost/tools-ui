@@ -13,10 +13,7 @@ function useRefreshToken(refresh_token) {
     method: 'POST',
     url: '/authenticate',
     data: `grant_type=refresh_token&refresh_token=${refresh_token}`,
-    headers: {
-      Authorization: authCookie.authHeader,
-      'Content-Type': authCookie['Content-Type']
-    }
+    headers: authCookie.requestHeaders
   });
 }
 
