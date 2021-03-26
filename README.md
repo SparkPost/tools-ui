@@ -51,5 +51,4 @@ Note: If you add the following to your `.gitconfig` file, you can just push and 
 
 ## Notes
 
-Cypress is installed but only for local so far. CI command could look something like:
-`"cy-ci": "cross-env NODE_ENV=test npm run serve & wait-on cypress run --config-file cypress.ci.json"`
+ - Cypress is installed but only for local so far. 
