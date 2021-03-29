@@ -56,8 +56,7 @@ Note: If you add the following to your `.gitconfig` file, you can just push and 
 
 ## Security Patches
 
- - 1 is-svg vulnerability found in package-lock.json (March 29th, 2021)
- - "is-svg": ">=4.2.2" added as a devDependency
+ - March 29th, 2021 - "is-svg": ">=4.2.2" added as a devDependency to fix "1 is-svg vulnerability found in package-lock.json"
 
 > Vulnerable versions: >= 2.1.0, < 4.2.2
 > Patched version: 4.2.2
