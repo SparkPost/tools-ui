@@ -51,4 +51,14 @@ Note: If you add the following to your `.gitconfig` file, you can just push and 
 
 ## Notes
 
+ - Create React App (4.0.3) was used to re-initialize this application on March 26, 2021. ([upgrade guide](https://create-react-app.dev/docs/updating-to-new-releases))
  - Cypress is installed but only for local so far. 
+
+## Security Patches
+
+ - 1 is-svg vulnerability found in package-lock.json (March 29th, 2021)
+ - "is-svg": ">=4.2.2" added as a devDependency
+
+> Vulnerable versions: >= 2.1.0, < 4.2.2
+> Patched version: 4.2.2
+> The is-svg package 2.1.0 through 4.2.1 for Node.js uses a regular expression that is vulnerable to Regular Expression Denial of Service (ReDoS). If an > attacker provides a malicious string, is-svg will get stuck processing the input for a very long time.
