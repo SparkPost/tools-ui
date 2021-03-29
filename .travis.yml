@@ -32,8 +32,8 @@ deploy:
       branch: main
       condition: $REACT_APP_ENV = staging && -z $TRAVIS_TAG
   - provider: s3
-      env:
-        - REACT_APP_GTM_ID=GTM-WN7C84
+    env:
+      - REACT_APP_GTM_ID=GTM-WN7C84
     access_key_id: $ENG_AWS_ACCESS_KEY_ID
     secret_access_key: $ENG_AWS_SECRET_ACCESS_KEY
     bucket: sp-messaging-tools-ui-prod
