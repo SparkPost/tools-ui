@@ -27,7 +27,7 @@ deploy:
     skip_cleanup: true
     local_dir: build
     on:
-      branch: master
+      branch: main
       condition: $REACT_APP_ENV = staging && -z $TRAVIS_TAG
   - provider: s3
     access_key_id: $ENG_AWS_ACCESS_KEY_ID
