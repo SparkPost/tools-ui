@@ -61,4 +61,5 @@ Note: If you add the following to your `.gitconfig` file, you can just push and 
 
 > Vulnerable versions: >= 2.1.0, < 4.2.2
 > Patched version: 4.2.2
-> The is-svg package 2.1.0 through 4.2.1 for Node.js uses a regular expression that is vulnerable to Regular Expression Denial of Service (ReDoS). If an > attacker provides a malicious string, is-svg will get stuck processing the input for a very long time.
+> The is-svg package 2.1.0 through 4.2.1 for Node.js uses a regular expression that is vulnerable to Regular Expression Denial of Service (ReDoS). 
+> If an attacker provides a malicious string, is-svg will get stuck processing the input for a very long time.
