@@ -15,7 +15,7 @@ addons:
     packages:
       # allows arch specific modules to be built
       - g++-4.8
-install: npm install
+install: npm ci
 script: npm test && npm run build
 deploy:
   - provider: s3
