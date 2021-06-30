@@ -1,4 +1,6 @@
-const AUTH = process.env.TOOLS_UI_AUTH;
+console.log('process.env: ', process.env);
+const AUTH = process.env.REACT_APP_TOOLS_UI_AUTH;
+console.log('AUTH: ', AUTH);
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
