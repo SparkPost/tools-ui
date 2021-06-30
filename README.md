@@ -3,6 +3,10 @@ This repo contains the [Messaging Tools UI](https://tools.sparkpost.com). API is
 
 ## Development
 
+### Environment Variables
+
+#### TOOLS_UI_AUTH: export TOOLS_UI_AUTH="{value from 1password here}"
+
 ### Installing Dependencies
 
 ```
