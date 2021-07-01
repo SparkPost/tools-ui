@@ -13,11 +13,12 @@ jobs:
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.ENG_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.ENG_AWS_SECRET_ACCESS_KEY }}
+      REACT_APP_ENV: staging
+      REACT_APP_GTM_ID: GTM-N6D3QT
 
     strategy:
       matrix:
         node-version: [10.17.x]
-        # - REACT_APP_ENV=staging REACT_APP_GTM_ID=GTM-N6D3QT
 
     steps:
     - uses: actions/checkout@v2
@@ -40,7 +41,8 @@ jobs:
       uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
       with:
         folder: build
-        bucket: sp-messaging-tools-ui-staging
+        # bucket: sp-messaging-tools-ui-staging
+        bucket: sp-messaging-tools-ui-testing
         bucket-region: us-west-2
         invalidation: /
         delete-removed: true
