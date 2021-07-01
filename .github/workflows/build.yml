@@ -1,4 +1,4 @@
-name: Tools-UI build, test, and deploy
+name: Tools-UI build and test
 
 on:
   push:
@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.ENG_AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.ENG_AWS_SECRET_ACCESS_KEY }}
 
     strategy:
       matrix:
@@ -37,14 +35,3 @@ jobs:
 
     - name: Test
     - run: npm test
-
-    # - name: Deploy
-    #   uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
-    #   with:
-    #     folder: build
-    #     bucket: sp-messaging-tools-ui-staging
-    #     bucket-region: us-west-2
-    #     invalidation: /
-    #     delete-removed: true
-    #     no-cache: true
-    #     private: true
