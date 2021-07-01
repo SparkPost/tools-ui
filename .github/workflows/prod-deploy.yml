@@ -1,10 +1,8 @@
 name: Tools-UI deploy
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -18,7 +16,6 @@ jobs:
     strategy:
       matrix:
         node-version: [10.17.x]
-        # - REACT_APP_ENV=staging REACT_APP_GTM_ID=GTM-N6D3QT
         # - REACT_APP_ENV=production REACT_APP_GTM_ID=GTM-WN7C84
 
     steps:
@@ -29,11 +26,20 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
+    - name: Install dependencies
+    - run: npm ci
+    
+    - name: Build
+    - run: npm run build --if-present
+
+    - name: Test
+    - run: npm test
+
     - name: Deploy
       uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
       with:
         folder: build
-        bucket: sp-messaging-tools-ui-staging
+        bucket: sp-messaging-tools-ui-prod
         bucket-region: us-west-2
         invalidation: /
         delete-removed: true

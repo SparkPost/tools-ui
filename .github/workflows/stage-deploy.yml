@@ -1,8 +1,9 @@
-name: Tools-UI build and test
+name: Tools-UI deploy
 
 on:
-  pull_request:
-    branches: [ main ]
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -10,12 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.ENG_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.ENG_AWS_SECRET_ACCESS_KEY }}
 
     strategy:
       matrix:
         node-version: [10.17.x]
         # - REACT_APP_ENV=staging REACT_APP_GTM_ID=GTM-N6D3QT
-        # - REACT_APP_ENV=production REACT_APP_GTM_ID=GTM-WN7C84
 
     steps:
     - uses: actions/checkout@v2
@@ -34,5 +36,13 @@ jobs:
     - name: Test
     - run: npm test
 
-# Docs:
-# https://docs.github.com/en/actions/reference/events-that-trigger-workflows#release
+    - name: Deploy
+      uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
+      with:
+        folder: build
+        bucket: sp-messaging-tools-ui-staging
+        bucket-region: us-west-2
+        invalidation: /
+        delete-removed: true
+        no-cache: true
+        private: true
