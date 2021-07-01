@@ -1,0 +1,50 @@
+name: Tools-UI build, test, and deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.ENG_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.ENG_AWS_SECRET_ACCESS_KEY }}
+
+    strategy:
+      matrix:
+        node-version: [10.17.x]
+        # - REACT_APP_ENV=staging REACT_APP_GTM_ID=GTM-N6D3QT
+        # - REACT_APP_ENV=production REACT_APP_GTM_ID=GTM-WN7C84
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install dependencies
+    - run: npm ci
+    
+    - name: Build
+    - run: npm run build --if-present
+
+    - name: Test
+    - run: npm test
+
+    # - name: Deploy
+    #   uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
+    #   with:
+    #     folder: build
+    #     bucket: sp-messaging-tools-ui-staging
+    #     bucket-region: us-west-2
+    #     invalidation: /
+    #     delete-removed: true
+    #     no-cache: true
+    #     private: true
