@@ -14,8 +14,6 @@ jobs:
     strategy:
       matrix:
         node-version: [10.17.x]
-        # - REACT_APP_ENV=staging REACT_APP_GTM_ID=GTM-N6D3QT
-        # - REACT_APP_ENV=production REACT_APP_GTM_ID=GTM-WN7C84
 
     steps:
     - uses: actions/checkout@v2
