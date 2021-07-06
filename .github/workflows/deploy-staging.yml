@@ -6,6 +6,7 @@ on:
       - FE-1523
 
 jobs:
+  environment: staging
   build:
 
     runs-on: ubuntu-latest

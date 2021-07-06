@@ -5,6 +5,7 @@ on:
     types: [published]
 
 jobs:
+  environment: production
   build:
 
     runs-on: ubuntu-latest
