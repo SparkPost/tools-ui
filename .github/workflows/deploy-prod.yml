@@ -1,4 +1,4 @@
-name: Tools-UI deploy
+name: Tools-UI deploy production
 
 on:
   release:
