@@ -41,8 +41,7 @@ jobs:
       uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
       with:
         folder: build
-        # bucket: sp-messaging-tools-ui-staging
-        bucket: sp-messaging-tools-ui-testing
+        bucket: ${{ secrets.S3_BUCKET }}
         bucket-region: us-west-2
         invalidation: /
         delete-removed: true
