@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.ENG_AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.ENG_AWS_SECRET_ACCESS_KEY }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.TST_ENG_AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.TST_ENG_AWS_SECRET_ACCESS_KEY }}
       REACT_APP_ENV: production
       REACT_APP_GTM_ID: GTM-WN7C84
 
@@ -40,7 +40,7 @@ jobs:
       uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
       with:
         folder: build
-        bucket: ${{ secrets.S3_BUCKET }}
+        bucket: ${{ secrets.TST_S3_BUCKET }}
         bucket-region: us-west-2
         invalidation: /
         delete-removed: true
