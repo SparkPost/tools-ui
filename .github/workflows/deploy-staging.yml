@@ -33,13 +33,13 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
 
-    # - name: Deploy
-    #   uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
-    #   with:
-    #     folder: build
-    #     bucket: ${{ secrets.TST_S3_BUCKET }}
-    #     bucket-region: ${{ secrets.S3_BUCKET_REGION }}
-    #     invalidation: /
-    #     delete-removed: true
-    #     no-cache: true
-    #     private: true
+    - name: Deploy
+      uses: reggionick/s3-deploy@v3 # https://github.com/Reggionick/s3-deploy
+      with:
+        folder: build
+        bucket: ${{ secrets.TST_S3_BUCKET }}
+        bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+        invalidation: /
+        delete-removed: true
+        no-cache: true
+        private: true
