@@ -1,10 +1,9 @@
 name: Tools-UI deploy staging
 
-
 on:
   push:
     branches:
-      - FE-1523
+      - main
 
 jobs:
   build:

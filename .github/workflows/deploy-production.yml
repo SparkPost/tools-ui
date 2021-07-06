@@ -1,6 +1,5 @@
 name: Tools-UI deploy production
 
-
 on:
   release:
     types: [published]
