@@ -1,12 +1,13 @@
 name: Tools-UI deploy staging
 
+environment: staging
+
 on:
   push:
     branches:
       - FE-1523
 
 jobs:
-  environment: staging
   build:
 
     runs-on: ubuntu-latest
