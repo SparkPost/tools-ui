@@ -3,6 +3,12 @@ This repo contains the [Messaging Tools UI](https://tools.sparkpost.com). API is
 
 ## Development
 
+### Environment Variables
+
+#### REACT_APP_TOOLS_UI_AUTH: export REACT_APP_TOOLS_UI_AUTH="{value from 1password here}"
+
+Set this in your bash profile. 
+
 ### Installing Dependencies
 
 ```

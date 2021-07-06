@@ -1,3 +1,5 @@
+const AUTH = process.env.REACT_APP_TOOLS_UI_AUTH;
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   apiBase: 'no-default-set',
@@ -12,7 +14,7 @@ export default {
       path: '/'
     },
     requestHeaders: {
-      Authorization: 'Basic bXN5c1VJTGltaXRlZDphZjE0OTdkYS02NjI5LTQ3NTEtODljZS01ZDBmODE4N2MyMDQ=',
+      Authorization: AUTH,
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   },
