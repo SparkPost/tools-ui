@@ -1,6 +1,5 @@
 name: Tools-UI deploy production
 
-environment: production
 
 on:
   release:
@@ -9,6 +8,7 @@ on:
 jobs:
   build:
 
+    environment: production
     runs-on: ubuntu-latest
 
     env:

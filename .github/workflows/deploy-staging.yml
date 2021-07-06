@@ -1,6 +1,5 @@
 name: Tools-UI deploy staging
 
-environment: staging
 
 on:
   push:
@@ -10,6 +9,7 @@ on:
 jobs:
   build:
 
+    environment: staging
     runs-on: ubuntu-latest
 
     env:
