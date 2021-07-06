@@ -2,7 +2,7 @@ name: Tools-UI build and test
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ FE-1523 ]
 
 jobs:
   build:
@@ -31,6 +31,3 @@ jobs:
 
     - name: Test
     - run: npm test
-
-# Docs:
-# https://docs.github.com/en/actions/reference/events-that-trigger-workflows#release
