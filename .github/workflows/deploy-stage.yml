@@ -42,7 +42,7 @@ jobs:
       with:
         folder: build
         bucket: ${{ secrets.TST_S3_BUCKET }}
-        bucket-region: ${{ secrets.TST_S3_BUCKET_REGION }}
+        bucket-region: ${{ secrets.S3_BUCKET_REGION }}
         invalidation: /
         delete-removed: true
         no-cache: true
