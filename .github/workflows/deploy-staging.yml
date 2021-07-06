@@ -14,7 +14,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.TST_ENG_AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.TST_ENG_AWS_SECRET_ACCESS_KEY }}
       REACT_APP_ENV: staging
-      REACT_APP_GTM_ID: GTM-N6D3QT
+      REACT_APP_GTM_ID: ${{ secrets.REACT_APP_GTM_ID }}
 
     strategy:
       matrix:
