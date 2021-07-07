@@ -44,5 +44,6 @@ jobs:
           aws-region: ${{ secrets.S3_BUCKET_REGION }}
       - name: Push Contents to S3 to deploy 
         run: aws s3 sync ./build s3://${{ secrets.S3_BUCKET }}
+      # No cache is actually hooked up rn, don't need to invalidate when it's set to 0 ttl (no caching)
       # - name: Invalidate CloudFront Cache # Invalidate the CloudFront Distribution's /sites/* path
       #   run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DISTRIBUTION_ID }} --paths "/sites/*"
