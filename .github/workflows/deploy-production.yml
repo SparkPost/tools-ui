@@ -1,0 +1,49 @@
+name: Tools-UI deploy production
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  build:
+
+    environment: production
+    runs-on: ubuntu-latest
+
+    env:
+      REACT_APP_ENV: production
+      REACT_APP_GTM_ID: ${{ secrets.REACT_APP_GTM_ID }}
+
+    strategy:
+      matrix:
+        node-version: [10.17.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm test
+
+      - name: Setup Python
+        uses: actions/setup-python@v1 # sets up python in our environment
+        with:
+          python-version: "3.x" # install python version 3.x, default architecture is x64
+      - name: Install AWS CLI
+        run: pip3 install awscli --upgrade --user # install the cli with upgrade to any requirements and into the subdir of the user
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1 # use the official GitHub Action from AWS to setup credentials
+        with:
+          aws-access-key-id: ${{ secrets.ENG_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.ENG_AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.S3_BUCKET_REGION }}
+      - name: Push Contents to S3 to deploy 
+        run: aws s3 sync ./build s3://${{ secrets.S3_BUCKET }}
+      # No cache is actually hooked up rn, don't need to invalidate when it's set to 0 ttl (no caching)
+      # - name: Invalidate CloudFront Cache # Invalidate the CloudFront Distribution's /sites/* path
+      #   run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DISTRIBUTION_ID }} --paths "/sites/*"
