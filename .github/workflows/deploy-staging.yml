@@ -44,5 +44,5 @@ jobs:
         aws-region: ${{ secrets.S3_BUCKET_REGION }}
     - name: Push Contents to S3 to deploy
       run: aws s3 sync ./build s3://${{ secrets.TST_S3_BUCKET }}
-    # - name: Invalidate CloudFront Cache # Invalidate the CloudFront Distribution's /sites/* path
-    #   run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DISTRIBUTION_ID }} --paths "/sites/*"
+    - name: Invalidate CloudFront Cache # Invalidate the CloudFront Distribution's /sites/* path
+      run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DISTRIBUTION_ID }} --paths "/sites/*"
